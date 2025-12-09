@@ -1,174 +1,100 @@
-import React, { useState, useMemo } from 'react'; // Import useState, useMemo
-import games from '../data';
-import { useDispatch } from 'react-redux';
-import { addToCart } from '../redux/cartSlice';
+import React, { useState, useEffect, useMemo } from 'react';
+import GameCard from '../components/GameCard';
+import { Play, Info, ChevronRight, Star, Loader } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Search, Filter, ArrowUpDown } from 'lucide-react'; // Import icon mới
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart } from '../redux/cartSlice';
+import { fetchProducts } from '../redux/productSlice';
 
 export default function Home() {
   const dispatch = useDispatch();
+  const { items: games, status } = useSelector(state => state.products);
 
-  // --- 1. KHAI BÁO STATE QUẢN LÝ BỘ LỌC ---
-  const [searchTerm, setSearchTerm] = useState(''); // Từ khóa tìm kiếm
-  const [selectedGenre, setSelectedGenre] = useState('All'); // Thể loại đang chọn
-  const [sortOption, setSortOption] = useState('default'); // Kiểu sắp xếp (giá thấp-cao, đánh giá...)
+  useEffect(() => {
+    if (status === 'idle') {
+      dispatch(fetchProducts());
+    }
+  }, [status, dispatch]);
 
-  // --- 2. TẠO DANH SÁCH THỂ LOẠI TỰ ĐỘNG (Để hiện trong menu Dropdown) ---
-  // Lấy tất cả genre từ data -> xóa trùng lặp -> thêm lựa chọn "All"
-  const allGenres = ['All', ...new Set(games.map(game => game.genre))];
+  const featuredGames = games.slice(0, 5); 
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [selectedGenre, setSelectedGenre] = useState('All');
 
-  // --- 3. LOGIC LỌC VÀ SẮP XẾP (QUAN TRỌNG NHẤT) ---
-  // Sử dụng useMemo để tối ưu hiệu năng (chỉ tính toán lại khi state thay đổi)
+  useEffect(() => {
+    if (featuredGames.length > 0) {
+        const timer = setInterval(() => {
+        setCurrentIndex((prev) => (prev + 1) % featuredGames.length);
+        }, 5000); 
+        return () => clearInterval(timer);
+    }
+  }, [featuredGames.length]);
+
+  const currentGame = featuredGames[currentIndex];
+
+  const genres = useMemo(() => {
+    if (!games.length) return [];
+    const allGenres = ['All', ...new Set(games.map(game => game.genre))];
+    return allGenres.sort();
+  }, [games]);
+
   const filteredGames = useMemo(() => {
-    let result = [...games]; // Copy mảng gốc để không làm hỏng dữ liệu
+    if (selectedGenre === 'All') return games;
+    return games.filter(game => game.genre === selectedGenre);
+  }, [selectedGenre, games]);
 
-    // Bước A: Lọc theo từ khóa tìm kiếm
-    if (searchTerm) {
-      result = result.filter(game => 
-        game.name.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-    }
+  if (status === 'loading' || !currentGame) {
+    return <div className="flex h-[60vh] items-center justify-center"><Loader className="animate-spin text-blue-600" size={48} /></div>;
+  }
 
-    // Bước B: Lọc theo thể loại (Genre)
-    if (selectedGenre !== 'All') {
-      result = result.filter(game => game.genre === selectedGenre);
-    }
+  if (status === 'failed') {
+      return <div className="text-center text-red-500 mt-20">Lỗi tải dữ liệu. Vui lòng kiểm tra Server!</div>;
+  }
 
-    // Bước C: Sắp xếp (Sort)
-    switch (sortOption) {
-      case 'price-asc': // Giá thấp đến cao
-        result.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
-        break;
-      case 'price-desc': // Giá cao đến thấp
-        result.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
-        break;
-      case 'rating': // Đánh giá cao nhất
-        result.sort((a, b) => b.rating - a.rating);
-        break;
-      default:
-        break;
-    }
-
-    return result;
-  }, [searchTerm, selectedGenre, sortOption]); // Chạy lại khi 3 biến này thay đổi
-
-  
-  // --- 4. GIAO DIỆN ---
   return (
-    <div className="container mx-auto p-4 min-h-screen">
-      <h1 className="text-3xl font-bold mb-6 border-l-4 border-yellow-500 pl-4 text-white">
-        Kho Game Bản Quyền
-      </h1>
-
-      {/* --- THANH CÔNG CỤ TÌM KIẾM & LỌC --- */}
-      <div className="bg-gray-800 p-4 rounded-lg mb-8 flex flex-col md:flex-row gap-4 items-center shadow-lg">
-        
-        {/* Ô tìm kiếm */}
-        <div className="relative flex-1 w-full">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
-          <input 
-            type="text"
-            placeholder="Tìm tên game (ví dụ: Elden Ring)..."
-            className="w-full bg-gray-900 text-white pl-10 pr-4 py-2 rounded border border-gray-700 focus:outline-none focus:border-yellow-500 transition"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
+    <div className="w-full space-y-10">
+      <div className="relative w-full h-[400px] lg:h-[500px] rounded-[32px] overflow-hidden shadow-2xl group">
+        <div key={currentGame.id} className="absolute inset-0 animate-fade-in">
+           <img src={currentGame.cover} alt={currentGame.name} className="w-full h-full object-cover" />
+           <div className="absolute inset-0 bg-gradient-to-r from-[#0f1221] via-[#0f1221]/60 to-transparent"></div>
+           <div className="absolute inset-0 bg-gradient-to-t from-[#0f1221] via-transparent to-transparent"></div>
         </div>
 
-        {/* Bộ lọc Thể loại */}
-        <div className="flex items-center gap-2 w-full md:w-auto">
-          <Filter className="text-yellow-500" size={20} />
-          <select 
-            className="bg-gray-900 text-white px-4 py-2 rounded border border-gray-700 focus:border-yellow-500 cursor-pointer w-full"
-            value={selectedGenre}
-            onChange={(e) => setSelectedGenre(e.target.value)}
-          >
-            {allGenres.map(genre => (
-              <option key={genre} value={genre}>
-                {genre === 'All' ? 'Tất cả thể loại' : genre}
-              </option>
-            ))}
-          </select>
+        <div className="absolute bottom-0 left-0 p-8 md:p-12 w-full md:w-2/3 z-10">
+           <div className="flex items-center gap-3 mb-4">
+              <span className="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-lg uppercase tracking-wider">Featured</span>
+              <span className="flex items-center gap-1 text-yellow-400 text-sm font-bold"><Star size={16} fill="currentColor" /> {currentGame.rating}</span>
+           </div>
+           <h1 className="text-4xl md:text-6xl font-black text-white mb-4 leading-tight drop-shadow-lg">{currentGame.name}</h1>
+           <p className="text-gray-300 line-clamp-2 mb-8 text-lg max-w-xl">{currentGame.desc}</p>
+           <div className="flex flex-wrap gap-4">
+              <button onClick={() => dispatch(addToCart(currentGame))} className="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-2 transition transform active:scale-95 shadow-lg"><Play size={20} fill="currentColor" /> Mua Ngay ${currentGame.price}</button>
+              <Link to={`/game/${currentGame.id}`} className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-2 transition"><Info size={20} /> Chi tiết</Link>
+           </div>
         </div>
 
-        {/* Bộ lọc Sắp xếp */}
-        <div className="flex items-center gap-2 w-full md:w-auto">
-          <ArrowUpDown className="text-yellow-500" size={20} />
-          <select 
-            className="bg-gray-900 text-white px-4 py-2 rounded border border-gray-700 focus:border-yellow-500 cursor-pointer w-full"
-            value={sortOption}
-            onChange={(e) => setSortOption(e.target.value)}
-          >
-            <option value="default">Mặc định</option>
-            <option value="price-asc">Giá: Thấp đến Cao</option>
-            <option value="price-desc">Giá: Cao đến Thấp</option>
-            <option value="rating">Đánh giá cao nhất</option>
-          </select>
+        <div className="absolute right-8 top-1/2 -translate-y-1/2 flex flex-col gap-3 z-20">
+          {featuredGames.map((_, idx) => (
+            <button key={idx} onClick={() => setCurrentIndex(idx)} className={`w-3 h-3 rounded-full transition-all duration-300 ${idx === currentIndex ? 'bg-blue-600 h-8' : 'bg-gray-600 hover:bg-gray-400'}`} />
+          ))}
         </div>
       </div>
 
-      {/* --- DANH SÁCH GAME (Render biến filteredGames thay vì games) --- */}
-      {filteredGames.length === 0 ? (
-        <div className="text-center text-gray-400 mt-10 text-xl">
-            Không tìm thấy game nào phù hợp! 😢
+      <div>
+        <div className="flex items-center justify-between mb-6">
+           <h2 className="text-2xl font-bold text-gray-800 flex items-center gap-2">🔥 Khám phá Kho Game</h2>
+           <Link to="/categories" className="text-gray-500 hover:text-blue-600 text-sm font-bold flex items-center gap-1 transition">Xem tất cả <ChevronRight size={16} /></Link>
         </div>
-      ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {filteredGames.map((game) => (
-            <div key={game.id} className="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:-translate-y-2 transition duration-300 group flex flex-col h-full border border-gray-700 hover:border-yellow-500/50">
-                
-                <Link to={`/game/${game.id}`} className="relative overflow-hidden h-56 block cursor-pointer">
-                    <img 
-                    src={game.cover} 
-                    alt={game.name} 
-                    className="w-full h-full object-cover transition duration-500 group-hover:scale-110" 
-                    />
-                    <span className="absolute top-2 right-2 bg-black/80 text-white text-xs px-2 py-1 rounded border border-gray-600 backdrop-blur-md">
-                        {game.genre}
-                    </span>
-                    {/* Hiển thị điểm Rating nếu cao */}
-                    {game.rating >= 90 && (
-                        <span className="absolute top-2 left-2 bg-yellow-500 text-black text-xs font-bold px-2 py-1 rounded">
-                            HOT 🔥
-                        </span>
-                    )}
-                </Link>
-                
-                <div className="p-4 flex flex-col flex-1">
-                <Link to={`/game/${game.id}`} className="hover:text-yellow-400 transition mb-1">
-                    <h3 className="font-bold text-lg text-white line-clamp-1" title={game.name}>{game.name}</h3>
-                </Link>
-                
-                <p className="text-xs text-gray-400 mb-4 line-clamp-1">{game.platforms}</p>
 
-                <div className="flex justify-between items-center mt-auto pt-3 border-t border-gray-700">
-                    <div className="flex flex-col">
-                        <span className="text-xs text-gray-400 line-through decoration-red-500 decoration-2">
-                            ${(parseFloat(game.price) * 1.2).toFixed(2)}
-                        </span>
-                        <p className="text-yellow-400 font-bold text-xl">
-                            ${game.price}
-                        </p>
-                    </div>
-                    <div className="flex gap-1 text-xs text-gray-300 bg-gray-700 px-2 py-1 rounded items-center">
-                        <span>⭐ {game.rating}</span>
-                    </div>
-                </div>
-                
-                <button 
-                    onClick={() => {
-                        dispatch(addToCart(game));
-                        alert(`Đã thêm ${game.name} vào giỏ!`);
-                    }}
-                    className="mt-4 w-full bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-400 hover:to-yellow-500 text-black font-bold py-2 rounded transition shadow-lg"
-                >
-                    Thêm vào giỏ
-                </button>
-                </div>
-            </div>
+        <div className="flex gap-3 mb-8 overflow-x-auto pb-2 scrollbar-hide">
+            {genres.map((genre) => (
+            <button key={genre} onClick={() => setSelectedGenre(genre)} className={`px-5 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap border ${selectedGenre === genre ? 'bg-blue-600 text-white border-blue-600 shadow-md' : 'bg-white text-gray-500 border-gray-200 hover:border-blue-400 hover:text-blue-600'}`}>{genre}</button>
             ))}
         </div>
-      )}
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+           {filteredGames.slice(0, 8).map(game => <GameCard key={game.id} game={game} />)}
+        </div>
+      </div>
     </div>
   );
 }

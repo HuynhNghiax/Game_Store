@@ -1,71 +1,86 @@
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeFromCart, clearCart } from '../redux/cartSlice';
-import { Trash2 } from 'lucide-react';
+import { createOrder } from '../redux/orderSlice'; // Import action tạo đơn
+import { Trash2, CreditCard, Heart } from 'lucide-react';
 import { useNavigate, Link } from 'react-router-dom';
 
 export default function Cart() {
   const { items, totalAmount } = useSelector(state => state.cart);
+  const { user } = useSelector(state => state.auth); // Lấy thông tin user
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const handleCheckout = () => {
+  const handleCheckout = async () => {
+    // 1. Kiểm tra đăng nhập
+    if (!user) {
+        alert("Vui lòng đăng nhập để thanh toán!");
+        navigate('/login');
+        return;
+    }
+
+    // 2. Tạo dữ liệu đơn hàng
+    const newOrder = {
+        userId: user.id,
+        items: items,
+        totalAmount: totalAmount,
+        date: new Date().toISOString(), // Lưu ngày giờ hiện tại
+        status: "Completed" // Giả lập trạng thái
+    };
+
+    // 3. Gửi lên Server
+    await dispatch(createOrder(newOrder));
+
+    // 4. Xóa giỏ hàng và chuyển trang
     dispatch(clearCart());
     navigate('/success');
   };
 
+  // ... (Phần render UI giữ nguyên, chỉ thay đổi logic nút button bên dưới) ...
+
   if (items.length === 0) return (
-    <div className="text-center mt-20">
-        <h2 className="text-2xl text-white font-bold">Giỏ hàng trống!</h2>
-        <Link to="/" className="text-yellow-500 underline mt-4 block">Quay lại mua sắm</Link>
+    <div className="flex flex-col items-center justify-center h-[50vh] text-center">
+        <h2 className="text-3xl text-gray-800 font-bold mb-4">Giỏ hàng đang trống</h2>
+        <p className="text-gray-500 mb-6">Bạn chưa chọn game nào cả.</p>
+        <Link to="/" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-bold transition">Quay lại mua sắm</Link>
     </div>
   );
 
   return (
-    <div className="container mx-auto p-4 max-w-4xl">
-      <h1 className="text-2xl font-bold mb-6 text-white">Giỏ hàng của bạn</h1>
-      
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* Cột trái: List sản phẩm */}
-        <div className="md:col-span-2 space-y-4">
+    <div className="w-full">
+      <h1 className="text-3xl font-bold mb-8 text-gray-800">Giỏ hàng ({items.length})</h1>
+      <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
+        {/* ... (Phần list items giữ nguyên) ... */}
+        <div className="xl:col-span-2 space-y-4">
             {items.map(item => (
-            <div key={item.id} className="flex gap-4 bg-gray-800 p-4 rounded-lg items-center">
-                <img src={item.cover} alt={item.name} className="w-20 h-28 object-cover rounded" />
-                <div className="flex-1">
-                    <h3 className="font-bold text-white text-lg">{item.name}</h3>
-                    <p className="text-yellow-500 font-bold">${item.price}</p>
-                    <div className="flex items-center gap-2 mt-2">
-                        <span className="text-gray-400 text-sm">Số lượng: {item.quantity}</span>
+            <div key={item.id} className="flex gap-4 bg-white p-4 rounded-2xl border border-gray-200 shadow-sm items-center">
+                <img src={item.cover} alt={item.name} className="w-24 h-32 object-cover rounded-xl shrink-0" />
+                <div className="flex-1 min-w-0">
+                    <h3 className="font-bold text-gray-900 text-xl mb-1 truncate">{item.name}</h3>
+                    <div className="flex items-center gap-3">
+                        <span className="text-blue-600 font-bold text-lg">${item.price}</span>
+                        <span className="text-gray-500 text-sm bg-gray-100 px-2 py-1 rounded-lg">Qty: {item.quantity}</span>
                     </div>
                 </div>
-                
-                <button 
-                onClick={() => dispatch(removeFromCart(item.id))}
-                className="text-red-500 hover:text-red-400 p-2 hover:bg-gray-700 rounded-full transition"
-                >
-                <Trash2 size={20} />
-                </button>
+                <div className="flex flex-col gap-2 shrink-0">
+                    <button onClick={() => dispatch(removeFromCart(item.id))} className="p-2 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition"><Trash2 size={20} /></button>
+                </div>
             </div>
             ))}
         </div>
 
-        {/* Cột phải: Tổng tiền */}
-        <div className="md:col-span-1">
-            <div className="bg-gray-800 p-6 rounded-lg sticky top-24">
-                <h3 className="text-xl font-bold text-white mb-4 border-b border-gray-700 pb-2">Tóm tắt đơn hàng</h3>
-                <div className="flex justify-between text-lg mb-4 text-gray-300">
-                    <span>Tạm tính:</span>
-                    <span>${totalAmount.toFixed(2)}</span>
+        {/* ... (Phần Sidebar thanh toán) ... */}
+        <div className="xl:col-span-1">
+            <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-lg sticky top-4">
+                <h3 className="text-xl font-bold text-gray-900 mb-6">Tổng kết</h3>
+                <div className="space-y-3 mb-6">
+                    <div className="flex justify-between text-gray-500"><span>Tạm tính</span><span>${totalAmount.toFixed(2)}</span></div>
+                    <div className="h-px bg-gray-200 my-4"></div>
+                    <div className="flex justify-between text-2xl font-bold text-gray-900"><span>Tổng cộng</span><span>${totalAmount.toFixed(2)}</span></div>
                 </div>
-                <div className="flex justify-between text-xl font-bold text-yellow-400 mb-6">
-                    <span>Tổng cộng:</span>
-                    <span>${totalAmount.toFixed(2)}</span>
-                </div>
-                
-                <button 
-                onClick={handleCheckout}
-                className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded text-lg transition shadow-lg shadow-green-900/50"
-                >
-                Thanh toán ngay
+                {/* NÚT THANH TOÁN ĐÃ GẮN HÀM MỚI */}
+                <button onClick={handleCheckout} className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl text-lg shadow-lg transition active:scale-95 flex items-center justify-center gap-2">
+                    <CreditCard size={20} /> Thanh toán ngay
                 </button>
             </div>
         </div>
