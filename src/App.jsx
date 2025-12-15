@@ -1,26 +1,65 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
+import MainLayout from './components/MainLayout';
 import Home from './pages/Home';
 import Cart from './pages/Cart';
-import Success from './pages/Success';
 import GameDetail from './pages/GameDetail';
-import SearchResults from './pages/SearchResults'; // <--- Import file mới
+import Success from './pages/Success';
+import Categories from './pages/Categories';
+import Library from './pages/Library';
+import SearchResults from './pages/SearchResults';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import OrderHistory from './pages/OrderHistory';
+import ProtectedRoute from './components/ProtectedRoute'; // 1. Import Component bảo vệ
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="min-h-screen pb-20 bg-gray-900 text-white">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/success" element={<Success />} />
-          <Route path="/game/:id" element={<GameDetail />} />
+      <Routes>
+        
+        {/* --- CÁC TRANG KHÔNG CẦN BẢO VỆ (Public Routes) --- */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+
+        {/* --- MAIN LAYOUT --- */}
+        <Route path="/" element={<MainLayout />}>
           
-          {/* Route cho trang tìm kiếm */}
-          <Route path="/search" element={<SearchResults />} /> 
-        </Routes>
-      </div>
+          {/* Ai cũng xem được */}
+          <Route index element={<Home />} />
+          <Route path="game/:id" element={<GameDetail />} />
+          <Route path="categories" element={<Categories />} />
+          <Route path="search" element={<SearchResults />} />
+          
+          {/* --- CÁC TRANG CẦN BẢO VỆ (Private Routes) --- */}
+          {/* Phải đăng nhập mới vào được, nếu không sẽ bị đá về Login */}
+          
+          <Route path="cart" element={
+            <ProtectedRoute>
+              <Cart />
+            </ProtectedRoute>
+          } />
+
+          <Route path="library" element={
+            <ProtectedRoute>
+              <Library />
+            </ProtectedRoute>
+          } />
+
+          <Route path="history" element={
+            <ProtectedRoute>
+              <OrderHistory />
+            </ProtectedRoute>
+          } />
+
+          <Route path="success" element={
+            <ProtectedRoute>
+              <Success />
+            </ProtectedRoute>
+          } />
+
+        </Route>
+
+      </Routes>
     </BrowserRouter>
   );
 }

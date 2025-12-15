@@ -1,86 +1,81 @@
-import React, { useState } from 'react';
-import { Gamepad2, Mail, Lock, ArrowRight } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Gamepad2, Mail, Lock, ArrowRight, AlertCircle } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { loginUser, clearError } from '../redux/authSlice';
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { loading, error, isAuthenticated } = useSelector(state => state.auth);
+
+  useEffect(() => { dispatch(clearError()); }, [dispatch]);
+
+  // Nếu đăng nhập thành công -> Chuyển về Home
+  useEffect(() => {
+    if (isAuthenticated) {
+        navigate('/');
+    }
+  }, [isAuthenticated, navigate]);
 
   const handleLogin = (e) => {
     e.preventDefault();
-    // Giả lập đăng nhập thành công
-    if (email && password) {
-        alert("Đăng nhập thành công!");
-        navigate('/'); // Chuyển về trang chủ
-    } else {
-        alert("Vui lòng nhập Email và Mật khẩu");
-    }
+    dispatch(loginUser({ email, password }));
   };
 
   return (
-    <div className="min-h-screen w-full bg-[#050816] flex items-center justify-center relative overflow-hidden">
-      
-      {/* Hiệu ứng nền (Trang trí) */}
-      <div className="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] bg-teal-500/20 rounded-full blur-[120px] pointer-events-none animate-pulse"></div>
-      <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-purple-500/20 rounded-full blur-[120px] pointer-events-none animate-pulse"></div>
-
-      {/* Form Card */}
-      <div className="bg-[#15192b]/80 backdrop-blur-xl border border-white/10 p-10 rounded-[40px] w-full max-w-md shadow-2xl relative z-10">
+    <div className="min-h-screen w-full bg-gray-50 flex items-center justify-center">
+      <div className="bg-white p-10 rounded-2xl w-full max-w-md shadow-xl border border-gray-200">
         
-        {/* Logo */}
-        <div className="flex flex-col items-center mb-10">
-            <div className="w-16 h-16 bg-gradient-to-tr from-teal-400 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg shadow-teal-500/30 mb-4">
-                <Gamepad2 className="text-white" size={40} />
+        <div className="flex flex-col items-center mb-8">
+            <div className="bg-blue-600 text-white p-3 rounded-xl shadow-lg shadow-blue-200 mb-4">
+                <Gamepad2 size={32} />
             </div>
-            <h2 className="text-3xl font-black text-white tracking-tight">Chào mừng trở lại!</h2>
-            <p className="text-gray-400 mt-2">Đăng nhập để tiếp tục chiến game</p>
+            <h2 className="text-2xl font-bold text-gray-900">Chào mừng trở lại!</h2>
+            <p className="text-gray-500 text-sm">Đăng nhập để tiếp tục</p>
         </div>
 
-        {/* Form Inputs */}
-        <form onSubmit={handleLogin} className="space-y-6">
-            <div className="space-y-2">
-                <label className="text-sm font-bold text-gray-300 ml-1">Email</label>
-                <div className="relative group">
-                    <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 group-focus-within:text-teal-400 transition" size={20} />
-                    <input 
-                        type="email" 
-                        placeholder="example@email.com"
-                        className="w-full bg-[#0B0E14] text-white pl-12 pr-4 py-4 rounded-2xl border border-gray-800 focus:border-teal-500 focus:outline-none transition placeholder-gray-600 font-medium"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                    />
-                </div>
+        {error && (
+            <div className="bg-red-50 text-red-600 p-3 rounded-lg text-sm mb-6 flex items-center gap-2 border border-red-100">
+                <AlertCircle size={16}/> {error}
+            </div>
+        )}
+
+        <form onSubmit={handleLogin} className="space-y-5">
+            <div className="relative">
+                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
+                <input 
+                    type="email" placeholder="Email" required
+                    className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 outline-none transition bg-gray-50 focus:bg-white"
+                    value={email} onChange={(e) => setEmail(e.target.value)}
+                />
             </div>
 
-            <div className="space-y-2">
-                <label className="text-sm font-bold text-gray-300 ml-1">Mật khẩu</label>
-                <div className="relative group">
-                    <Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 group-focus-within:text-teal-400 transition" size={20} />
-                    <input 
-                        type="password" 
-                        placeholder="••••••••"
-                        className="w-full bg-[#0B0E14] text-white pl-12 pr-4 py-4 rounded-2xl border border-gray-800 focus:border-teal-500 focus:outline-none transition placeholder-gray-600 font-medium"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                    />
-                </div>
+            <div className="relative">
+                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
+                <input 
+                    type="password" placeholder="Mật khẩu" required
+                    className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 outline-none transition bg-gray-50 focus:bg-white"
+                    value={password} onChange={(e) => setPassword(e.target.value)}
+                />
             </div>
 
             <div className="flex justify-end">
-                <a href="#" className="text-sm text-teal-400 hover:text-teal-300 font-bold transition">Quên mật khẩu?</a>
+                <Link to="/forgot-password" class="text-sm text-blue-600 hover:underline font-medium">Quên mật khẩu?</Link>
             </div>
 
-            <button 
-                type="submit"
-                className="w-full bg-gradient-to-r from-teal-400 to-teal-600 hover:from-teal-300 hover:to-teal-500 text-white font-bold py-4 rounded-2xl text-lg shadow-lg shadow-teal-500/30 transition transform active:scale-95 flex items-center justify-center gap-2"
+            <button type="submit" disabled={loading}
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg shadow-md hover:shadow-lg transition flex items-center justify-center gap-2 disabled:opacity-70"
             >
-                Đăng Nhập <ArrowRight size={20} />
+                {loading ? 'Đang kiểm tra...' : <>Đăng Nhập <ArrowRight size={18} /></>}
             </button>
         </form>
 
-        <div className="mt-8 text-center text-gray-400 text-sm">
-            Chưa có tài khoản? <Link to="/register" className="text-white font-bold hover:text-teal-400 transition">Đăng ký ngay</Link>
+        <div className="mt-8 text-center text-sm text-gray-500">
+            Chưa có tài khoản? <Link to="/register" className="text-blue-600 font-bold hover:underline">Đăng ký ngay</Link>
         </div>
       </div>
     </div>

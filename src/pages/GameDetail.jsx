@@ -1,118 +1,73 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import games from '../data'; // Import data game
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../redux/cartSlice';
-import { ArrowLeft, ShoppingCart, Star, Calendar, Globe } from 'lucide-react';
+import { fetchProducts } from '../redux/productSlice';
+import { ArrowLeft, ShoppingBag, Star, Heart, Loader } from 'lucide-react';
 
 export default function GameDetail() {
-  // 1. Lấy ID từ đường dẫn URL (ví dụ: /game/0 -> id = "0")
   const { id } = useParams();
   const dispatch = useDispatch();
+  const { items: games, status } = useSelector(state => state.products);
+  const [isLiked, setIsLiked] = useState(false);
 
-  // 2. Tìm game trong danh sách dựa vào ID
-  // Lưu ý: id lấy từ URL là chuỗi, nên cần đổi sang số (parseInt) hoặc so sánh lỏng (==)
+  useEffect(() => {
+    if (status === 'idle') dispatch(fetchProducts());
+  }, [status, dispatch]);
+
   const game = games.find((g) => g.id == id);
 
-  // 3. Scroll lên đầu trang khi chuyển trang
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [id]);
-
-  if (!game) {
-    return <div className="text-center text-white mt-20">Không tìm thấy game!</div>;
-  }
+  if (status === 'loading') return <div className="flex h-[50vh] items-center justify-center"><Loader className="animate-spin text-blue-600" size={40} /></div>;
+  if (!game) return <div className="text-center text-gray-500 mt-20">Không tìm thấy game!</div>;
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white pb-10">
-      {/* Ảnh nền mờ phía sau (Background Blur effect) */}
-      <div 
-        className="fixed inset-0 z-0 opacity-10 pointer-events-none"
-        style={{ backgroundImage: `url(${game.cover})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
-      ></div>
+    <div className="w-full relative">
+      <div className="w-full h-[300px] rounded-[32px] overflow-hidden relative mb-8 shadow-md">
+          <img src={game.cover} alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent"></div>
+          <Link to="/" className="absolute top-4 left-4 bg-white/90 backdrop-blur-md text-gray-800 px-4 py-2 rounded-xl flex items-center gap-2 hover:bg-white transition font-bold shadow-sm"><ArrowLeft size={18} /> Back</Link>
+      </div>
 
-      <div className="container mx-auto p-4 relative z-10">
-        {/* Nút quay lại */}
-        <Link to="/" className="inline-flex items-center text-gray-400 hover:text-white mb-6 transition">
-          <ArrowLeft size={20} className="mr-2" /> Quay lại cửa hàng
-        </Link>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Cột Trái: Ảnh bìa lớn */}
-          <div className="md:col-span-1">
-            <img 
-              src={game.cover} 
-              alt={game.name} 
-              className="w-full rounded-lg shadow-2xl border border-gray-700"
-            />
-          </div>
-
-          {/* Cột Phải: Thông tin chi tiết */}
-          <div className="md:col-span-2 space-y-6">
-            <div>
-              <h1 className="text-4xl font-bold mb-2 text-white">{game.name}</h1>
-              <div className="flex flex-wrap gap-4 text-sm text-gray-400">
-                <span className="flex items-center gap-1 bg-gray-800 px-3 py-1 rounded-full">
-                   <Calendar size={16} /> {game.release}
-                </span>
-                <span className="flex items-center gap-1 bg-gray-800 px-3 py-1 rounded-full">
-                   <Star size={16} className="text-yellow-500" /> {game.rating}/100
-                </span>
-                <span className="flex items-center gap-1 bg-gray-800 px-3 py-1 rounded-full">
-                   <Globe size={16} /> {game.developers}
-                </span>
-              </div>
-            </div>
-
-            <div className="bg-gray-800/50 p-6 rounded-lg backdrop-blur-sm border border-gray-700">
-                <p className="text-3xl font-bold text-yellow-400 mb-4">${game.price}</p>
-                <button 
-                  onClick={() => {
-                    dispatch(addToCart(game));
-                    alert(`Đã thêm ${game.name} vào giỏ!`);
-                  }}
-                  className="w-full md:w-auto bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-8 rounded-lg flex items-center justify-center gap-2 transition transform hover:scale-105"
-                >
-                  <ShoppingCart size={20} /> Mua Ngay
-                </button>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-bold border-b border-gray-700 pb-2 mb-3">Cốt truyện</h3>
-              <p className="text-gray-300 leading-relaxed text-justify">
-                {game.desc}
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 gap-4 text-sm text-gray-400">
-                <div>
-                    <span className="font-bold text-white block">Thể loại:</span> {game.genre}
-                </div>
-                <div>
-                    <span className="font-bold text-white block">Hệ máy:</span> {game.platforms}
-                </div>
-                <div>
-                    <span className="font-bold text-white block">Nhà phát hành:</span> {game.publishers}
-                </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Phần Thư viện ảnh (Footage) */}
-        <div className="mt-12">
-            <h2 className="text-2xl font-bold mb-6 border-l-4 border-yellow-500 pl-4">Hình ảnh trong game</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {game.footage && game.footage.map((imgUrl, index) => (
-                    <div key={index} className="overflow-hidden rounded-lg group">
-                        <img 
-                            src={imgUrl} 
-                            alt={`Gameplay ${index}`} 
-                            className="w-full h-64 object-cover transition duration-500 group-hover:scale-110"
-                        />
+      <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
+          <div className="xl:col-span-2 space-y-6">
+              <div className="flex justify-between items-start">
+                  <div>
+                    <h1 className="text-4xl font-black text-gray-900 mb-2">{game.name}</h1>
+                    <div className="flex gap-3 text-gray-500 text-sm font-medium">
+                        <span className="bg-white border border-gray-200 px-3 py-1 rounded-lg flex items-center gap-2 shadow-sm"><Star size={14} className="text-yellow-500 fill-yellow-500" /> {game.rating}</span>
+                        <span className="bg-white border border-gray-200 px-3 py-1 rounded-lg shadow-sm">{game.genre}</span>
+                        <span className="bg-white border border-gray-200 px-3 py-1 rounded-lg shadow-sm">{game.release}</span>
                     </div>
-                ))}
-            </div>
-        </div>
+                  </div>
+                  <button onClick={() => setIsLiked(!isLiked)} className={`xl:hidden p-3 rounded-2xl border transition flex items-center justify-center ${isLiked ? 'bg-red-50 text-red-500 border-red-200' : 'bg-white text-gray-400 border-gray-200'}`}><Heart size={24} className={isLiked ? "fill-red-500" : ""} /></button>
+              </div>
+              <div className="prose max-w-none text-gray-600 leading-relaxed"><h3 className="text-xl font-bold text-gray-900 mb-2">About</h3><p>{game.desc}</p></div>
+              <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">Gallery</h3>
+                  <div className="grid grid-cols-2 gap-4">
+                      {game.footage && game.footage.map((img, idx) => (
+                          <img key={idx} src={img} className="rounded-2xl hover:opacity-90 transition cursor-pointer h-40 object-cover w-full shadow-sm" alt="" />
+                      ))}
+                  </div>
+              </div>
+          </div>
+          <div>
+              <div className="bg-white p-6 rounded-[32px] border border-gray-200 shadow-lg sticky top-4">
+                  <img src={game.cover} alt="" className="w-full h-48 object-cover rounded-2xl mb-6 shadow-md" />
+                  <div className="flex justify-between items-end mb-6">
+                      <div><p className="text-gray-400 line-through text-sm">$99.99</p><p className="text-3xl font-bold text-gray-900">${game.price}</p></div>
+                      <span className="bg-red-50 text-red-600 text-xs font-bold px-2 py-1 rounded border border-red-100">-50%</span>
+                  </div>
+                  <div className="flex gap-3">
+                      <button onClick={() => dispatch(addToCart(game))} className="flex-1 bg-gray-900 hover:bg-blue-600 text-white font-bold py-4 rounded-2xl flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transition active:scale-95"><ShoppingBag size={20} /> Add to Cart</button>
+                      <button onClick={() => setIsLiked(!isLiked)} className={`w-16 rounded-2xl flex items-center justify-center border transition active:scale-95 ${isLiked ? 'bg-red-50 text-red-500 border-red-200 shadow-md' : 'bg-white border-gray-200 text-gray-400 hover:border-gray-400'}`}><Heart size={24} className={isLiked ? "fill-red-500" : ""} /></button>
+                  </div>
+                  <div className="mt-6 space-y-3 text-sm text-gray-500 font-medium">
+                      <div className="flex justify-between"><span>Developer</span><span className="text-gray-900">{game.developers}</span></div>
+                      <div className="flex justify-between"><span>Publisher</span><span className="text-gray-900">{game.publishers}</span></div>
+                  </div>
+              </div>
+          </div>
       </div>
     </div>
   );

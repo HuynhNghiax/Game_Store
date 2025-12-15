@@ -1,133 +1,97 @@
-import React, { useState } from 'react';
-import { Gamepad2, Mail, Lock, User, ArrowRight } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Gamepad2, Mail, Lock, User, ArrowRight, AlertCircle, CheckCircle } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { registerUser, clearError } from '../redux/authSlice';
 
 export default function Register() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    password: '',
-    confirmPassword: ''
-  });
+  const [formData, setFormData] = useState({ name: '', email: '', password: '', confirmPassword: '' });
+  
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { loading, error, successMessage } = useSelector(state => state.auth);
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  // Xóa lỗi cũ khi vào trang
+  useEffect(() => { dispatch(clearError()); }, [dispatch]);
+
+  // Nếu đăng ký thành công thì chuyển hướng sau 1.5s
+  useEffect(() => {
+    if (successMessage) {
+        setTimeout(() => navigate('/login'), 1500);
+    }
+  }, [successMessage, navigate]);
+
+  const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const handleRegister = (e) => {
     e.preventDefault();
-    // Validate cơ bản
     if (formData.password !== formData.confirmPassword) {
-      alert("Mật khẩu nhập lại không khớp!");
+      alert("Mật khẩu không khớp!"); 
       return;
     }
-    if (!formData.email || !formData.password || !formData.name) {
-      alert("Vui lòng điền đầy đủ thông tin!");
-      return;
-    }
-
-    // Giả lập đăng ký thành công
-    alert(`Đăng ký thành công! Chào mừng ${formData.name}`);
-    navigate('/login'); // Chuyển sang trang đăng nhập
+    // Gọi API qua Redux
+    dispatch(registerUser({ 
+        name: formData.name, 
+        email: formData.email, 
+        password: formData.password 
+    }));
   };
 
   return (
-    <div className="min-h-screen w-full bg-[#050816] flex items-center justify-center relative overflow-hidden">
-      
-      {/* Hiệu ứng nền */}
-      <div className="absolute top-[-10%] right-[-10%] w-[600px] h-[600px] bg-teal-500/20 rounded-full blur-[120px] pointer-events-none animate-pulse"></div>
-      <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-purple-500/20 rounded-full blur-[120px] pointer-events-none animate-pulse"></div>
-
-      {/* Form Card */}
-      <div className="bg-[#15192b]/80 backdrop-blur-xl border border-white/10 p-10 rounded-[40px] w-full max-w-md shadow-2xl relative z-10 my-10">
+    <div className="min-h-screen w-full bg-gray-50 flex items-center justify-center">
+      <div className="bg-white p-10 rounded-2xl w-full max-w-md shadow-xl border border-gray-200">
         
-        {/* Header */}
         <div className="flex flex-col items-center mb-8">
-            <div className="w-16 h-16 bg-gradient-to-tr from-teal-400 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg shadow-teal-500/30 mb-4">
-                <Gamepad2 className="text-white" size={40} />
+            <div className="bg-blue-600 text-white p-3 rounded-xl shadow-lg shadow-blue-200 mb-4">
+                <Gamepad2 size={32} />
             </div>
-            <h2 className="text-3xl font-black text-white tracking-tight">Tạo tài khoản mới</h2>
-            <p className="text-gray-400 mt-2">Gia nhập cộng đồng game thủ ngay!</p>
+            <h2 className="text-2xl font-bold text-gray-900">Tạo tài khoản</h2>
+            <p className="text-gray-500 text-sm">Tham gia cộng đồng GameStore</p>
         </div>
 
-        {/* Form Inputs */}
-        <form onSubmit={handleRegister} className="space-y-5">
-            
-            {/* Tên hiển thị */}
-            <div className="space-y-2">
-                <label className="text-sm font-bold text-gray-300 ml-1">Tên hiển thị</label>
-                <div className="relative group">
-                    <User className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 group-focus-within:text-teal-400 transition" size={20} />
-                    <input 
-                        type="text" 
-                        name="name"
-                        placeholder="Gamer_VIP"
-                        className="w-full bg-[#0B0E14] text-white pl-12 pr-4 py-4 rounded-2xl border border-gray-800 focus:border-teal-500 focus:outline-none transition placeholder-gray-600 font-medium"
-                        value={formData.name}
-                        onChange={handleChange}
-                    />
-                </div>
+        {/* Thông báo lỗi / Thành công */}
+        {error && <div className="bg-red-50 text-red-600 p-3 rounded-lg text-sm mb-4 flex items-center gap-2"><AlertCircle size={16}/> {error}</div>}
+        {successMessage && <div className="bg-green-50 text-green-600 p-3 rounded-lg text-sm mb-4 flex items-center gap-2"><CheckCircle size={16}/> {successMessage}</div>}
+
+        <form onSubmit={handleRegister} className="space-y-4">
+            <div className="relative">
+                <User className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
+                <input name="name" type="text" placeholder="Tên hiển thị" required
+                    className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 outline-none transition bg-gray-50 focus:bg-white"
+                    onChange={handleChange}
+                />
+            </div>
+            <div className="relative">
+                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
+                <input name="email" type="email" placeholder="Email" required
+                    className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 outline-none transition bg-gray-50 focus:bg-white"
+                    onChange={handleChange}
+                />
+            </div>
+            <div className="relative">
+                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
+                <input name="password" type="password" placeholder="Mật khẩu" required
+                    className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 outline-none transition bg-gray-50 focus:bg-white"
+                    onChange={handleChange}
+                />
+            </div>
+            <div className="relative">
+                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
+                <input name="confirmPassword" type="password" placeholder="Nhập lại mật khẩu" required
+                    className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 outline-none transition bg-gray-50 focus:bg-white"
+                    onChange={handleChange}
+                />
             </div>
 
-            {/* Email */}
-            <div className="space-y-2">
-                <label className="text-sm font-bold text-gray-300 ml-1">Email</label>
-                <div className="relative group">
-                    <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 group-focus-within:text-teal-400 transition" size={20} />
-                    <input 
-                        type="email" 
-                        name="email"
-                        placeholder="example@email.com"
-                        className="w-full bg-[#0B0E14] text-white pl-12 pr-4 py-4 rounded-2xl border border-gray-800 focus:border-teal-500 focus:outline-none transition placeholder-gray-600 font-medium"
-                        value={formData.email}
-                        onChange={handleChange}
-                    />
-                </div>
-            </div>
-
-            {/* Mật khẩu */}
-            <div className="space-y-2">
-                <label className="text-sm font-bold text-gray-300 ml-1">Mật khẩu</label>
-                <div className="relative group">
-                    <Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 group-focus-within:text-teal-400 transition" size={20} />
-                    <input 
-                        type="password" 
-                        name="password"
-                        placeholder="••••••••"
-                        className="w-full bg-[#0B0E14] text-white pl-12 pr-4 py-4 rounded-2xl border border-gray-800 focus:border-teal-500 focus:outline-none transition placeholder-gray-600 font-medium"
-                        value={formData.password}
-                        onChange={handleChange}
-                    />
-                </div>
-            </div>
-
-            {/* Nhập lại Mật khẩu */}
-            <div className="space-y-2">
-                <label className="text-sm font-bold text-gray-300 ml-1">Xác nhận mật khẩu</label>
-                <div className="relative group">
-                    <Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 group-focus-within:text-teal-400 transition" size={20} />
-                    <input 
-                        type="password" 
-                        name="confirmPassword"
-                        placeholder="••••••••"
-                        className="w-full bg-[#0B0E14] text-white pl-12 pr-4 py-4 rounded-2xl border border-gray-800 focus:border-teal-500 focus:outline-none transition placeholder-gray-600 font-medium"
-                        value={formData.confirmPassword}
-                        onChange={handleChange}
-                    />
-                </div>
-            </div>
-
-            <button 
-                type="submit"
-                className="w-full bg-gradient-to-r from-teal-400 to-teal-600 hover:from-teal-300 hover:to-teal-500 text-white font-bold py-4 rounded-2xl text-lg shadow-lg shadow-teal-500/30 transition transform active:scale-95 flex items-center justify-center gap-2 mt-6"
+            <button type="submit" disabled={loading}
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg shadow-md hover:shadow-lg transition flex items-center justify-center gap-2 disabled:opacity-70"
             >
-                Đăng Ký Ngay <ArrowRight size={20} />
+                {loading ? 'Đang xử lý...' : <>Đăng Ký <ArrowRight size={18} /></>}
             </button>
         </form>
 
-        <div className="mt-8 text-center text-gray-400 text-sm">
-            Đã có tài khoản? <Link to="/login" className="text-white font-bold hover:text-teal-400 transition">Đăng nhập ngay</Link>
+        <div className="mt-6 text-center text-sm text-gray-500">
+            Đã có tài khoản? <Link to="/login" className="text-blue-600 font-bold hover:underline">Đăng nhập</Link>
         </div>
       </div>
     </div>
