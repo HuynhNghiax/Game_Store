@@ -32,6 +32,7 @@ export const loginUser = createAsyncThunk('auth/login', async ({ email, password
       return rejectWithValue('Email hoặc mật khẩu không đúng!');
     }
   } catch (error) {
+    console.error(error);
     return rejectWithValue('Lỗi kết nối server');
   }
 });
@@ -39,7 +40,7 @@ export const loginUser = createAsyncThunk('auth/login', async ({ email, password
 const authSlice = createSlice({
   name: 'auth',
   initialState: {
-    user: null,          // Thông tin user đang đăng nhập
+    user: null,
     isAuthenticated: false,
     loading: false,
     error: null,
@@ -53,6 +54,14 @@ const authSlice = createSlice({
     clearError: (state) => {
       state.error = null;
       state.successMessage = null;
+    },
+    updateProfile: (state, action) => {
+      if (state.user) {
+        state.user = {
+          ...state.user,
+          ...action.payload
+        };
+      }
     }
   },
   extraReducers: (builder) => {
@@ -84,5 +93,6 @@ const authSlice = createSlice({
   }
 });
 
-export const { logout, clearError } = authSlice.actions;
+export const { logout, clearError, updateProfile } = authSlice.actions;
 export default authSlice.reducer;
+
