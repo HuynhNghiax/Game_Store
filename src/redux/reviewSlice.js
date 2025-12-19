@@ -1,43 +1,44 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
+
+const REVIEWS_URL = 'http://localhost:3000/reviews';
+
+// Tải bình luận theo productId
+export const fetchReviews = createAsyncThunk(
+    'reviews/fetchReviews',
+    async (productId) => {
+        const response = await axios.get(`${REVIEWS_URL}?productId=${productId}`);
+        return response.data;
+    }
+);
+
+// Gửi bình luận mới
+export const postReview = createAsyncThunk(
+    'reviews/postReview',
+    async (newReview) => {
+        const response = await axios.post(REVIEWS_URL, newReview);
+        return response.data;
+    }
+);
 
 const reviewSlice = createSlice({
     name: 'reviews',
     initialState: {
-        list: [],       // danh sách review
-        totalReviews: 0 // tổng số đánh giá
+        list: [],
+        status: 'idle'
     },
-    reducers: {
-        addReview(state, action) {
-            const newReview = action.payload;
-
-            state.list.push({
-                id: Date.now(),      // id đơn giản
-                rating: newReview.rating,
-                comment: newReview.comment,
-                user: newReview.user || 'Guest',
-                createdAt: new Date().toISOString()
+    reducers: {},
+    extraReducers: (builder) => {
+        builder
+            // Xử lý load reviews
+            .addCase(fetchReviews.fulfilled, (state, action) => {
+                state.list = action.payload;
+            })
+            // Xử lý gửi review thành công
+            .addCase(postReview.fulfilled, (state, action) => {
+                state.list.unshift(action.payload); // Đưa bình luận mới lên đầu danh sách
             });
-
-            state.totalReviews++;
-        },
-
-        removeReview(state, action) {
-            const id = action.payload;
-            state.list = state.list.filter(review => review.id !== id);
-            state.totalReviews = state.list.length;
-        },
-
-        clearReviews(state) {
-            state.list = [];
-            state.totalReviews = 0;
-        }
     }
 });
-
-export const {
-    addReview,
-    removeReview,
-    clearReviews
-} = reviewSlice.actions;
 
 export default reviewSlice.reducer;
