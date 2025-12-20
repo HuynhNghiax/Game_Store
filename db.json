@@ -39,7 +39,35 @@
     }
   ],
   "wishlist": [],
-  "reviews": [],
+  "reviews": [
+    {
+      "id": "95b5",
+      "productId": "0",
+      "userId": "8551",
+      "user": "nhannghia",
+      "rating": 5,
+      "comment": "game vip quá",
+      "createdAt": "2025-12-20T08:42:05.242Z"
+    },
+    {
+      "id": "bd19",
+      "productId": "2",
+      "userId": "8551",
+      "user": "nhannghia",
+      "rating": 1,
+      "comment": "game quá tệ.không nên chơi",
+      "createdAt": "2025-12-20T08:44:10.794Z"
+    },
+    {
+      "id": "0a9f",
+      "productId": "5",
+      "userId": "8551",
+      "user": "nhannghia",
+      "rating": 5,
+      "comment": "game rất hay\n",
+      "createdAt": "2025-12-20T08:57:25.898Z"
+    }
+  ],
   "products": [
     {
       "name": "Cyberpunk 2077",
