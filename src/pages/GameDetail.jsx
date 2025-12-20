@@ -105,7 +105,9 @@ export default function GameDetail() {
                         {/* Danh sách bình luận */}
                         <div className="mt-10 space-y-6">
                             {reviews.length > 0 ? (
-                                reviews.map((rev) => (
+                                [...reviews] // clone mảng để không mutate Redux
+                                    .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+                                    .map((rev) => (
                                     <div key={rev.id} className="group bg-white p-6 rounded-[28px] border border-gray-100 shadow-sm hover:shadow-xl hover:shadow-gray-100/50 transition-all duration-300">
                                         <div className="flex justify-between items-start">
                                             <div className="flex items-start gap-4">

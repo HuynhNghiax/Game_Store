@@ -9,6 +9,12 @@ export default function ReviewForm({ gameId }) {
 
     // Lấy thông tin từ Redux Store
     const { user, isAuthenticated } = useSelector(state => state.auth);
+    const displayName =
+        user?.username ||
+        user?.name ||
+        user?.email?.split('@')[0] ||
+        "Người dùng";
+
     const { list: reviews } = useSelector(state => state.reviews);
 
     // Kiểm tra xem user hiện tại đã có bài đánh giá nào cho game này chưa
@@ -22,7 +28,7 @@ export default function ReviewForm({ gameId }) {
         if (!comment.trim()) return;
 
         // Xử lý lấy tên hiển thị an toàn nhất
-        const currentName = user?.username || user?.name || user?.email?.split('@')[0] || "Người dùng";
+        const currentName = displayName;
 
         dispatch(postReview({
             productId: gameId,
@@ -73,9 +79,8 @@ export default function ReviewForm({ gameId }) {
                     </div>
                     <div>
                         <p className="text-sm font-black text-gray-900 leading-none">
-                            {user?.username || user?.email?.split('@')[0]}
+                            {displayName}
                         </p>
-                        <p className="text-[11px] text-gray-400 mt-1 uppercase tracking-wider font-bold">Đang viết đánh giá</p>
                     </div>
                 </div>
 
