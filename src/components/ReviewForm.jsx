@@ -1,10 +1,25 @@
 import { useState } from "react";
 import { Star } from "lucide-react";
-import { useDispatch } from "react-redux";
-import { addReview } from "../redux/reviewSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { postReview } from "../redux/reviewSlice";
+import { Link } from "react-router-dom";
 
-export default function ReviewForm() {
+export default function ReviewForm({ gameId }) {
     const dispatch = useDispatch();
+
+    // Lấy thông tin từ Redux Store
+    const { user, isAuthenticated } = useSelector(state => state.auth);
+    const displayName =
+        user?.username ||
+        user?.name ||
+        user?.email?.split('@')[0] ||
+        "Người dùng";
+
+    const { list: reviews } = useSelector(state => state.reviews);
+
+    // Kiểm tra xem user hiện tại đã có bài đánh giá nào cho game này chưa
+    const hasReviewed = reviews.some(rev => rev.userId === user?.id);
+
     const [rating, setRating] = useState(5);
     const [comment, setComment] = useState("");
 
@@ -12,44 +27,99 @@ export default function ReviewForm() {
         e.preventDefault();
         if (!comment.trim()) return;
 
-        dispatch(addReview({
+        // Xử lý lấy tên hiển thị an toàn nhất
+        const currentName = displayName;
+
+        dispatch(postReview({
+            productId: gameId,
+            userId: user.id,
+            user: currentName,
             rating,
             comment,
-            user: "Guest"
+            createdAt: new Date().toISOString()
         }));
 
         setComment("");
         setRating(5);
     };
 
+    // 1. Nếu chưa đăng nhập
+    if (!isAuthenticated) {
+        return (
+            <div className="mt-6 p-8 bg-gradient-to-br from-gray-50 to-blue-50/30 border-2 border-dashed border-gray-200 rounded-[32px] text-center">
+                <p className="text-gray-500 mb-4 font-medium text-lg">Chia sẻ ý kiến của bạn về tựa game này</p>
+                <Link
+                    to="/login"
+                    className="inline-block bg-gray-900 text-white px-8 py-3 rounded-2xl font-bold hover:bg-blue-600 transition-all active:scale-95 shadow-lg"
+                >
+                    Đăng nhập để đánh giá
+                </Link>
+            </div>
+        );
+    }
+
+    // 2. Nếu đã đánh giá rồi
+    if (hasReviewed) {
+        return (
+            <div className="mt-6 p-6 bg-green-50/50 border border-green-100 rounded-[32px] flex items-center justify-center gap-3">
+                <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-bold">✓</div>
+                <p className="text-green-700 font-bold">Bạn đã gửi đánh giá cho tựa game này. Cảm ơn đóng góp của bạn!</p>
+            </div>
+        );
+    }
+
+    // 3. Giao diện Form bình luận mới (Đã đẹp hơn)
     return (
-        <form onSubmit={handleSubmit} className="mt-3 bg-gray-900 p-3 rounded-lg">
-            <div className="flex gap-1 mb-2">
-                {[1, 2, 3, 4, 5].map((star) => (
-                    <Star
-                        key={star}
-                        size={18}
-                        onClick={() => setRating(star)}
-                        className={`cursor-pointer ${
-                            star <= rating
-                                ? "text-yellow-400 fill-yellow-400"
-                                : "text-gray-500"
-                        }`}
-                    />
-                ))}
+        <form onSubmit={handleSubmit} className="mt-8 bg-white p-6 rounded-[32px] border border-gray-100 shadow-xl shadow-gray-100/50 relative">
+            <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center gap-3">
+                    {/* Avatar người dùng hiện tại */}
+                    <div className="w-10 h-10 bg-gradient-to-tr from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold shadow-md">
+                        {(user?.username || user?.email)?.charAt(0).toUpperCase()}
+                    </div>
+                    <div>
+                        <p className="text-sm font-black text-gray-900 leading-none">
+                            {displayName}
+                        </p>
+                    </div>
+                </div>
+
+                {/* Chọn số sao */}
+                <div className="flex gap-1.5 bg-gray-50 px-3 py-2 rounded-2xl border border-gray-100">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                        <Star
+                            key={star}
+                            size={18}
+                            onClick={() => setRating(star)}
+                            className={`cursor-pointer transition-all duration-300 ${
+                                star <= rating
+                                    ? "text-yellow-400 fill-yellow-400 scale-110"
+                                    : "text-gray-300 hover:text-yellow-200"
+                            }`}
+                        />
+                    ))}
+                </div>
             </div>
 
-            <textarea
-                className="w-full bg-gray-800 text-white p-2 rounded text-sm mb-2"
-                placeholder="Viết đánh giá..."
-                value={comment}
-                onChange={(e) => setComment(e.target.value)}
-            />
+            <div className="relative group">
+                <textarea
+                    className="w-full bg-gray-50/80 border-2 border-transparent text-gray-800 p-5 rounded-[24px] text-sm min-h-[120px] focus:bg-white focus:border-blue-500/20 focus:ring-4 focus:ring-blue-500/5 outline-none transition-all duration-300 placeholder:text-gray-400 shadow-inner"
+                    placeholder="Hãy để lại cảm nhận của bạn về tựa game này..."
+                    value={comment}
+                    onChange={(e) => setComment(e.target.value)}
+                />
+            </div>
 
-            <button className="w-full bg-yellow-500 hover:bg-yellow-400 text-black font-bold py-1 rounded">
-                Gửi đánh giá
-            </button>
+            <div className="flex justify-end mt-4">
+                <button className="bg-gray-900 hover:bg-blue-600 text-white font-bold px-10 py-3.5 rounded-2xl transition-all active:scale-95 shadow-lg shadow-gray-200 hover:shadow-blue-200 flex items-center gap-2">
+                    Gửi bình luận
+                </button>
+            </div>
         </form>
     );
+
+}
+
 }
  
+

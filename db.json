@@ -7,10 +7,18 @@
       "password": "123"
     },
     {
+
+      "id": "8551",
+      "name": "nhannghia",
+      "email": "nhannghialai@gmail.com",
+      "password": "123456"
+    },
+    {
       "id": "f6d6",
       "name": "Nam ",
       "email": "22130175@st.hcmuaf.edu.vn",
       "password": "nam0210004"
+
     }
   ],
   "orders": [
@@ -55,6 +63,53 @@
     }
   ],
   "wishlist": [],
+  "reviews": [
+    {
+      "id": "95b5",
+      "productId": "0",
+      "userId": "8551",
+      "user": "nhannghia",
+      "rating": 5,
+      "comment": "game rất hay mọi người nên chơi thử",
+      "createdAt": "2025-12-20T08:42:05.242Z"
+    },
+    {
+      "id": "bd19",
+      "productId": "2",
+      "userId": "8551",
+      "user": "nhannghia",
+      "rating": 1,
+      "comment": "game quá tệ.không nên chơi",
+      "createdAt": "2025-12-20T08:44:10.794Z"
+    },
+    {
+      "id": "0a9f",
+      "productId": "5",
+      "userId": "8551",
+      "user": "nhannghia",
+      "rating": 5,
+      "comment": "game rất hay\n",
+      "createdAt": "2025-12-20T08:57:25.898Z"
+    },
+    {
+      "id": "81cc",
+      "productId": "1",
+      "userId": "8551",
+      "user": "nhannghia",
+      "rating": 3,
+      "comment": "game ko hay",
+      "createdAt": "2025-12-20T12:47:48.273Z"
+    },
+    {
+      "id": "0e86",
+      "productId": "0",
+      "userId": "1",
+      "user": "Admin Gamer",
+      "rating": 5,
+      "comment": "game quá hay luôn\n",
+      "createdAt": "2025-12-20T13:53:30.890Z"
+    }
+  ],
   "products": [
     {
       "name": "Cyberpunk 2077",
@@ -879,6 +934,256 @@
         "https://res.cloudinary.com/gianlucajahn/image/upload/v1658238650/tombraider_1_jxeua4.jpg",
         "https://res.cloudinary.com/gianlucajahn/image/upload/v1658238650/tombraider_2_fnhmmd.jpg",
         "https://res.cloudinary.com/gianlucajahn/image/upload/v1658238650/tombraider_3_cr0yee.jpg"
+      ]
+    },
+    {
+      "name": "Elden Ring",
+      "surname": "eldenring",
+      "price": "49.99",
+      "desc": "ELDEN RING là một tựa game hành động nhập vai thế giới mở được phát triển bởi FromSoftware và Bandai Namco Entertainment. Người chơi sẽ khám phá vùng đất Lands Between rộng lớn, chiến đấu với các kẻ thù hung dữ, thu thập rune để nâng cấp sức mạnh và đối đầu với các boss khổng lồ để trở thành Elden Lord. Thế giới được sáng tạo bởi Hidetaka Miyazaki và George R. R. Martin, mang đến trải nghiệm thử thách và đầy bất ngờ.",
+      "link": "https://en.bandainamcoent.eu/elden-ring/elden-ring",
+      "release": "25th of February, 2022",
+      "platforms": "Playstation 4, Playstation 5, Xbox One, Xbox Series S/X, PC",
+      "genre": "RPG",
+      "developers": "FromSoftware",
+      "publishers": "Bandai Namco Entertainment",
+      "inCart": false,
+      "selected": false,
+      "isHovered": false,
+      "isLiked": false,
+      "rating": 96,
+      "id": "33",
+      "cover": "https://cdn.mos.cms.futurecdn.net/bByhky6jeMXqwxkPV9DZsg-1920-80.jpg",
+      "footage": [
+        "https://cdn.mos.cms.futurecdn.net/bByhky6jeMXqwxkPV9DZsg-1920-80.jpg",
+        "https://assetsio.gnwcdn.com/elden-ring-cover-art.jpg?width=570&quality=85&format=jpg&dpr=3&auto=webp",
+        "https://p325k7wa.twic.pics/high/elden-ring/elden-ring/08-shadow-of-the-erdtree/elden-ring-expansion-SOTE/00-page-content/ERSOTE-header-mobile.jpg?twic=v1/resize=760/step=10/quality=80",
+        "https://cdn01.pinkoi.com/product/24rsWqPA/0/1/640x530.jpg"
+      ]
+    },
+    {
+      "name": "Baldur's Gate 3",
+      "surname": "baldursgate3",
+      "price": "59.99",
+      "desc": "Baldur's Gate 3 là game nhập vai theo lượt dựa trên Dungeons & Dragons, phát triển bởi Larian Studios. Người chơi dẫn dắt một nhóm nhân vật bị nhiễm ký sinh trùng, khám phá thế giới Forgotten Realms, đưa ra lựa chọn ảnh hưởng đến cốt truyện và chiến đấu chiến lược. Với tự do cao, câu chuyện phong phú và đồ họa ấn tượng, đây là kiệt tác RPG hiện đại.",
+      "link": "https://baldursgate3.game/",
+      "release": "3rd of August, 2023",
+      "platforms": "PC, Playstation 5, Xbox Series S/X",
+      "genre": "RPG",
+      "developers": "Larian Studios",
+      "publishers": "Larian Studios",
+      "inCart": false,
+      "selected": false,
+      "isHovered": false,
+      "isLiked": false,
+      "rating": 96,
+      "id": "34",
+      "cover": "https://www.dexerto.com/cdn-image/wp-content/uploads/2024/03/14/Baldurs-gate-3-body-img.jpg",
+      "footage": [
+        "https://www.dexerto.com/cdn-image/wp-content/uploads/2024/03/14/Baldurs-gate-3-body-img.jpg",
+        "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2024/01/bg3-lego-cover.jpg?w=1600&h=900&fit=crop",
+        "https://miro.medium.com/0*lIgFfYSaabNN1oWm",
+        "https://coverproject.sfo2.cdn.digitaloceanspaces.com/playstation_5/playstation_5.baldursgateiii_US.1694775307124177062_thumb.jpg"
+      ]
+    },
+    {
+      "name": "The Legend of Zelda: Tears of the Kingdom",
+      "surname": "tearskingdom",
+      "price": "69.99",
+      "desc": "The Legend of Zelda: Tears of the Kingdom là phần tiếp theo của Breath of the Wild, nơi Link khám phá vương quốc Hyrule mở rộng với vùng trời và lòng đất. Sử dụng khả năng Ultrahand để xây dựng máy móc, Fuse để kết hợp vật phẩm và chiến đấu chống lại thế lực bóng tối để cứu công chúa Zelda. Game mang đến tự do sáng tạo vô tận trong thế giới mở.",
+      "link": "https://www.nintendo.com/us/store/products/the-legend-of-zelda-tears-of-the-kingdom-switch/",
+      "release": "12th of May, 2023",
+      "platforms": "Nintendo Switch",
+      "genre": "Adventure",
+      "developers": "Nintendo EPD",
+      "publishers": "Nintendo",
+      "inCart": false,
+      "selected": false,
+      "isHovered": false,
+      "isLiked": false,
+      "rating": 96,
+      "id": "35",
+      "cover": "https://www.gamereactor.eu/media/49/thisstunningnew_4164993b.jpg",
+      "footage": [
+        "https://www.gamereactor.eu/media/49/thisstunningnew_4164993b.jpg",
+        "https://e.snmc.io/lk/nv/x/f4ceadebd7cb750ed0d015ed62b908c9/10962227",
+        "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/c5c6299b-b8c4-450a-901a-dbeeaa4b7d81.jpg;maxHeight=1920;maxWidth=900?format=webp",
+        "https://www.rpgfan.com/wp-content/uploads/2022/09/The-Legend-of-Zelda-Tears-of-the-Kingdom-Cover-Art-US-296x480-320x240_c.jpg"
+      ]
+    },
+    {
+      "name": "Black Myth: Wukong",
+      "surname": "blackmythwukong",
+      "price": "59.99",
+      "desc": "Black Myth: Wukong là game hành động nhập vai lấy cảm hứng từ thần thoại Trung Quốc và Tây Du Ký. Bạn hóa thân thành Định Mệnh Chi Nhân (Destined One), khám phá thế giới huyền bí, chiến đấu với yêu quái khổng lồ bằng gậy Như Ý, phép biến thân và các chiêu thức đa dạng. Với đồ họa Unreal Engine 5 tuyệt đẹp, boss chiến mãn nhãn và hành trình đầy thử thách, đây là một trong những tựa game xuất sắc nhất năm 2024.",
+      "link": "https://www.heishenhua.com/",
+      "release": "20th of August, 2024",
+      "platforms": "PlayStation 5, PC, Xbox Series X/S",
+      "genre": "Action RPG",
+      "developers": "Game Science",
+      "publishers": "Game Science",
+      "inCart": false,
+      "selected": false,
+      "isHovered": false,
+      "isLiked": false,
+      "rating": 82,
+      "id": "36",
+      "cover": "https://cdn1.epicgames.com/spt-assets/ca9ef1bcf2f54043baac351366aec677/black-myth-wukong-jz9yr.jpg",
+      "footage": [
+        "https://cdn1.epicgames.com/spt-assets/ca9ef1bcf2f54043baac351366aec677/black-myth-wukong-jz9yr.jpg",
+        "https://www.dsogaming.com/wp-content/uploads/2024/06/Black-Myth-Wukong-screenshot_02.jpg",
+        "https://www.gematsu.com/wp-content/uploads/2022/08/Black-Myth_08-19-22.jpg",
+        "https://preview.redd.it/new-black-myth-wukong-screenshot-breathtaking-v0-mmrc6y4gh4jd1.jpeg?auto=webp&s=5ab4e31e8fba2582db5ffaf10b6c438a51662b2b"
+      ]
+    },
+    {
+      "name": "Marvel's Spider-Man 2",
+      "surname": "spiderman2",
+      "price": "69.99",
+      "desc": "Marvel's Spider-Man 2 cho phép điều khiển Peter Parker và Miles Morales trong New York rộng lớn, chiến đấu với các villain như Venom và Kraven. Với hệ thống chiến đấu mượt mà, web-swinging đỉnh cao và cốt truyện cảm xúc về tình bạn, trách nhiệm.",
+      "link": "https://www.playstation.com/en-us/games/marvels-spider-man-2/",
+      "release": "20th of October, 2023",
+      "platforms": "Playstation 5, PC",
+      "genre": "Action",
+      "developers": "Insomniac Games",
+      "publishers": "Sony Interactive Entertainment",
+      "inCart": false,
+      "selected": false,
+      "isHovered": false,
+      "isLiked": false,
+      "rating": 90,
+      "id": "37",
+      "cover": "https://4kwallpapers.com/images/wallpapers/marvels-spider-man-3840x2160-11609.jpeg",
+      "footage": [
+        "https://4kwallpapers.com/images/wallpapers/marvels-spider-man-3840x2160-11609.jpeg",
+        "https://gamingbolt.com/wp-content/uploads/2024/10/marvels-spider-man-2-pc-image-2.jpg",
+        "https://www.playstationlifestyle.net/wp-content/uploads/sites/9/2023/06/spider-2-concept.jpg",
+        "https://i.redd.it/8wwi30k20u961.jpg"
+      ]
+    },
+    {
+      "name": "Resident Evil 4 Remake",
+      "surname": "residentevil4remake",
+      "price": "39.99",
+      "desc": "Resident Evil 4 Remake đưa Leon S. Kennedy đến Tây Ban Nha để cứu con gái tổng thống khỏi giáo phái Los Illuminados. Với đồ họa hiện đại, chiến đấu over-the-shoulder căng thẳng và yếu tố kinh dị sinh tồn, đây là phiên bản làm lại hoàn hảo của kiệt tác kinh điển.",
+      "link": "https://www.residentevil.com/re4/",
+      "release": "24th of March, 2023",
+      "platforms": "Playstation 4, Playstation 5, Xbox Series S/X, PC",
+      "genre": "Shooter",
+      "developers": "Capcom",
+      "publishers": "Capcom",
+      "inCart": false,
+      "selected": false,
+      "isHovered": false,
+      "isLiked": false,
+      "rating": 96,
+      "id": "38",
+      "cover": "https://cdna.artstation.com/p/assets/images/images/060/947/604/large/yin-shiuan-resident-evil-4-remake.jpg?1679663576",
+      "footage": [
+        "https://cdna.artstation.com/p/assets/images/images/060/947/604/large/yin-shiuan-resident-evil-4-remake.jpg?1679663576",
+        "https://preview.redd.it/idmjlql391g51.png?auto=webp&s=aef86caaaadc1f4a9a813ca94ab85716a33dd5bb",
+        "https://i.redd.it/sdcev2ze46qa1.png",
+        "https://image.api.playstation.com/vulcan/ap/rnd/202402/0907/307bf27242bb288e27f8bf745037a1d035081db1f22d2c71.png?w=440"
+      ]
+    },
+    {
+      "name": "Hogwarts Legacy",
+      "surname": "hogwartslegacy",
+      "price": "44.99",
+      "desc": "Hogwarts Legacy đưa người chơi vào thế giới phù thủy Harry Potter thế kỷ 19, nhập vai học sinh Hogwarts, học phép thuật, khám phá lâu đài và thế giới mở, chiến đấu với goblin và khám phá bí mật cổ xưa. Trải nghiệm tự do khám phá và tùy chỉnh nhân vật.",
+      "link": "https://www.hogwartslegacy.com/",
+      "release": "10th of February, 2023",
+      "platforms": "Playstation 4, Playstation 5, Xbox One, Xbox Series S/X, PC, Nintendo Switch",
+      "genre": "RPG",
+      "developers": "Avalanche Software",
+      "publishers": "Warner Bros. Games",
+      "inCart": false,
+      "selected": false,
+      "isHovered": false,
+      "isLiked": false,
+      "rating": 84,
+      "id": "39",
+      "cover": "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2021/08/hogwarts-legacy-giant-spider.jpg?w=1200&h=675&fit=crop",
+      "footage": [
+        "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2021/08/hogwarts-legacy-giant-spider.jpg?w=1200&h=675&fit=crop",
+        "https://hb.imgix.net/f414c5d002517cfe7af54a54ce88d66523d4f158.png?auto=compress,format&fit=crop&h=353&w=616&s=0e5be3f9fc3452eebb56135ee6b005f7",
+        "https://www.syfy.com/sites/syfy/files/2023/01/the_art_and_making_of_hogwarts_legacy.jpg",
+        "https://ar-pay.com/blog/wp-content/uploads/2024/08/Unveiling-Hogwarts-Legacy-Gameplay.jpg"
+      ]
+    },
+    {
+      "name": "Forza Horizon 5",
+      "surname": "forzahorizon5",
+      "price": "59.99",
+      "desc": "Forza Horizon 5 diễn ra tại Mexico rộng lớn với địa hình đa dạng từ sa mạc đến rừng rậm. Người chơi tham gia festival đua xe Horizon, thu thập hơn 500 xe, tùy chỉnh và thi đấu trong thế giới mở sống động với thời tiết động.",
+      "link": "https://www.forzamotorsport.net/en-us/games/fh5",
+      "release": "9th of November, 2021",
+      "platforms": "Xbox One, Xbox Series S/X, PC",
+      "genre": "Racing",
+      "developers": "Playground Games",
+      "publishers": "Xbox Game Studios",
+      "inCart": false,
+      "selected": false,
+      "isHovered": false,
+      "isLiked": false,
+      "rating": 92,
+      "id": "40",
+      "cover": "https://cdn.theouterhaven.net/wp-content/uploads/2021/08/Forza-Horizon-5-Cover-Art-Header-Image_01-e1634661962864.jpg",
+      "footage": [
+        "https://cdn.theouterhaven.net/wp-content/uploads/2021/08/Forza-Horizon-5-Cover-Art-Header-Image_01-e1634661962864.jpg",
+        "https://i.ytimg.com/vi/eh2sGze-8G0/maxresdefault.jpg",
+        "https://images.greenmangaming.com/2c3b8ab05a12409c8ec93487c4f3935a/fec44402e0f1413ca52d2fe123471df0.jpg",
+        "https://preview.redd.it/high-quality-cover-print-for-forza-horizon-5-for-pc-put-v0-42pno6vphsqd1.jpeg?width=1080&crop=smart&auto=webp&s=ca874f9f8a9da335f93b29e6a66df112e42300f2"
+      ]
+    },
+    {
+      "name": "Star Wars Jedi: Survivor",
+      "surname": "jedisurvivor",
+      "price": "49.99",
+      "desc": "Star Wars Jedi: Survivor tiếp nối hành trình của Cal Kestis 5 năm sau Fallen Order, trốn chạy Đế chế, khám phá các hành tinh mới, nâng cấp lightsaber và Force powers để chiến đấu với kẻ thù. Kết hợp platforming, combat và câu chuyện Star Wars hấp dẫn.",
+      "link": "https://www.ea.com/games/starwars/jedi-survivor",
+      "release": "28th of April, 2023",
+      "platforms": "Playstation 5, Xbox Series S/X, PC",
+      "genre": "Adventure",
+      "developers": "Respawn Entertainment",
+      "publishers": "Electronic Arts",
+      "inCart": false,
+      "selected": false,
+      "isHovered": false,
+      "isLiked": false,
+      "rating": 85,
+      "id": "41",
+      "cover": "https://cdna.artstation.com/p/assets/images/images/069/938/982/large/volta-ea-applejack-keyart01-full-illustration-4k.jpg?1701356056",
+      "footage": [
+        "https://cdna.artstation.com/p/assets/images/images/069/938/982/large/volta-ea-applejack-keyart01-full-illustration-4k.jpg?1701356056",
+        "https://pbs.twimg.com/media/GvXnNGIXIAA_dxV.jpg",
+        "https://games-b26f.kxcdn.com/wp-content/uploads/2024/01/jedi-survivor-8-ezgif.com-webp-to-jpg-converter-770x470.jpg",
+        "https://atthemoviesshop.com/cdn/shop/files/star-wars-jedi-survivor-vinyl-soundtrack-atm-packshot_460x@2x.webp?v=1725881570"
+      ]
+    },
+    {
+      "name": "Assassin's Creed Mirage",
+      "surname": "assassinscreedmirage",
+      "price": "39.99",
+      "desc": "Assassin's Creed Mirage đưa Basim Ibn Ishaq trở thành Assassin ở Baghdad thế kỷ 9, tập trung vào stealth, parkour và ám sát. Khám phá thành phố sống động, học kỹ năng từ Hidden Ones và khám phá bí mật về quá khứ của mình.",
+      "link": "https://www.ubisoft.com/en-us/game/assassins-creed/mirage",
+      "release": "5th of October, 2023",
+      "platforms": "Playstation 4, Playstation 5, Xbox One, Xbox Series S/X, PC",
+      "genre": "Action",
+      "developers": "Ubisoft Bordeaux",
+      "publishers": "Ubisoft",
+      "inCart": false,
+      "selected": false,
+      "isHovered": false,
+      "isLiked": false,
+      "rating": 76,
+      "id": "42",
+      "cover": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/09e726154938805.64947f37d43cb.jpg",
+      "footage": [
+        "https://mir-s3-cdn-cf.behance.net/project_modules/1400/09e726154938805.64947f37d43cb.jpg",
+        "https://preview.redd.it/gameinformer-cover-reveal-assassins-creed-mirage-v0-ceemxdhxp2lb1.jpg?auto=webp&s=8cae4e2063f4e407eaad076897d342d40412ace7",
+        "https://i.redd.it/xwky1pqw2ctf1.jpeg",
+        "https://media.altchar.com/prod/images/gm_article_embed_image/05e2fae8172d-ac-mirage-ps5-cover.jpg"
       ]
     }
   ]
