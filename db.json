@@ -7,10 +7,18 @@
       "password": "123"
     },
     {
+
       "id": "8551",
       "name": "nhannghia",
       "email": "nhannghialai@gmail.com",
       "password": "123456"
+    },
+    {
+      "id": "f6d6",
+      "name": "Nam ",
+      "email": "22130175@st.hcmuaf.edu.vn",
+      "password": "nam0210004"
+
     }
   ],
   "orders": [
@@ -35,6 +43,22 @@
       ],
       "totalAmount": 89.98,
       "date": "2025-12-08T17:09:57.601Z",
+      "status": "Completed"
+    },
+    {
+      "id": "9e23",
+      "userId": "f6d6",
+      "items": [
+        {
+          "id": "0",
+          "name": "Cyberpunk 2077",
+          "cover": "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,q_100,w_500/v1658188604/cyberpunk_n6jitl.jpg",
+          "price": 59.99,
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 59.99,
+      "date": "2025-12-19T13:05:48.078Z",
       "status": "Completed"
     }
   ],

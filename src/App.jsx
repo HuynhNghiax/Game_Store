@@ -11,6 +11,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import OrderHistory from './pages/OrderHistory';
 import ProtectedRoute from './components/ProtectedRoute'; // 1. Import Component bảo vệ
+import Profile from './pages/Profile';
 
 function App() {
   return (
@@ -54,6 +55,12 @@ function App() {
           <Route path="success" element={
             <ProtectedRoute>
               <Success />
+            </ProtectedRoute>
+          } />
+
+          <Route path="/profile" element={
+            <ProtectedRoute>
+              <Profile />
             </ProtectedRoute>
           } />
 
