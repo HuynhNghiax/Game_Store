@@ -120,6 +120,5 @@ export default function ReviewForm({ gameId }) {
 
 }
 
-}
  
 
