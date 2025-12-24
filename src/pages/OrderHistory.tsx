@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useAppDispatch, useAppSelector } from '../redux/hooks';
 import { fetchUserOrders } from '../redux/orderSlice';
-import { Calendar, Package, Download, CheckCircle } from 'lucide-react'; // Thêm icon
+import { Package, Download, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function OrderHistory() {
-  const dispatch = useDispatch();
-  const { user } = useSelector(state => state.auth);
-  const { orders } = useSelector(state => state.orders);
+  const dispatch = useAppDispatch();
+  const { user } = useAppSelector(state => state.auth);
+  const { orders } = useAppSelector(state => state.orders);
 
   useEffect(() => {
     if (user) dispatch(fetchUserOrders(user.id));
@@ -46,9 +46,8 @@ export default function OrderHistory() {
                                     <h4 className="font-bold text-gray-800 text-sm truncate">{item.name}</h4>
                                     <Link to={`/game/${item.id}`} className="text-xs text-blue-500 hover:underline">Xem chi tiết</Link>
                                 </div>
-                                
-                                {/* NÚT CÀI ĐẶT GAME TẠI ĐÂY */}
                                 <button 
+                                    onClick={() => alert(`Đang tải xuống ${item.name}... 0%`)}
                                     className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-bold text-xs flex items-center gap-2 transition shadow-md active:scale-95 shrink-0"
                                 >
                                     <Download size={16} /> Cài đặt

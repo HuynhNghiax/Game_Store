@@ -1,20 +1,24 @@
 import React from 'react';
 import { Heart, ShoppingBag, Star } from 'lucide-react'; 
-import { useDispatch, useSelector } from 'react-redux';
+import { useAppDispatch, useAppSelector } from '../redux/hooks';
 import { addToCart } from '../redux/cartSlice';
-import { toggleWishlist } from '../redux/wishlistSlice'; // Import action
+import { toggleWishlist } from '../redux/wishlistSlice';
 import { Link, useNavigate } from 'react-router-dom';
+import { Game } from '../types'; // Import Interface
 
-export default function GameCard({ game }) {
-  const dispatch = useDispatch();
+interface Props {
+  game: Game; // Định nghĩa props game
+}
+
+export default function GameCard({ game }: Props) {
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  const { user } = useSelector(state => state.auth);
-  const { items: wishlistItems } = useSelector(state => state.wishlist);
+  const { user } = useAppSelector(state => state.auth);
+  const { items: wishlistItems } = useAppSelector(state => state.wishlist);
 
-  // Kiểm tra xem game này có trong wishlist chưa
   const isLiked = wishlistItems.some(item => item.gameId === game.id);
 
-  const handleLike = (e) => {
+  const handleLike = (e: React.MouseEvent) => {
     e.preventDefault();
     if (!user) {
         alert("Vui lòng đăng nhập để thêm yêu thích!");
@@ -24,12 +28,16 @@ export default function GameCard({ game }) {
     dispatch(toggleWishlist({ userId: user.id, gameId: game.id }));
   };
 
+  const handleAddToCart = (e: React.MouseEvent) => {
+    e.preventDefault();
+    dispatch(addToCart(game));
+  };
+
   return (
     <div className="bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col h-full overflow-hidden group">
       <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
         <img src={game.cover} alt={game.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
         
-        {/* NÚT TIM ĐÃ KẾT NỐI API */}
         <button 
             onClick={handleLike}
             className={`absolute top-2 right-2 p-2 rounded-full shadow-md transition ${
@@ -56,7 +64,7 @@ export default function GameCard({ game }) {
           
           <div className="mt-auto flex items-center justify-between pt-3 border-t border-gray-50">
              <span className="text-lg font-bold text-gray-900">${game.price}</span>
-             <button onClick={() => dispatch(addToCart(game))} className="flex items-center gap-2 bg-gray-900 hover:bg-blue-600 text-white px-3 py-2 rounded-lg text-sm font-medium transition-colors">
+             <button onClick={handleAddToCart} className="flex items-center gap-2 bg-gray-900 hover:bg-blue-600 text-white px-3 py-2 rounded-lg text-sm font-medium transition-colors">
                 <ShoppingBag size={16} /> <span>Thêm</span>
              </button>
           </div>

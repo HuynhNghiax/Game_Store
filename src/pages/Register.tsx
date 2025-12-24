@@ -1,35 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import { Gamepad2, Mail, Lock, User, ArrowRight, AlertCircle, CheckCircle } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useAppDispatch, useAppSelector } from '../redux/hooks';
 import { registerUser, clearError } from '../redux/authSlice';
 
 export default function Register() {
   const [formData, setFormData] = useState({ name: '', email: '', password: '', confirmPassword: '' });
   
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  const { loading, error, successMessage } = useSelector(state => state.auth);
+  const { loading, error, successMessage } = useAppSelector(state => state.auth);
 
-  // Xóa lỗi cũ khi vào trang
   useEffect(() => { dispatch(clearError()); }, [dispatch]);
 
-  // Nếu đăng ký thành công thì chuyển hướng sau 1.5s
   useEffect(() => {
     if (successMessage) {
         setTimeout(() => navigate('/login'), 1500);
     }
   }, [successMessage, navigate]);
 
-  const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
-  const handleRegister = (e) => {
+  const handleRegister = (e: React.FormEvent) => {
     e.preventDefault();
     if (formData.password !== formData.confirmPassword) {
       alert("Mật khẩu không khớp!"); 
       return;
     }
-    // Gọi API qua Redux
     dispatch(registerUser({ 
         name: formData.name, 
         email: formData.email, 
@@ -40,16 +39,13 @@ export default function Register() {
   return (
     <div className="min-h-screen w-full bg-gray-50 flex items-center justify-center">
       <div className="bg-white p-10 rounded-2xl w-full max-w-md shadow-xl border border-gray-200">
-        
         <div className="flex flex-col items-center mb-8">
             <div className="bg-blue-600 text-white p-3 rounded-xl shadow-lg shadow-blue-200 mb-4">
                 <Gamepad2 size={32} />
             </div>
             <h2 className="text-2xl font-bold text-gray-900">Tạo tài khoản</h2>
-            <p className="text-gray-500 text-sm">Tham gia cộng đồng GameStore</p>
         </div>
 
-        {/* Thông báo lỗi / Thành công */}
         {error && <div className="bg-red-50 text-red-600 p-3 rounded-lg text-sm mb-4 flex items-center gap-2"><AlertCircle size={16}/> {error}</div>}
         {successMessage && <div className="bg-green-50 text-green-600 p-3 rounded-lg text-sm mb-4 flex items-center gap-2"><CheckCircle size={16}/> {successMessage}</div>}
 

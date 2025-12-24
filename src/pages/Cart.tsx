@@ -1,42 +1,36 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useAppSelector, useAppDispatch } from '../redux/hooks';
 import { removeFromCart, clearCart } from '../redux/cartSlice';
-import { createOrder } from '../redux/orderSlice'; // Import action tạo đơn
-import { Trash2, CreditCard, Heart } from 'lucide-react';
+import { createOrder } from '../redux/orderSlice';
+import { Trash2, CreditCard } from 'lucide-react';
 import { useNavigate, Link } from 'react-router-dom';
+import toast from 'react-hot-toast'; // Đã dùng toast thay alert
 
 export default function Cart() {
-  const { items, totalAmount } = useSelector(state => state.cart);
-  const { user } = useSelector(state => state.auth); // Lấy thông tin user
-  const dispatch = useDispatch();
+  const { items, totalAmount } = useAppSelector(state => state.cart);
+  const { user } = useAppSelector(state => state.auth);
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
   const handleCheckout = async () => {
-    // 1. Kiểm tra đăng nhập
     if (!user) {
-        alert("Vui lòng đăng nhập để thanh toán!");
+        toast.error("Vui lòng đăng nhập để thanh toán!");
         navigate('/login');
         return;
     }
 
-    // 2. Tạo dữ liệu đơn hàng
     const newOrder = {
         userId: user.id,
         items: items,
         totalAmount: totalAmount,
-        date: new Date().toISOString(), // Lưu ngày giờ hiện tại
-        status: "Completed" // Giả lập trạng thái
+        date: new Date().toISOString(),
+        status: "Completed"
     };
 
-    // 3. Gửi lên Server
     await dispatch(createOrder(newOrder));
-
-    // 4. Xóa giỏ hàng và chuyển trang
     dispatch(clearCart());
     navigate('/success');
   };
-
-  // ... (Phần render UI giữ nguyên, chỉ thay đổi logic nút button bên dưới) ...
 
   if (items.length === 0) return (
     <div className="flex flex-col items-center justify-center h-[50vh] text-center">
@@ -50,7 +44,6 @@ export default function Cart() {
     <div className="w-full">
       <h1 className="text-3xl font-bold mb-8 text-gray-800">Giỏ hàng ({items.length})</h1>
       <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
-        {/* ... (Phần list items giữ nguyên) ... */}
         <div className="xl:col-span-2 space-y-4">
             {items.map(item => (
             <div key={item.id} className="flex gap-4 bg-white p-4 rounded-2xl border border-gray-200 shadow-sm items-center">
@@ -69,7 +62,6 @@ export default function Cart() {
             ))}
         </div>
 
-        {/* ... (Phần Sidebar thanh toán) ... */}
         <div className="xl:col-span-1">
             <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-lg sticky top-4">
                 <h3 className="text-xl font-bold text-gray-900 mb-6">Tổng kết</h3>
@@ -78,7 +70,6 @@ export default function Cart() {
                     <div className="h-px bg-gray-200 my-4"></div>
                     <div className="flex justify-between text-2xl font-bold text-gray-900"><span>Tổng cộng</span><span>${totalAmount.toFixed(2)}</span></div>
                 </div>
-                {/* NÚT THANH TOÁN ĐÃ GẮN HÀM MỚI */}
                 <button onClick={handleCheckout} className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl text-lg shadow-lg transition active:scale-95 flex items-center justify-center gap-2">
                     <CreditCard size={20} /> Thanh toán ngay
                 </button>

@@ -1,6 +1,6 @@
 import { BrowserRouter } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
-import AppRouter from './routers'; // Tự động tìm file index.jsx trong folder routers
+import AppRouter from './routers';
 
 function App() {
   return (

@@ -1,23 +1,22 @@
 import React, { useEffect, useMemo } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useAppDispatch, useAppSelector } from '../redux/hooks';
 import { fetchWishlist } from '../redux/wishlistSlice';
 import { fetchProducts } from '../redux/productSlice';
-import GameCard from '../components/GameCard'; // Tái sử dụng thẻ GameCard
+import GameCard from '../components/GameCard';
 import { Heart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function Library() {
-  const dispatch = useDispatch();
-  const { user } = useSelector(state => state.auth);
-  const { items: wishlistItems } = useSelector(state => state.wishlist);
-  const { items: allGames, status } = useSelector(state => state.products);
+  const dispatch = useAppDispatch();
+  const { user } = useAppSelector(state => state.auth);
+  const { items: wishlistItems } = useAppSelector(state => state.wishlist);
+  const { items: allGames, status } = useAppSelector(state => state.products);
 
   useEffect(() => {
     if (user) dispatch(fetchWishlist(user.id));
     if (status === 'idle') dispatch(fetchProducts());
   }, [dispatch, user, status]);
 
-  // Lọc ra các game có ID nằm trong wishlist
   const likedGames = useMemo(() => {
     return allGames.filter(game => wishlistItems.some(item => item.gameId === game.id));
   }, [allGames, wishlistItems]);

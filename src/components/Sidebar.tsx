@@ -1,25 +1,24 @@
 import React from 'react';
-// QUAN TRỌNG: Phải import 'History' ở dòng dưới đây
 import { Home, LayoutGrid, Heart, ShoppingBag, LogIn, LogOut, Gamepad2, History } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import { useAppDispatch, useAppSelector } from '../redux/hooks'; // Hook TS
 import { logout } from '../redux/authSlice';
 
 
 export default function Sidebar() {
   const location = useLocation();
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   
-  const { user } = useSelector(state => state.auth); 
+  const { user } = useAppSelector(state => state.auth); 
   
-  const isActive = (path) => location.pathname === path;
+  const isActive = (path: string) => location.pathname === path;
 
   const menuItems = [
     { icon: Home, label: 'Trang chủ', path: '/' },
     { icon: LayoutGrid, label: 'Thể loại', path: '/categories' },
     { icon: Heart, label: 'Thư viện', path: '/library' },
-    { icon: History, label: 'Lịch sử mua', path: '/history' }, // Dùng icon History ở đây
+    { icon: History, label: 'Lịch sử mua', path: '/history' },
     { icon: ShoppingBag, label: 'Giỏ hàng', path: '/cart' },
   ];
 
@@ -30,7 +29,6 @@ export default function Sidebar() {
 
   return (
     <aside className="flex flex-col h-full p-6">
-      {/* Logo */}
       <div className="flex items-center gap-3 mb-10 px-2">
         <div className="bg-blue-600 text-white p-2 rounded-lg">
             <Gamepad2 size={24} />
@@ -40,7 +38,6 @@ export default function Sidebar() {
         </span>
       </div>
 
-      {/* Menu Chính */}
       <nav className="flex-1 space-y-1">
         {menuItems.map((item) => (
           <Link
@@ -58,7 +55,6 @@ export default function Sidebar() {
         ))}
       </nav>
 
-      {/* Footer User */}
       <div className="pt-6 border-t border-gray-200 mt-auto">
          {user ? (
              <button 

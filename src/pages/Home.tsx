@@ -2,13 +2,13 @@ import React, { useState, useEffect, useMemo } from 'react';
 import GameCard from '../components/GameCard';
 import { Play, Info, ChevronRight, Star, Loader } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useAppDispatch, useAppSelector } from '../redux/hooks';
 import { addToCart } from '../redux/cartSlice';
 import { fetchProducts } from '../redux/productSlice';
 
 export default function Home() {
-  const dispatch = useDispatch();
-  const { items: games, status } = useSelector(state => state.products);
+  const dispatch = useAppDispatch();
+  const { items: games, status } = useAppSelector(state => state.products);
 
   useEffect(() => {
     if (status === 'idle') {
@@ -42,6 +42,7 @@ export default function Home() {
     return games.filter(game => game.genre === selectedGenre);
   }, [selectedGenre, games]);
 
+  // Loading UI
   if (status === 'loading' || !currentGame) {
     return <div className="flex h-[60vh] items-center justify-center"><Loader className="animate-spin text-blue-600" size={48} /></div>;
   }
@@ -52,6 +53,7 @@ export default function Home() {
 
   return (
     <div className="w-full space-y-10">
+      {/* Hero Slider */}
       <div className="relative w-full h-[400px] lg:h-[500px] rounded-[32px] overflow-hidden shadow-2xl group">
         <div key={currentGame.id} className="absolute inset-0 animate-fade-in">
            <img src={currentGame.cover} alt={currentGame.name} className="w-full h-full object-cover" />
@@ -79,6 +81,7 @@ export default function Home() {
         </div>
       </div>
 
+      {/* List Game */}
       <div>
         <div className="flex items-center justify-between mb-6">
            <h2 className="text-2xl font-bold text-gray-800 flex items-center gap-2">🔥 Khám phá Kho Game</h2>
