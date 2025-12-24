@@ -100,26 +100,28 @@ export default function Categories() {
         </div>
       </div>
 
-      {/* --- BỘ LỌC GENRE (PILLS) --- */}
-      <div className="flex gap-3 mb-6 overflow-x-auto pb-2 scrollbar-hide items-center">
-        <div className="flex items-center gap-2 text-gray-400 pr-2 border-r border-gray-200 mr-2 shrink-0">
-            <Filter size={18} />
-            <span className="text-xs font-bold uppercase">Lọc</span>
+        {/* --- BỘ LỌC GENRE (PILLS) --- */}
+        <div className="mb-6">
+            <div className="flex items-center gap-2 text-gray-400 mb-3">
+                <Filter size={18} />
+                <span className="text-xs font-bold uppercase">Lọc theo thể loại</span>
+            </div>
+            <div className="flex flex-wrap gap-2">
+                {genres.map((genre) => (
+                    <button
+                        key={genre}
+                        onClick={() => setSelectedGenre(genre)}
+                        className={`px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap border ${
+                            selectedGenre === genre
+                                ? 'bg-blue-600 text-white border-blue-600 shadow-md'
+                                : 'bg-white text-gray-500 border-gray-200 hover:border-blue-400 hover:text-blue-600'
+                        }`}
+                    >
+                        {genre}
+                    </button>
+                ))}
+            </div>
         </div>
-        {genres.map((genre) => (
-          <button
-            key={genre}
-            onClick={() => setSelectedGenre(genre)}
-            className={`px-5 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap border ${
-              selectedGenre === genre
-                ? 'bg-blue-600 text-white border-blue-600 shadow-md'
-                : 'bg-white text-gray-500 border-gray-200 hover:border-blue-400 hover:text-blue-600'
-            }`}
-          >
-            {genre}
-          </button>
-        ))}
-      </div>
 
       {/* --- THÔNG SỐ HIỂN THỊ --- */}
       <div className="mb-4 text-gray-500 text-sm font-medium flex justify-between items-center">

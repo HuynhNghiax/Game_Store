@@ -5,6 +5,20 @@
       "name": "Admin Gamer",
       "email": "admin@gmail.com",
       "password": "123"
+    },
+    {
+
+      "id": "8551",
+      "name": "nhannghia",
+      "email": "nhannghialai@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "f6d6",
+      "name": "Nam ",
+      "email": "22130175@st.hcmuaf.edu.vn",
+      "password": "123567"
+
     }
   ],
   "orders": [
@@ -30,9 +44,72 @@
       "totalAmount": 89.98,
       "date": "2025-12-08T17:09:57.601Z",
       "status": "Completed"
+    },
+    {
+      "id": "9e23",
+      "userId": "f6d6",
+      "items": [
+        {
+          "id": "0",
+          "name": "Cyberpunk 2077",
+          "cover": "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,q_100,w_500/v1658188604/cyberpunk_n6jitl.jpg",
+          "price": 59.99,
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 59.99,
+      "date": "2025-12-19T13:05:48.078Z",
+      "status": "Completed"
     }
   ],
   "wishlist": [],
+  "reviews": [
+    {
+      "id": "95b5",
+      "productId": "0",
+      "userId": "8551",
+      "user": "nhannghia",
+      "rating": 5,
+      "comment": "game rất hay mọi người nên chơi thử",
+      "createdAt": "2025-12-20T08:42:05.242Z"
+    },
+    {
+      "id": "bd19",
+      "productId": "2",
+      "userId": "8551",
+      "user": "nhannghia",
+      "rating": 1,
+      "comment": "game quá tệ.không nên chơi",
+      "createdAt": "2025-12-20T08:44:10.794Z"
+    },
+    {
+      "id": "0a9f",
+      "productId": "5",
+      "userId": "8551",
+      "user": "nhannghia",
+      "rating": 5,
+      "comment": "game rất hay\n",
+      "createdAt": "2025-12-20T08:57:25.898Z"
+    },
+    {
+      "id": "81cc",
+      "productId": "1",
+      "userId": "8551",
+      "user": "nhannghia",
+      "rating": 3,
+      "comment": "game ko hay",
+      "createdAt": "2025-12-20T12:47:48.273Z"
+    },
+    {
+      "id": "0e86",
+      "productId": "0",
+      "userId": "1",
+      "user": "Admin Gamer",
+      "rating": 5,
+      "comment": "game quá hay luôn\n",
+      "createdAt": "2025-12-20T13:53:30.890Z"
+    }
+  ],
   "products": [
     {
       "name": "Cyberpunk 2077",
@@ -50,7 +127,7 @@
       "isHovered": false,
       "isLiked": false,
       "rating": 78,
-      "id": 0,
+      "id": "0",
       "cover": "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,q_100,w_500/v1658188604/cyberpunk_n6jitl.jpg",
       "footage": [
         "https://res.cloudinary.com/gianlucajahn/image/upload/v1658188604/cyberpunk_n6jitl.jpg",
@@ -75,7 +152,7 @@
       "isHovered": false,
       "isLiked": false,
       "rating": 71,
-      "id": 1,
+      "id": "1",
       "cover": "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,q_100,w_500/v1658188621/battlefield_n0gd5a.jpg",
       "footage": [
         "https://res.cloudinary.com/gianlucajahn/image/upload/v1658188621/battlefield_n0gd5a.jpg",
@@ -100,7 +177,7 @@
       "isHovered": false,
       "isLiked": false,
       "rating": 83,
-      "id": 2,
+      "id": "2",
       "cover": "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,q_100,w_500/v1658188606/lis_ft0puo.jpg",
       "footage": [
         "https://res.cloudinary.com/gianlucajahn/image/upload/v1658188606/lis_ft0puo.jpg",
@@ -125,7 +202,7 @@
       "isHovered": false,
       "isLiked": false,
       "rating": 84,
-      "id": 3,
+      "id": "3",
       "cover": "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,q_100,w_500/v1658232678/mariokart_0_mhgbeg.jpg",
       "footage": [
         "https://res.cloudinary.com/gianlucajahn/image/upload/v1658232678/mariokart_0_mhgbeg.jpg",
@@ -150,7 +227,7 @@
       "isHovered": false,
       "isLiked": false,
       "rating": 86,
-      "id": 4,
+      "id": "4",
       "cover": "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,q_100,w_500/v1658188602/bioshockinfinite_qyo3pi.jpg",
       "footage": [
         "https://res.cloudinary.com/gianlucajahn/image/upload/v1658188602/bioshockinfinite_qyo3pi.jpg",
@@ -175,7 +252,7 @@
       "isHovered": false,
       "isLiked": false,
       "rating": 81,
-      "id": 5,
+      "id": "5",
       "cover": "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,q_100,w_500/v1658188622/anno_cbmzye.jpg",
       "footage": [
         "https://res.cloudinary.com/gianlucajahn/image/upload/v1658188622/anno_cbmzye.jpg",
@@ -200,7 +277,7 @@
       "isHovered": false,
       "isLiked": false,
       "rating": 92,
-      "id": 6,
+      "id": "6",
       "cover": "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,q_100,w_500/v1658188613/rdr_fhqs3d.jpg",
       "footage": [
         "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,w_1920/v1658188613/rdr_fhqs3d.jpg",
@@ -225,7 +302,7 @@
       "isHovered": false,
       "isLiked": false,
       "rating": 90,
-      "id": 7,
+      "id": "7",
       "cover": "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,q_100,w_500/v1658188606/horizon_jzlhsd.jpg",
       "footage": [
         "https://res.cloudinary.com/gianlucajahn/image/upload/v1658188606/horizon_jzlhsd.jpg",
@@ -250,7 +327,7 @@
       "isHovered": false,
       "isLiked": false,
       "rating": 90,
-      "id": 8,
+      "id": "8",
       "cover": "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,q_100,w_500/v1658188604/gtav_x1ccio.jpg",
       "footage": [
         "https://res.cloudinary.com/gianlucajahn/image/upload/v1658188604/gtav_x1ccio.jpg",
@@ -275,7 +352,7 @@
       "isHovered": false,
       "isLiked": false,
       "rating": 88,
-      "id": 9,
+      "id": "9",
       "cover": "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,q_100,w_500/v1658584215/skyrim_js5pmg.jpg",
       "footage": [
         "https://res.cloudinary.com/gianlucajahn/image/upload/v1658584215/skyrim_js5pmg.jpg",
@@ -300,7 +377,7 @@
       "isHovered": false,
       "isLiked": false,
       "rating": 76,
-      "id": 10,
+      "id": "10",
       "cover": "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,q_100,w_500/v1658188601/warframe_kghu8g.jpg",
       "footage": [
         "https://res.cloudinary.com/gianlucajahn/image/upload/v1658188601/warframe_kghu8g.jpg",
@@ -325,7 +402,7 @@
       "isHovered": false,
       "isLiked": false,
       "rating": 84,
-      "id": 11,
+      "id": "11",
       "cover": "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,q_100,w_500/v1658188606/minecraft_iuejtm.jpg",
       "footage": [
         "https://res.cloudinary.com/gianlucajahn/image/upload/v1658188606/minecraft_iuejtm.jpg",
@@ -350,7 +427,7 @@
       "isHovered": false,
       "isLiked": false,
       "rating": 82,
-      "id": 12,
+      "id": "12",
       "cover": "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,q_100,w_500/v1658188610/riseofthetombraider_uq2q6t.jpg",
       "footage": [
         "https://res.cloudinary.com/gianlucajahn/image/upload/v1658188610/riseofthetombraider_uq2q6t.jpg",
@@ -375,7 +452,7 @@
       "isHovered": false,
       "isLiked": false,
       "rating": 83,
-      "id": 13,
+      "id": "13",
       "cover": "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,q_100,w_500/v1658188608/metro_o45ytf.jpg",
       "footage": [
         "https://res.cloudinary.com/gianlucajahn/image/upload/v1658188608/metro_o45ytf.jpg",
@@ -400,7 +477,7 @@
       "isHovered": false,
       "isLiked": false,
       "rating": 81,
-      "id": 14,
+      "id": "14",
       "cover": "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,q_100,w_500/v1658188609/terraria_yb3iuc.jpg",
       "footage": [
         "https://res.cloudinary.com/gianlucajahn/image/upload/v1658188609/terraria_yb3iuc.jpg",
@@ -425,7 +502,7 @@
       "isHovered": false,
       "isLiked": false,
       "rating": 83,
-      "id": 15,
+      "id": "15",
       "cover": "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,q_100,w_500/v1658188608/rocketleague_on6yqd.jpg",
       "footage": [
         "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,w_1920/v1658188608/rocketleague_on6yqd.jpg",
@@ -450,7 +527,7 @@
       "isHovered": false,
       "isLiked": false,
       "rating": 95,
-      "id": 16,
+      "id": "16",
       "cover": "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,q_100,w_500/v1658188610/thewitcher_tllr60.jpg",
       "footage": [
         "https://res.cloudinary.com/gianlucajahn/image/upload/v1658188610/thewitcher_tllr60.jpg",
@@ -475,7 +552,7 @@
       "isHovered": false,
       "isLiked": false,
       "rating": 81,
-      "id": 17,
+      "id": "17",
       "cover": "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,q_100,w_500/v1658188605/hitman_pqhnm6.jpg",
       "footage": [
         "https://res.cloudinary.com/gianlucajahn/image/upload/v1658188605/hitman_pqhnm6.jpg",
@@ -500,7 +577,7 @@
       "isHovered": false,
       "isLiked": false,
       "rating": 80,
-      "id": 18,
+      "id": "18",
       "cover": "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,q_100,w_500/v1658188603/fallout_kuxjw3.jpg",
       "footage": [
         "https://res.cloudinary.com/gianlucajahn/image/upload/v1658188603/fallout_kuxjw3.jpg",
@@ -525,7 +602,7 @@
       "isHovered": false,
       "isLiked": false,
       "rating": 90,
-      "id": 19,
+      "id": "19",
       "cover": "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,q_100,w_500/v1658188606/gtasanandreas_xkkyyp.jpg",
       "footage": [
         "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,w_1920/v1658188606/gtasanandreas_xkkyyp.jpg",
@@ -550,7 +627,7 @@
       "isHovered": false,
       "isLiked": false,
       "rating": 70,
-      "id": 20,
+      "id": "20",
       "cover": "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,q_100,w_500/v1658188609/golfwithyourfriends_rxrsbv.jpg",
       "footage": [
         "https://res.cloudinary.com/gianlucajahn/image/upload/v1658188609/golfwithyourfriends_rxrsbv.jpg",
@@ -575,7 +652,7 @@
       "isHovered": false,
       "isLiked": false,
       "rating": 82,
-      "id": 21,
+      "id": "21",
       "cover": "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,q_100,w_500/v1658188605/heavyrain_bljnwv.jpg",
       "footage": [
         "https://res.cloudinary.com/gianlucajahn/image/upload/v1658188605/heavyrain_bljnwv.jpg",
@@ -600,7 +677,7 @@
       "isHovered": false,
       "isLiked": false,
       "rating": 79,
-      "id": 22,
+      "id": "22",
       "cover": "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,q_100,w_500/v1658188603/dota_gdjxqx.jpg",
       "footage": [
         "https://res.cloudinary.com/gianlucajahn/image/upload/v1658188603/dota_gdjxqx.jpg",
@@ -625,7 +702,7 @@
       "isHovered": false,
       "isLiked": false,
       "rating": 92,
-      "id": 23,
+      "id": "23",
       "cover": "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,q_100,w_500/v1658188606/portal2_eugfiq.jpg",
       "footage": [
         "https://res.cloudinary.com/gianlucajahn/image/upload/v1658188606/portal2_eugfiq.jpg",
@@ -650,7 +727,7 @@
       "isHovered": false,
       "isLiked": false,
       "rating": 82,
-      "id": 24,
+      "id": "24",
       "cover": "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,q_100,w_500/v1658188603/civilization_jcuqap.jpg",
       "footage": [
         "https://res.cloudinary.com/gianlucajahn/image/upload/v1658188603/civilization_jcuqap.jpg",
@@ -675,7 +752,7 @@
       "isHovered": false,
       "isLiked": false,
       "rating": 94,
-      "id": 25,
+      "id": "25",
       "cover": "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,q_100,w_500/v1658188602/godofwar_cbqzk1.jpg",
       "footage": [
         "https://res.cloudinary.com/gianlucajahn/image/upload/v1658188602/godofwar_cbqzk1.jpg",
@@ -700,7 +777,7 @@
       "isHovered": false,
       "isLiked": false,
       "rating": 80,
-      "id": 26,
+      "id": "26",
       "cover": "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,q_100,w_500/v1658188603/fifa_zb6ook.jpg",
       "footage": [
         "https://res.cloudinary.com/gianlucajahn/image/upload/v1658188603/fifa_zb6ook.jpg",
@@ -725,7 +802,7 @@
       "isHovered": false,
       "isLiked": false,
       "rating": 91,
-      "id": 27,
+      "id": "27",
       "cover": "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,q_100,w_500/v1658188604/halflife_fiorjc.jpg",
       "footage": [
         "https://res.cloudinary.com/gianlucajahn/image/upload/v1658188604/halflife_fiorjc.jpg",
@@ -750,7 +827,7 @@
       "isHovered": false,
       "isLiked": false,
       "rating": 86,
-      "id": 28,
+      "id": "28",
       "cover": "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,q_100,w_500/v1658188600/twd_dmycxx.jpg",
       "footage": [
         "https://res.cloudinary.com/gianlucajahn/image/upload/v1658188600/twd_dmycxx.jpg",
@@ -775,7 +852,7 @@
       "isHovered": false,
       "isLiked": false,
       "rating": 85,
-      "id": 29,
+      "id": "29",
       "cover": "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,q_100,w_500/v1658188601/crusaderkings_fpz1te.jpg",
       "footage": [
         "https://res.cloudinary.com/gianlucajahn/image/upload/v1658188601/crusaderkings_fpz1te.jpg",
@@ -800,7 +877,7 @@
       "isHovered": false,
       "isLiked": false,
       "rating": 82,
-      "id": 30,
+      "id": "30",
       "cover": "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,q_100,w_500/v1658188600/csgo_o9whdd.jpg",
       "footage": [
         "https://res.cloudinary.com/gianlucajahn/image/upload/v1658188600/csgo_o9whdd.jpg",
@@ -825,7 +902,7 @@
       "isHovered": false,
       "isLiked": false,
       "rating": 89,
-      "id": 31,
+      "id": "31",
       "cover": "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,q_100,w_500/v1658188602/detroit_a4kqkx.jpg",
       "footage": [
         "https://res.cloudinary.com/gianlucajahn/image/upload/v1658188602/detroit_a4kqkx.jpg",
@@ -850,7 +927,7 @@
       "isHovered": false,
       "isLiked": false,
       "rating": 85,
-      "id": 32,
+      "id": "32",
       "cover": "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,q_100,w_500/v1658188613/tombraider_qx2xiy.jpg",
       "footage": [
         "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,q_100,w_1920/v1658188613/tombraider_qx2xiy.jpg",
@@ -858,6 +935,606 @@
         "https://res.cloudinary.com/gianlucajahn/image/upload/v1658238650/tombraider_2_fnhmmd.jpg",
         "https://res.cloudinary.com/gianlucajahn/image/upload/v1658238650/tombraider_3_cr0yee.jpg"
       ]
+    },
+    {
+      "name": "Elden Ring",
+      "surname": "eldenring",
+      "price": "49.99",
+      "desc": "ELDEN RING là một tựa game hành động nhập vai thế giới mở được phát triển bởi FromSoftware và Bandai Namco Entertainment. Người chơi sẽ khám phá vùng đất Lands Between rộng lớn, chiến đấu với các kẻ thù hung dữ, thu thập rune để nâng cấp sức mạnh và đối đầu với các boss khổng lồ để trở thành Elden Lord. Thế giới được sáng tạo bởi Hidetaka Miyazaki và George R. R. Martin, mang đến trải nghiệm thử thách và đầy bất ngờ.",
+      "link": "https://en.bandainamcoent.eu/elden-ring/elden-ring",
+      "release": "25th of February, 2022",
+      "platforms": "Playstation 4, Playstation 5, Xbox One, Xbox Series S/X, PC",
+      "genre": "RPG",
+      "developers": "FromSoftware",
+      "publishers": "Bandai Namco Entertainment",
+      "inCart": false,
+      "selected": false,
+      "isHovered": false,
+      "isLiked": false,
+      "rating": 96,
+      "id": "33",
+      "cover": "https://cdn.mos.cms.futurecdn.net/bByhky6jeMXqwxkPV9DZsg-1920-80.jpg",
+      "footage": [
+        "https://cdn.mos.cms.futurecdn.net/bByhky6jeMXqwxkPV9DZsg-1920-80.jpg",
+        "https://assetsio.gnwcdn.com/elden-ring-cover-art.jpg?width=570&quality=85&format=jpg&dpr=3&auto=webp",
+        "https://p325k7wa.twic.pics/high/elden-ring/elden-ring/08-shadow-of-the-erdtree/elden-ring-expansion-SOTE/00-page-content/ERSOTE-header-mobile.jpg?twic=v1/resize=760/step=10/quality=80",
+        "https://cdn01.pinkoi.com/product/24rsWqPA/0/1/640x530.jpg"
+      ]
+    },
+    {
+      "name": "Baldur's Gate 3",
+      "surname": "baldursgate3",
+      "price": "59.99",
+      "desc": "Baldur's Gate 3 là game nhập vai theo lượt dựa trên Dungeons & Dragons, phát triển bởi Larian Studios. Người chơi dẫn dắt một nhóm nhân vật bị nhiễm ký sinh trùng, khám phá thế giới Forgotten Realms, đưa ra lựa chọn ảnh hưởng đến cốt truyện và chiến đấu chiến lược. Với tự do cao, câu chuyện phong phú và đồ họa ấn tượng, đây là kiệt tác RPG hiện đại.",
+      "link": "https://baldursgate3.game/",
+      "release": "3rd of August, 2023",
+      "platforms": "PC, Playstation 5, Xbox Series S/X",
+      "genre": "RPG",
+      "developers": "Larian Studios",
+      "publishers": "Larian Studios",
+      "inCart": false,
+      "selected": false,
+      "isHovered": false,
+      "isLiked": false,
+      "rating": 96,
+      "id": "34",
+      "cover": "https://www.dexerto.com/cdn-image/wp-content/uploads/2024/03/14/Baldurs-gate-3-body-img.jpg",
+      "footage": [
+        "https://www.dexerto.com/cdn-image/wp-content/uploads/2024/03/14/Baldurs-gate-3-body-img.jpg",
+        "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2024/01/bg3-lego-cover.jpg?w=1600&h=900&fit=crop",
+        "https://miro.medium.com/0*lIgFfYSaabNN1oWm",
+        "https://coverproject.sfo2.cdn.digitaloceanspaces.com/playstation_5/playstation_5.baldursgateiii_US.1694775307124177062_thumb.jpg"
+      ]
+    },
+    {
+      "name": "The Legend of Zelda: Tears of the Kingdom",
+      "surname": "tearskingdom",
+      "price": "69.99",
+      "desc": "The Legend of Zelda: Tears of the Kingdom là phần tiếp theo của Breath of the Wild, nơi Link khám phá vương quốc Hyrule mở rộng với vùng trời và lòng đất. Sử dụng khả năng Ultrahand để xây dựng máy móc, Fuse để kết hợp vật phẩm và chiến đấu chống lại thế lực bóng tối để cứu công chúa Zelda. Game mang đến tự do sáng tạo vô tận trong thế giới mở.",
+      "link": "https://www.nintendo.com/us/store/products/the-legend-of-zelda-tears-of-the-kingdom-switch/",
+      "release": "12th of May, 2023",
+      "platforms": "Nintendo Switch",
+      "genre": "Adventure",
+      "developers": "Nintendo EPD",
+      "publishers": "Nintendo",
+      "inCart": false,
+      "selected": false,
+      "isHovered": false,
+      "isLiked": false,
+      "rating": 96,
+      "id": "35",
+      "cover": "https://www.gamereactor.eu/media/49/thisstunningnew_4164993b.jpg",
+      "footage": [
+        "https://www.gamereactor.eu/media/49/thisstunningnew_4164993b.jpg",
+        "https://e.snmc.io/lk/nv/x/f4ceadebd7cb750ed0d015ed62b908c9/10962227",
+        "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/c5c6299b-b8c4-450a-901a-dbeeaa4b7d81.jpg;maxHeight=1920;maxWidth=900?format=webp",
+        "https://www.rpgfan.com/wp-content/uploads/2022/09/The-Legend-of-Zelda-Tears-of-the-Kingdom-Cover-Art-US-296x480-320x240_c.jpg"
+      ]
+    },
+    {
+      "name": "Black Myth: Wukong",
+      "surname": "blackmythwukong",
+      "price": "59.99",
+      "desc": "Black Myth: Wukong là game hành động nhập vai lấy cảm hứng từ thần thoại Trung Quốc và Tây Du Ký. Bạn hóa thân thành Định Mệnh Chi Nhân (Destined One), khám phá thế giới huyền bí, chiến đấu với yêu quái khổng lồ bằng gậy Như Ý, phép biến thân và các chiêu thức đa dạng. Với đồ họa Unreal Engine 5 tuyệt đẹp, boss chiến mãn nhãn và hành trình đầy thử thách, đây là một trong những tựa game xuất sắc nhất năm 2024.",
+      "link": "https://www.heishenhua.com/",
+      "release": "20th of August, 2024",
+      "platforms": "PlayStation 5, PC, Xbox Series X/S",
+      "genre": "Action RPG",
+      "developers": "Game Science",
+      "publishers": "Game Science",
+      "inCart": false,
+      "selected": false,
+      "isHovered": false,
+      "isLiked": false,
+      "rating": 82,
+      "id": "36",
+      "cover": "https://cdn1.epicgames.com/spt-assets/ca9ef1bcf2f54043baac351366aec677/black-myth-wukong-jz9yr.jpg",
+      "footage": [
+        "https://cdn1.epicgames.com/spt-assets/ca9ef1bcf2f54043baac351366aec677/black-myth-wukong-jz9yr.jpg",
+        "https://www.dsogaming.com/wp-content/uploads/2024/06/Black-Myth-Wukong-screenshot_02.jpg",
+        "https://www.gematsu.com/wp-content/uploads/2022/08/Black-Myth_08-19-22.jpg",
+        "https://preview.redd.it/new-black-myth-wukong-screenshot-breathtaking-v0-mmrc6y4gh4jd1.jpeg?auto=webp&s=5ab4e31e8fba2582db5ffaf10b6c438a51662b2b"
+      ]
+    },
+    {
+      "name": "Marvel's Spider-Man 2",
+      "surname": "spiderman2",
+      "price": "69.99",
+      "desc": "Marvel's Spider-Man 2 cho phép điều khiển Peter Parker và Miles Morales trong New York rộng lớn, chiến đấu với các villain như Venom và Kraven. Với hệ thống chiến đấu mượt mà, web-swinging đỉnh cao và cốt truyện cảm xúc về tình bạn, trách nhiệm.",
+      "link": "https://www.playstation.com/en-us/games/marvels-spider-man-2/",
+      "release": "20th of October, 2023",
+      "platforms": "Playstation 5, PC",
+      "genre": "Action",
+      "developers": "Insomniac Games",
+      "publishers": "Sony Interactive Entertainment",
+      "inCart": false,
+      "selected": false,
+      "isHovered": false,
+      "isLiked": false,
+      "rating": 90,
+      "id": "37",
+      "cover": "https://4kwallpapers.com/images/wallpapers/marvels-spider-man-3840x2160-11609.jpeg",
+      "footage": [
+        "https://4kwallpapers.com/images/wallpapers/marvels-spider-man-3840x2160-11609.jpeg",
+        "https://gamingbolt.com/wp-content/uploads/2024/10/marvels-spider-man-2-pc-image-2.jpg",
+        "https://www.playstationlifestyle.net/wp-content/uploads/sites/9/2023/06/spider-2-concept.jpg",
+        "https://i.redd.it/8wwi30k20u961.jpg"
+      ]
+    },
+    {
+      "name": "Resident Evil 4 Remake",
+      "surname": "residentevil4remake",
+      "price": "39.99",
+      "desc": "Resident Evil 4 Remake đưa Leon S. Kennedy đến Tây Ban Nha để cứu con gái tổng thống khỏi giáo phái Los Illuminados. Với đồ họa hiện đại, chiến đấu over-the-shoulder căng thẳng và yếu tố kinh dị sinh tồn, đây là phiên bản làm lại hoàn hảo của kiệt tác kinh điển.",
+      "link": "https://www.residentevil.com/re4/",
+      "release": "24th of March, 2023",
+      "platforms": "Playstation 4, Playstation 5, Xbox Series S/X, PC",
+      "genre": "Shooter",
+      "developers": "Capcom",
+      "publishers": "Capcom",
+      "inCart": false,
+      "selected": false,
+      "isHovered": false,
+      "isLiked": false,
+      "rating": 96,
+      "id": "38",
+      "cover": "https://cdna.artstation.com/p/assets/images/images/060/947/604/large/yin-shiuan-resident-evil-4-remake.jpg?1679663576",
+      "footage": [
+        "https://cdna.artstation.com/p/assets/images/images/060/947/604/large/yin-shiuan-resident-evil-4-remake.jpg?1679663576",
+        "https://preview.redd.it/idmjlql391g51.png?auto=webp&s=aef86caaaadc1f4a9a813ca94ab85716a33dd5bb",
+        "https://i.redd.it/sdcev2ze46qa1.png",
+        "https://image.api.playstation.com/vulcan/ap/rnd/202402/0907/307bf27242bb288e27f8bf745037a1d035081db1f22d2c71.png?w=440"
+      ]
+    },
+    {
+      "name": "Hogwarts Legacy",
+      "surname": "hogwartslegacy",
+      "price": "44.99",
+      "desc": "Hogwarts Legacy đưa người chơi vào thế giới phù thủy Harry Potter thế kỷ 19, nhập vai học sinh Hogwarts, học phép thuật, khám phá lâu đài và thế giới mở, chiến đấu với goblin và khám phá bí mật cổ xưa. Trải nghiệm tự do khám phá và tùy chỉnh nhân vật.",
+      "link": "https://www.hogwartslegacy.com/",
+      "release": "10th of February, 2023",
+      "platforms": "Playstation 4, Playstation 5, Xbox One, Xbox Series S/X, PC, Nintendo Switch",
+      "genre": "RPG",
+      "developers": "Avalanche Software",
+      "publishers": "Warner Bros. Games",
+      "inCart": false,
+      "selected": false,
+      "isHovered": false,
+      "isLiked": false,
+      "rating": 84,
+      "id": "39",
+      "cover": "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2021/08/hogwarts-legacy-giant-spider.jpg?w=1200&h=675&fit=crop",
+      "footage": [
+        "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2021/08/hogwarts-legacy-giant-spider.jpg?w=1200&h=675&fit=crop",
+        "https://hb.imgix.net/f414c5d002517cfe7af54a54ce88d66523d4f158.png?auto=compress,format&fit=crop&h=353&w=616&s=0e5be3f9fc3452eebb56135ee6b005f7",
+        "https://www.syfy.com/sites/syfy/files/2023/01/the_art_and_making_of_hogwarts_legacy.jpg",
+        "https://ar-pay.com/blog/wp-content/uploads/2024/08/Unveiling-Hogwarts-Legacy-Gameplay.jpg"
+      ]
+    },
+    {
+      "name": "Forza Horizon 5",
+      "surname": "forzahorizon5",
+      "price": "59.99",
+      "desc": "Forza Horizon 5 diễn ra tại Mexico rộng lớn với địa hình đa dạng từ sa mạc đến rừng rậm. Người chơi tham gia festival đua xe Horizon, thu thập hơn 500 xe, tùy chỉnh và thi đấu trong thế giới mở sống động với thời tiết động.",
+      "link": "https://www.forzamotorsport.net/en-us/games/fh5",
+      "release": "9th of November, 2021",
+      "platforms": "Xbox One, Xbox Series S/X, PC",
+      "genre": "Racing",
+      "developers": "Playground Games",
+      "publishers": "Xbox Game Studios",
+      "inCart": false,
+      "selected": false,
+      "isHovered": false,
+      "isLiked": false,
+      "rating": 92,
+      "id": "40",
+      "cover": "https://cdn.theouterhaven.net/wp-content/uploads/2021/08/Forza-Horizon-5-Cover-Art-Header-Image_01-e1634661962864.jpg",
+      "footage": [
+        "https://cdn.theouterhaven.net/wp-content/uploads/2021/08/Forza-Horizon-5-Cover-Art-Header-Image_01-e1634661962864.jpg",
+        "https://i.ytimg.com/vi/eh2sGze-8G0/maxresdefault.jpg",
+        "https://images.greenmangaming.com/2c3b8ab05a12409c8ec93487c4f3935a/fec44402e0f1413ca52d2fe123471df0.jpg",
+        "https://preview.redd.it/high-quality-cover-print-for-forza-horizon-5-for-pc-put-v0-42pno6vphsqd1.jpeg?width=1080&crop=smart&auto=webp&s=ca874f9f8a9da335f93b29e6a66df112e42300f2"
+      ]
+    },
+    {
+      "name": "Star Wars Jedi: Survivor",
+      "surname": "jedisurvivor",
+      "price": "49.99",
+      "desc": "Star Wars Jedi: Survivor tiếp nối hành trình của Cal Kestis 5 năm sau Fallen Order, trốn chạy Đế chế, khám phá các hành tinh mới, nâng cấp lightsaber và Force powers để chiến đấu với kẻ thù. Kết hợp platforming, combat và câu chuyện Star Wars hấp dẫn.",
+      "link": "https://www.ea.com/games/starwars/jedi-survivor",
+      "release": "28th of April, 2023",
+      "platforms": "Playstation 5, Xbox Series S/X, PC",
+      "genre": "Adventure",
+      "developers": "Respawn Entertainment",
+      "publishers": "Electronic Arts",
+      "inCart": false,
+      "selected": false,
+      "isHovered": false,
+      "isLiked": false,
+      "rating": 85,
+      "id": "41",
+      "cover": "https://cdna.artstation.com/p/assets/images/images/069/938/982/large/volta-ea-applejack-keyart01-full-illustration-4k.jpg?1701356056",
+      "footage": [
+        "https://cdna.artstation.com/p/assets/images/images/069/938/982/large/volta-ea-applejack-keyart01-full-illustration-4k.jpg?1701356056",
+        "https://pbs.twimg.com/media/GvXnNGIXIAA_dxV.jpg",
+        "https://games-b26f.kxcdn.com/wp-content/uploads/2024/01/jedi-survivor-8-ezgif.com-webp-to-jpg-converter-770x470.jpg",
+        "https://atthemoviesshop.com/cdn/shop/files/star-wars-jedi-survivor-vinyl-soundtrack-atm-packshot_460x@2x.webp?v=1725881570"
+      ]
+    },
+    {
+      "name": "Assassin's Creed Mirage",
+      "surname": "assassinscreedmirage",
+      "price": "39.99",
+      "desc": "Assassin's Creed Mirage đưa Basim Ibn Ishaq trở thành Assassin ở Baghdad thế kỷ 9, tập trung vào stealth, parkour và ám sát. Khám phá thành phố sống động, học kỹ năng từ Hidden Ones và khám phá bí mật về quá khứ của mình.",
+      "link": "https://www.ubisoft.com/en-us/game/assassins-creed/mirage",
+      "release": "5th of October, 2023",
+      "platforms": "Playstation 4, Playstation 5, Xbox One, Xbox Series S/X, PC",
+      "genre": "Action",
+      "developers": "Ubisoft Bordeaux",
+      "publishers": "Ubisoft",
+      "inCart": false,
+      "selected": false,
+      "isHovered": false,
+      "isLiked": false,
+      "rating": 76,
+      "id": "42",
+      "cover": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/09e726154938805.64947f37d43cb.jpg",
+      "footage": [
+        "https://mir-s3-cdn-cf.behance.net/project_modules/1400/09e726154938805.64947f37d43cb.jpg",
+        "https://preview.redd.it/gameinformer-cover-reveal-assassins-creed-mirage-v0-ceemxdhxp2lb1.jpg?auto=webp&s=8cae4e2063f4e407eaad076897d342d40412ace7",
+        "https://i.redd.it/xwky1pqw2ctf1.jpeg",
+        "https://media.altchar.com/prod/images/gm_article_embed_image/05e2fae8172d-ac-mirage-ps5-cover.jpg"
+      ]
+    },
+    {
+      "name": "Unpacking",
+      "surname": "unpacking",
+      "price": "19.99",
+      "desc": "Một trò chơi giải đố nhẹ nhàng, nơi bạn mở các thùng đồ và sắp xếp chúng vào ngôi nhà mới. Qua từng món đồ, bạn sẽ dần khám phá ra câu chuyện cuộc đời của nhân vật mà không cần một lời thoại nào.",
+      "link": "https://store.steampowered.com/app/1135690/Unpacking/",
+      "release": "1st of November, 2021",
+      "platforms": "Nintendo Switch, PlayStation 4/5, Xbox One, PC",
+      "genre": "Puzzle",
+      "developers": "Witch Beam",
+      "publishers": "Humble Games",
+      "id": "1135690",
+      "cover": "https://witchbeam.com.au/wp-content/uploads/2020/09/unpacking_maincapsule-e1635550190906.png",
+      "footage": [
+        "https://unpackinggame.com/wp-content/uploads/2021/09/Screenshot02.png",
+        "https://unpackinggame.com/wp-content/uploads/2021/09/Screenshot01.png",
+        "https://static0.thegamerimages.com/wordpress/wp-content/uploads/2022/09/Unpacking-Beginner-Tips-Feature-Image.jpg",
+        "https://static0.srcdn.com/wordpress/wp-content/uploads/2022/01/Unpacking-Final-Shot.jpg"
+      ],
+      "inCart": false,
+      "selected": false,
+      "isHovered": false,
+      "isLiked": false,
+      "rating": 93
+    },
+    {
+      "name": "DAVE THE DIVER",
+      "surname": "davethediver",
+      "price": "19.99",
+      "desc": "Một trò chơi phiêu lưu dưới đại dương xanh mướt vào ban ngày và quản lý nhà hàng sushi vào ban đêm. Đồ họa pixel cực kỳ đáng yêu cùng lối chơi gây nghiện sẽ khiến bạn không thể rời mắt.",
+      "link": "https://store.steampowered.com/app/1868140/DAVE_THE_DIVER/",
+      "release": "28th of June, 2023",
+      "platforms": "Nintendo Switch, PlayStation 5, PC",
+      "genre": "Adventure",
+      "developers": "MINTROCKET",
+      "publishers": "MINTROCKET",
+      "id": "1868140",
+      "cover": "https://gaming-cdn.com/images/products/14242/orig/dave-the-diver-pc-mac-game-steam-europe-and-us-and-canada-cover.jpg?v=1744274918",
+      "footage": [
+        "https://gamelade1.sgp1.cdn.digitaloceanspaces.com/wp-content/uploads/2025/12/b-3.jpg",
+        "https://herogame.vn/upload/images/img_30_04_2024/game-dave-the-diver-anniversary-edition-nintendo-switch-4_894291_663003d205e6d6.20826904.jpg",
+        "https://static0.thegamerimages.com/wordpress/wp-content/uploads/2023/07/dave-the-diver-x-best-bosses.jpg?w=1600&h=1200&fit=crop",
+        "https://completexbox.co.uk/wp-content/uploads/2025/12/DAVE-THE-DIVER-header.webp"
+      ],
+      "inCart": false,
+      "selected": false,
+      "isHovered": false,
+      "isLiked": false,
+      "rating": 96
+    },
+    {
+      "name": "Persona 5 Royal",
+      "surname": "p5r",
+      "price": "59.99",
+      "desc": "Đeo mặt nạ và tham gia băng Phantom Thieves of Hearts khi họ thực hiện những vụ trộm chấn động. Bản Royal bao gồm thêm nội dung cốt truyện và nhân vật mới.",
+      "link": "https://store.steampowered.com/app/1687950/Persona_5_Royal/",
+      "release": "21st of October, 2022",
+      "platforms": "PlayStation 5, Xbox Series S/X, Nintendo Switch, PC",
+      "genre": "JRPG, Turn-based",
+      "developers": "ATLUS",
+      "publishers": "SEGA",
+      "id": "1687950",
+      "cover": "https://store-images.s-microsoft.com/image/apps.6136.14482474285447263.0a4055ed-9044-4c0c-abf5-292bb1bcb735.3db4c9c4-de15-4e0f-8b4d-1539f8a2ab08?q=90&w=480&h=270",
+      "footage": [
+        "https://images.bauerhosting.com/legacy/media/5e7a/4866/47b3/f17c/af0a/380b/persona-5-royal-1.jpg?ar=16%3A9&fit=crop&crop=top&auto=format&w=1440&q=80",
+        "https://i.redd.it/dednarspqar41.jpg",
+        "https://preview.redd.it/persona-5-will-be-my-first-rpg-any-combat-advice-v0-ftmg64w0qhfb1.jpg?width=1080&crop=smart&auto=webp&s=346f7ecfdf6fcfecdba163af8f455cd6c43af5a6",
+        "https://images.rpgsite.net/image/da49c9a1/84556/original/persona_5_confidant_guide.png"
+      ],
+      "inCart": false,
+      "selected": false,
+      "isHovered": false,
+      "isLiked": false,
+      "rating": 97
+    },
+    {
+      "name": "Persona 3 Reload",
+      "surname": "p3r",
+      "price": "69.99",
+      "desc": "Bước vào Dark Hour và đánh thức chiều sâu của trái tim bạn. Một bản tái hiện hoàn toàn mới của tựa game RPG định nghĩa thể loại.",
+      "link": "https://store.steampowered.com/app/2161700/Persona_3_Reload/",
+      "release": "2nd of February, 2024",
+      "platforms": "PlayStation 4/5, Xbox One, Xbox Series S/X, PC",
+      "genre": "JRPG, Turn-based", 
+      "developers": "ATLUS",
+      "publishers": "SEGA",
+      "id": "2161700",
+      "cover": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2161700/header.jpg?t=1762545767",
+      "footage": [
+        "https://static0.thegamerimages.com/wordpress/wp-content/uploads/wm/2024/09/the-members-of-sees-with-mitsuru-s-dad-in-persona-3-reload.jpg?w=1600&h=900&fit=crop",
+        "https://asia.sega.com/p3r/en/switch2/resources/img/top/overview-pict-1_7fbb88e4541a5d7ac9aa.webp",
+        "https://cdn.mos.cms.futurecdn.net/6d4rT7Sum4JrJMmMyzRNp7.jpg",
+        "https://mlpnk72yciwc.i.optimole.com/cqhiHLc.IIZS~2ef73/w:auto/h:auto/q:75/https://bleedingcool.com/wp-content/uploads/2024/03/Persona-3-Reload-Expansion-Pass-Art.jpg"
+      ],
+      "inCart": false,
+      "selected": false,
+      "isHovered": false,
+      "isLiked": false,
+      "rating": 95
+    },
+    {
+      "name": "Persona 4 Golden",
+      "surname": "p4g",
+      "price": "19.99",
+      "desc": "Một câu chuyện về sự trưởng thành đưa nhân vật chính và những người bạn vào một cuộc hành trình sau một chuỗi những vụ giết người hàng loạt. Hãy khám phá thế giới bên trong tivi, đối mặt với bản ngã đen tối của chính mình để tìm ra sự thật cuối cùng đằng sau màn sương mù.",
+      "link": "https://store.steampowered.com/app/1113000/Persona_4_Golden/",
+      "release": "13th of June, 2020",
+      "platforms": "PlayStation Vita, PlayStation 4, Xbox One, Nintendo Switch, PC",
+      "genre": "JRPG, Turn-based",
+      "developers": "ATLUS",
+      "publishers": "SEGA",
+      "id": "1113000",
+      "cover": "https://www.nintendo.com/eu/media/images/10_share_images/games_15/nintendo_switch_download_software_1/2x1_NSwitchDS_Persona4Golden.jpg",
+      "footage": [
+        "https://sm.pcmag.com/pcmag_au/review/p/persona-4-/persona-4-golden-for-pc_xpe3.jpg",
+        "https://preview.redd.it/should-i-buy-persona-4-golden-v0-siko3j8m8f9d1.jpeg?width=640&crop=smart&auto=webp&s=e1481a451aafa123bab8cb2d734928f760c5253b",
+        "https://www.megavisions.net/wp-content/uploads/2020/08/persona_4_goldenopcsteamsales.jpg",
+        "https://assets2.ignimgs.com/2012/11/21/p4g1119121600jpg-f2b620.jpg"
+      ],
+      "inCart": false,
+      "selected": false,
+      "isHovered": false,
+      "isLiked": false,
+      "rating": 97
+    },
+    {
+      "name": "Hades II",
+      "surname": "hades2",
+      "price": "29.99",
+      "desc": "Phần tiếp theo của tựa game rogue-like hành động đoạt giải Game of the Year. Lần này bạn sẽ vào vai Melinoë, công chúa của Địa ngục, sử dụng ma thuật hắc ám để đối đầu với Titan của Thời gian.",
+      "link": "https://store.steampowered.com/app/1145350/Hades_II/",
+      "release": "6th of May, 2024",
+      "platforms": "PC",
+      "genre": "Action",
+      "developers": "Supergiant Games",
+      "publishers": "Supergiant Games",
+      "id": "1145350",
+      "cover": "https://pcmarket.vn/media/news/471-thumb.jpg",
+      "footage": [
+        "https://cdn.cdkeys.com/media/catalog/product/h/a/hades2-steam4.jpg",
+        "https://cdn.hstatic.net/files/1000154920/file/game_nintendo_switch_2_-_hades_ii_1024x1024.jpg",
+        "https://static.wixstatic.com/media/a511ef_1bd9b81c0d54418aba578f147d331ef6~mv2.jpeg/v1/fill/w_568,h_320,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/a511ef_1bd9b81c0d54418aba578f147d331ef6~mv2.jpeg",
+        "https://shared.fastly.steamstatic.com/store_item_assets/steam/bundles/61368/1oamp11nx26flnh4/99b84caa02ff4453758fc6dd94fd137315490a91/header.jpg?t=1761679817"
+      ],
+      "inCart": false,
+      "selected": false,
+      "isHovered": false,
+      "isLiked": false,
+      "rating": 98
+    },
+    {
+      "name": "Ori and the Will of the Wisps",
+      "surname": "oriwotw",
+      "price": "29.99",
+      "desc": "Một trong những tựa game đẹp nhất mọi thời đại. Hãy cùng chú tinh linh Ori dấn thân vào một hành trình mới trong thế giới rộng lớn, giải cứu người bạn phương xa.",
+      "link": "https://store.steampowered.com/app/1057090/Ori_and_the_Will_of_the_Wisps/",
+      "release": "11th of March, 2020",
+      "platforms": "Nintendo Switch, Xbox One, PC",
+      "genre": "Platformer",
+      "developers": "Moon Studios",
+      "publishers": "Xbox Game Studios",
+      "id": "1057090",
+      "cover": "https://assets.nintendo.com/image/upload/ar_16:9,c_lpad,w_1240/b_white/f_auto/q_auto/store/software/switch/70010000034725/cf74916275780188fd850512efe6c678318d7317bf987599205d2a3fc76dbd79",
+      "footage": [
+        "https://divineshop.vn/image/ckeditor/ss_0cf0ec6681ae5771173790dbc99ddb3bf3b886ad.jpg",
+        "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/19784917/prologueInGame.png?quality=90&strip=all&crop=0,3.4613147178592,100,93.077370564282",
+        "https://i0.wp.com/thegamingoutsider.com/wp-content/uploads/2020/03/Will-of-the-Wisps-3.jpg?ssl=1",
+        "https://i.ytimg.com/vi/XQiRQzNi4AQ/maxresdefault.jpg"
+      ],
+      "inCart": false,
+      "selected": false,
+      "isHovered": false,
+      "isLiked": false,
+      "rating": 96
+    },
+    {
+      "name": "Viewfinder",
+      "surname": "viewfinder",
+      "price": "24.99",
+      "desc": "Thách thức mọi giác quan và định hình lại thế giới xung quanh bằng một chiếc máy ảnh lấy liền. Chụp ảnh và đưa chúng vào đời thực để vượt qua các chướng ngại vật.",
+      "link": "https://store.steampowered.com/app/1382890/Viewfinder/",
+      "release": "18th of July, 2023",
+      "platforms": "PlayStation 5, PC",
+      "genre": "Puzzle",
+      "developers": "Sad Owl Studios",
+      "publishers": "Thunderful Publishing",
+      "inCart": false,
+      "selected": false,
+      "isHovered": false,
+      "isLiked": false,
+      "rating": 92,
+      "id": "1382890",
+      "cover": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1382070/a69eb56f73446624325dec8a4fe74dc4ae09fb96/header.jpg?t=1764842475",
+      "footage": [
+        "https://static0.srcdn.com/wordpress/wp-content/uploads/2023/07/camera-taking-photo-in-viewfinder.jpg?q=50&fit=crop&w=825&dpr=1.5",
+        "https://d1lss44hh2trtw.cloudfront.net/resize?type=webp&url=https%3A%2F%2Fshacknews-www.s3.amazonaws.com%2Fassets%2Feditorial%2F2023%2F07%2Fviewfinder-review-1.jpg&width=986&sign=PTwAMjJotAi0F3QS4uQI4QeTee9xtJjVOH5easydKNc",
+        "https://static.actugaming.net/media/2023/07/viewfinder-test-screenshots-13.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQODELvGyxPlBojQ6JJ1U1kFO28l9bVlmedjA&s"
+      ]
+    },
+    {
+      "name": "Dorfromantik",
+      "surname": "dorfromantik",
+      "price": "13.99",
+      "desc": "Một trò chơi chiến thuật xây dựng và giải đố thư giãn, nơi bạn tạo ra một cảnh quan làng quê ngày càng mở rộng bằng cách đặt các ô gạch hình lục giác.",
+      "link": "https://store.steampowered.com/app/1455840/Dorfromantik/",
+      "release": "28th of April, 2022",
+      "platforms": "Nintendo Switch, PC",
+      "genre": "Casual",
+      "developers": "Toukana Interactive",
+      "publishers": "Toukana Interactive",
+      "inCart": false,
+      "selected": false,
+      "isHovered": false,
+      "isLiked": false,
+      "rating": 97,
+      "id": "1455840",
+      "cover": "https://gamelade.vn/wp-content/uploads/2025/05/maxresdefault-11.jpg",
+      "footage": [
+        "https://cdn.dlcompare.com/game_tetiere/upload/gameimage/file/76835.jpg.webp",
+        "https://superraregames.com/cdn/shop/files/Dorfromantik-gameplay-2@2x.jpg?v=1710262555",
+        "https://deathisawhale.com/wp-content/uploads/2022/09/20220722210157_1.jpg?w=930&h=450&crop=1",
+        "https://i.redd.it/dorfromantik-is-a-wonderful-game-with-a-very-high-replay-v0-o2eh0fyuptmb1.jpg?width=1280&format=pjpg&auto=webp&s=a213b4ed3bac53a5fe02cbff3af4cfea78a7041c"
+      ]
+    },
+    {
+      "name": "Stray",
+      "surname": "stray",
+      "price": "29.99",
+      "desc": "Lạc lối, cô độc và xa cách gia đình, một chú mèo hoang phải giải mã một bí ẩn cổ xưa để thoát khỏi một thành phố mạng (cybercity) đang dần tàn lụi và tìm đường về nhà.",
+      "link": "https://store.steampowered.com/app/1332010/Stray/",
+      "release": "19th of July, 2022",
+      "platforms": "PlayStation 4/5, Xbox One, Xbox Series S/X, PC",
+      "genre": "Adventure",
+      "developers": "BlueTwelve Studio",
+      "publishers": "Annapurna Interactive",
+      "inCart": false,
+      "selected": false,
+      "isHovered": false,
+      "isLiked": false,
+      "rating": 97,
+      "id": "1332010",
+      "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1332010/capsule_616x353.jpg?t=1733260906",
+      "footage": [
+        "https://pyxis.nymag.com/v1/imgs/dda/385/b3aa8500e7d2135714ddf15a629280b3f2-Stray3.rhorizontal.w700.png",
+        "https://adventuregamehotspot.com/images/posts/262/382-stray-review-teaser.jpg",
+        "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1332010/ss_e8f0cbd5efdba352e89c4cfcee3fe991a1e1be8a.1920x1080.jpg?t=1733260906",
+        "https://cdn.mos.cms.futurecdn.net/StLJWJPix4aaeecBGKMHxc-1200-80.jpg"
+      ]
+    },
+    {
+      "name": "Animal Well",
+      "surname": "animalwell",
+      "price": "24.99",
+      "desc": "Khám phá một mê cung siêu thực, kết nối sâu sắc với những sinh vật kỳ lạ. Một trò chơi giải đố Metroidvania có đồ họa pixel cực kỳ tinh xảo và chứa đựng hàng ngàn bí mật ẩn giấu.",
+      "link": "https://store.steampowered.com/app/813230/ANIMAL_WELL/",
+      "release": "9th of May, 2024",
+      "platforms": "Nintendo Switch, PlayStation 5, PC",
+      "genre": "Puzzle",
+      "developers": "Shared Memory",
+      "publishers": "Bigmode",
+      "id": "813230",
+      "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/813230/capsule_616x353.jpg?t=1736282851",
+      "footage": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWoJF2T-LUr8gXjt5D0h25pnYG_ehvt8hJUw&s",
+        "https://alexlovendahl.com/wp-content/uploads/2025/01/animal-well-1.jpg",
+        "https://www.animalwell.net/youtubeBanner.jpg",
+        "https://d1lss44hh2trtw.cloudfront.net/resize?type=webp&url=https%3A%2F%2Fshacknews-www.s3.amazonaws.com%2Fassets%2Farticle%2F2024%2F03%2F21%2Fanimal-well-featured_feature.jpg&width=1032&sign=Yi3Kr_tfVYUEMCFpitPA6LGiSoYMWCwPUTPCu5GPmKE"
+      ],
+      "inCart": false,
+      "selected": false,
+      "isHovered": false,
+      "isLiked": false,
+      "rating": 91
+    },
+    {
+      "name": "Townscaper",
+      "surname": "townscaper",
+      "price": "5.99",
+      "desc": "Không có mục tiêu, không có áp lực. Đơn giản là xây dựng những thị trấn nhỏ xinh xắn trên mặt nước bằng cách nhấp chuột. Một trải nghiệm nghệ thuật và giải trí cực kỳ thư giãn.",
+      "link": "https://store.steampowered.com/app/1291340/Townscaper/",
+      "release": "26th of August, 2021",
+      "platforms": "Nintendo Switch, PC, Mobile",
+      "genre": "Casual",
+      "developers": "Oskar Stålberg",
+      "publishers": "Raw Fury",
+      "id": "1291340",
+      "cover": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_Townscaper_OskarStlberg_S3_2560x1440-558540cb0b62cb5520f1f9e5b4c7a204",
+      "footage": [
+        "https://play-lh.googleusercontent.com/H5uuTwgyskAzYYlEPD9ak0v0Yjigs9fmzI8ApiEqMt5i5xgo7EXs_0qdosZ3cE4rKtU=w526-h296-rw",
+        "https://hoanghamobile.com/tin-tuc/wp-content/uploads/2024/08/Townscaper.jpg",
+        "https://cdn2.fptshop.com.vn/unsafe/Uploads/images/tin-tuc/166300/Originals/Townscaper-1.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlp5SM8DuFQ-u9Fbgd2oCsfY-hcrd4gmmphQ&s"
+      ],
+      "inCart": false,
+      "selected": false,
+      "isHovered": false,
+      "isLiked": false,
+      "rating": 97
+    },
+    {
+      "name": "Tiny Glade",
+      "surname": "tinyglade",
+      "price": "14.99",
+      "desc": "Một trò chơi xây dựng tự do không có lưới, cho phép bạn tạo ra các lâu đài cổ tích, những tàn tích rêu phong và các khu vườn thơ mộng với cảm giác cực kỳ êm dịu.",
+      "link": "https://store.steampowered.com/app/2198150/Tiny_Glade/",
+      "release": "23rd of September, 2024",
+      "platforms": "PC",
+      "genre": "Casual",
+      "developers": "Pounce Light",
+      "publishers": "Pounce Light",
+      "id": "2198150",
+      "cover": "https://cdn2.fptshop.com.vn/unsafe/1920x0/filters:format(webp):quality(75)/tiny_glade_thum_47a0e46bf1.jpg",
+      "footage": [
+        "https://cdn.mos.cms.futurecdn.net/i2CKeQ4XPbkJLZLGpVGion.jpg",
+        "https://eqobpdqkx9u.exactdn.com/wp-content/uploads/2024/09/tinyglade-3.jpg?strip=all&sharp=1",
+        "https://gaming.buzz/wp-content/uploads/2024/08/Tiny-Glade-22_08_2024-16_37_30-min-1024x576.jpg",
+        "https://www.destructoid.com/wp-content/uploads/2024/10/tiny-glade-builds.jpg"
+      ],
+      "inCart": false,
+      "selected": false,
+      "isHovered": false,
+      "isLiked": false,
+      "rating": 96
+    },
+    {
+      "name": "Balatro",
+      "surname": "balatro",
+      "price": "14.99",
+      "desc": "Một trò chơi xây dựng bộ bài (deck-builder) lấy cảm hứng từ Poker. Hãy tìm ra những sự kết hợp mạnh mẽ (jokers) để tạo ra những chuỗi điểm kỷ lục trong tựa game gây nghiện nhất năm 2024.",
+      "link": "https://store.steampowered.com/app/2379780/Balatro/",
+      "release": "20th of February, 2024",
+      "platforms": "Nintendo Switch, PS5, Xbox Series S/X, PC",
+      "genre": "Strategy",
+      "developers": "LocalThunk",
+      "publishers": "Playstack",
+      "id": "2379780",
+      "cover": "https://upload.wikimedia.org/wikipedia/en/8/89/Balatro_cover.jpg",
+      "footage": [
+        "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2379780/96208723dbedef49d71bf1b0a74aee1689018c50/ss_96208723dbedef49d71bf1b0a74aee1689018c50.1920x1080.jpg?t=1762516142",
+        "https://i.guim.co.uk/img/media/08567005721d112a0f138bfce795285cf4d7aea1/0_0_1920_1080/master/1920.jpg?width=700&quality=85&auto=format&fit=max&s=515ed152605ccf37a54c23fdd21a023b",
+        "https://kamikey.com/wp-content/uploads/2025/07/balatro.jpg",
+        "https://minhtuanmobile.com/uploads/blog/cach-tai-va-choi-balatro-vua-gay-sot-the-game-awards-2024-241213020149.jpg"
+      ],
+      "inCart": false,
+      "selected": false,
+      "isHovered": false,
+      "isLiked": false,
+      "rating": 97
     }
   ]
 }
