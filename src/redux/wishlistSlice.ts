@@ -1,8 +1,11 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { WishlistItem } from '../types';
+import { transformFirebaseData } from '../utils/firebaseHelper';
 
-const API_URL = 'http://localhost:3000/wishlist';
+const BASE_URL = import.meta.env.VITE_API_URL;
+const IS_FIREBASE = import.meta.env.VITE_SERVER_TYPE === 'firebase';
+const ENDPOINT = IS_FIREBASE ? '/wishlist.json' : '/wishlist';
 
 interface WishlistState {
   items: WishlistItem[];
@@ -14,40 +17,43 @@ const initialState: WishlistState = {
   status: 'idle'
 };
 
-// Lấy danh sách wishlist của user
 export const fetchWishlist = createAsyncThunk(
   'wishlist/fetch', 
   async (userId: string | number, { rejectWithValue }) => {
     try {
-      const response = await axios.get<WishlistItem[]>(`${API_URL}?userId=${userId}`);
-      return response.data;
+      const response = await axios.get(`${BASE_URL}${ENDPOINT}`);
+      const allItems = transformFirebaseData(response.data) as WishlistItem[];
+      return allItems.filter(item => item.userId === userId);
     } catch (error) {
       return rejectWithValue("Lỗi tải wishlist");
     }
   }
 );
 
-// Toggle (Thêm/Xóa) wishlist
 export const toggleWishlist = createAsyncThunk(
   'wishlist/toggle', 
-  async ({ userId, gameId }: { userId: string | number, gameId: string | number }, { getState, dispatch }) => {
+  async ({ userId, gameId }: { userId: string | number, gameId: string | number }, { getState }) => {
     try {
-      // Lấy state hiện tại để kiểm tra xem đã like chưa
-      const state = getState() as { wishlist: WishlistState };
-      const existingItem = state.wishlist.items.find(item => item.gameId === gameId);
+      const state = getState() as any;
+      const existingItem = state.wishlist.items.find((item: WishlistItem) => item.gameId === gameId);
 
       if (existingItem) {
-        // Nếu đã có -> Xóa
-        await axios.delete(`${API_URL}/${existingItem.id}`);
+        // XÓA: Cấu trúc URL khác nhau
+        // Firebase: .../wishlist/ID.json
+        // Json-server: .../wishlist/ID
+        const deleteSuffix = IS_FIREBASE ? '.json' : '';
+        await axios.delete(`${BASE_URL}/wishlist/${existingItem.id}${deleteSuffix}`);
+        
         return { type: 'remove', id: existingItem.id };
       } else {
-        // Nếu chưa có -> Thêm
+        // THÊM
         const newItem = { userId, gameId };
-        const response = await axios.post(API_URL, newItem);
-        return { type: 'add', item: response.data };
+        const response = await axios.post(`${BASE_URL}${ENDPOINT}`, newItem);
+        
+        const newId = IS_FIREBASE ? response.data.name : response.data.id;
+        return { type: 'add', item: { id: newId, ...newItem } };
       }
     } catch (error) {
-      console.error(error);
       throw error;
     }
   }
@@ -64,7 +70,6 @@ const wishlistSlice = createSlice({
       })
       .addCase(toggleWishlist.fulfilled, (state, action) => {
         if (action.payload.type === 'add') {
-          // Ép kiểu action.payload.item vì TS có thể hiểu nhầm
           state.items.push(action.payload.item as WishlistItem);
         } else {
           state.items = state.items.filter(item => item.id !== action.payload.id);

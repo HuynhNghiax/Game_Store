@@ -1,8 +1,9 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { Order } from '../types';
+import { transformFirebaseData } from '../utils/firebaseHelper';
 
-const API_URL = 'http://localhost:3000/orders';
+const BASE_URL = import.meta.env.VITE_API_URL;
 
 interface OrderState {
   orders: Order[];
@@ -16,26 +17,28 @@ const initialState: OrderState = {
   error: null,
 };
 
-// Tạo đơn hàng mới
 export const createOrder = createAsyncThunk(
   'orders/create', 
   async (orderData: Order, { rejectWithValue }) => {
     try {
-      const response = await axios.post(API_URL, orderData);
-      return response.data;
+      const response = await axios.post(`${BASE_URL}/orders.json`, orderData);
+      return { ...orderData, id: response.data.name };
     } catch (error) {
       return rejectWithValue("Lỗi khi tạo đơn hàng");
     }
   }
 );
 
-// Lấy lịch sử đơn hàng
 export const fetchUserOrders = createAsyncThunk(
   'orders/fetchUserOrders', 
   async (userId: string | number, { rejectWithValue }) => {
     try {
-      const response = await axios.get<Order[]>(`${API_URL}?userId=${userId}&_sort=date&_order=desc`);
-      return response.data;
+      const response = await axios.get(`${BASE_URL}/orders.json`);
+      const allOrders = transformFirebaseData(response.data) as Order[];
+      
+      // Lọc theo userId và sắp xếp mới nhất lên đầu
+      const userOrders = allOrders.filter(order => order.userId === userId);
+      return userOrders.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
     } catch (error) {
       return rejectWithValue("Lỗi tải lịch sử đơn hàng");
     }
@@ -47,12 +50,10 @@ const orderSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    // Create Order
     builder.addCase(createOrder.fulfilled, (state, action) => {
         state.orders.unshift(action.payload);
     });
     
-    // Fetch Orders
     builder
       .addCase(fetchUserOrders.pending, (state) => { state.status = 'loading'; })
       .addCase(fetchUserOrders.fulfilled, (state, action) => {

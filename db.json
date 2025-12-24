@@ -7,7 +7,6 @@
       "password": "123"
     },
     {
-
       "id": "8551",
       "name": "nhannghia",
       "email": "nhannghialai@gmail.com",
@@ -18,7 +17,6 @@
       "name": "Nam ",
       "email": "22130175@st.hcmuaf.edu.vn",
       "password": "123567"
-
     }
   ],
   "orders": [
@@ -62,7 +60,18 @@
       "status": "Completed"
     }
   ],
-  "wishlist": [],
+  "wishlist": [
+    {
+      "id": "3586",
+      "userId": "1",
+      "gameId": "0"
+    },
+    {
+      "id": "fd3a",
+      "userId": "1",
+      "gameId": "1"
+    }
+  ],
   "reviews": [
     {
       "id": "95b5",
@@ -1269,7 +1278,7 @@
       "link": "https://store.steampowered.com/app/2161700/Persona_3_Reload/",
       "release": "2nd of February, 2024",
       "platforms": "PlayStation 4/5, Xbox One, Xbox Series S/X, PC",
-      "genre": "JRPG, Turn-based", 
+      "genre": "JRPG, Turn-based",
       "developers": "ATLUS",
       "publishers": "SEGA",
       "id": "2161700",
