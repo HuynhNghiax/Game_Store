@@ -1,8 +1,11 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { User } from '../types'; // Import Interface User
+import { User } from '../types';
+import { transformFirebaseData } from '../utils/firebaseHelper';
 
-const API_URL = 'http://localhost:3000/users';
+const BASE_URL = import.meta.env.VITE_API_URL;
+const IS_FIREBASE = import.meta.env.VITE_SERVER_TYPE === 'firebase';
+const ENDPOINT = IS_FIREBASE ? '/users.json' : '/users';
 
 interface AuthState {
   user: User | null;
@@ -20,33 +23,44 @@ const initialState: AuthState = {
   successMessage: null
 };
 
-// Đăng ký
+// ĐĂNG KÝ
 export const registerUser = createAsyncThunk(
   'auth/register', 
   async (userData: Omit<User, 'id'>, { rejectWithValue }) => {
     try {
-      // Kiểm tra email tồn tại
-      const checkUser = await axios.get(`${API_URL}?email=${userData.email}`);
-      if (checkUser.data.length > 0) {
-        return rejectWithValue('Email này đã được sử dụng!');
-      }
-      // Tạo user mới
-      const response = await axios.post(API_URL, userData);
-      return response.data;
+      // 1. Kiểm tra email tồn tại
+      const checkRes = await axios.get(`${BASE_URL}${ENDPOINT}`);
+      const users = transformFirebaseData(checkRes.data) as User[];
+      const exists = users.find(u => u.email === userData.email);
+      
+      if (exists) return rejectWithValue('Email này đã được sử dụng!');
+
+      // 2. Tạo user
+      const response = await axios.post(`${BASE_URL}${ENDPOINT}`, userData);
+      
+      // Xử lý ID: Firebase trả về {name: "ID"}, json-server trả về {id: "ID", ...}
+      const newId = IS_FIREBASE ? response.data.name : response.data.id;
+      
+      return { id: newId, ...userData };
     } catch (error: any) {
-      return rejectWithValue(error.message || 'Lỗi đăng ký');
+      return rejectWithValue('Lỗi đăng ký');
     }
   }
 );
 
-// Đăng nhập
+// ĐĂNG NHẬP
 export const loginUser = createAsyncThunk(
   'auth/login', 
   async ({ email, password }: Pick<User, 'email' | 'password'>, { rejectWithValue }) => {
     try {
-      const response = await axios.get(`${API_URL}?email=${email}&password=${password}`);
-      if (response.data.length > 0) {
-        return response.data[0]; // Trả về user tìm thấy
+      // Tải hết về rồi lọc (Cách an toàn nhất cho cả 2 server)
+      const response = await axios.get(`${BASE_URL}${ENDPOINT}`);
+      const users = transformFirebaseData(response.data) as User[];
+
+      const user = users.find(u => u.email === email && u.password === password);
+
+      if (user) {
+        return user;
       } else {
         return rejectWithValue('Email hoặc mật khẩu không đúng!');
       }
@@ -73,7 +87,6 @@ const authSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      // Register logic
       .addCase(registerUser.pending, (state) => { state.loading = true; state.error = null; })
       .addCase(registerUser.fulfilled, (state) => { 
         state.loading = false; 
@@ -83,7 +96,6 @@ const authSlice = createSlice({
         state.loading = false; 
         state.error = action.payload as string; 
       })
-      // Login logic
       .addCase(loginUser.pending, (state) => { state.loading = true; state.error = null; })
       .addCase(loginUser.fulfilled, (state, action: PayloadAction<User>) => {
         state.loading = false;
