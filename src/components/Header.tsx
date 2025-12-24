@@ -106,26 +106,31 @@ export default function Header() {
         </Link>
 
         <div className="flex items-center gap-3 pl-4 border-l border-gray-200">
-            {user ? (
+              {user ? (
                 <>
-                    <div className="text-right hidden sm:block">
-                        <p className="text-sm font-bold text-gray-800">{user.name}</p>
-                        <button 
-                            onClick={() => dispatch(logout())} 
-                            className="text-xs text-red-500 hover:underline font-medium"
-                        >
-                            Đăng xuất
-                        </button>
-                    </div>
-                    <div className="w-9 h-9 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold border border-blue-200 uppercase">
-                        {user.name.charAt(0)}
-                    </div>
+                  <div className="text-right hidden sm:block">
+                    <p className="text-sm font-bold text-gray-800">{user.name}</p>
+                    <button 
+                      onClick={() => dispatch(logout())} 
+                      className="text-xs text-red-500 hover:underline font-medium"
+                    >
+                      Đăng xuất
+                    </button>
+                  </div>
+
+                  <div
+                    onClick={() => navigate('/profile')}
+                    className="w-9 h-9 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold border border-blue-200 uppercase cursor-pointer hover:ring-2 hover:ring-blue-400 transition"
+                    title="Xem hồ sơ"
+                  >
+                    {user.name.charAt(0)}
+                  </div>
                 </>
-            ) : (
+              ) : (
                 <Link to="/login" className="text-sm font-bold text-blue-600 hover:underline px-2">
-                    Đăng nhập
+                  Đăng nhập
                 </Link>
-            )}
+              )}
         </div>
       </div>
     </header>
