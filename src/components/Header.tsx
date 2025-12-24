@@ -1,22 +1,22 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Search, ShoppingBag, X } from 'lucide-react'; // Đã bỏ import Bell
-import { useSelector, useDispatch } from 'react-redux';
+import { Search, ShoppingBag, X } from 'lucide-react';
+import { useAppSelector, useAppDispatch } from '../redux/hooks';
 import { Link, useNavigate } from 'react-router-dom';
 import { logout } from '../redux/authSlice';
+import { Game } from '../types'; // Import type Game
 
 export default function Header() {
-  const quantity = useSelector(state => state.cart.totalQuantity);
-  const { user } = useSelector(state => state.auth);
-  const { items: games } = useSelector(state => state.products);
+  const quantity = useAppSelector(state => state.cart.totalQuantity);
+  const { user } = useAppSelector(state => state.auth);
+  const { items: games } = useAppSelector(state => state.products);
   
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const [searchTerm, setSearchTerm] = useState('');
-  const [suggestions, setSuggestions] = useState([]);
+  const [suggestions, setSuggestions] = useState<Game[]>([]); // Định nghĩa mảng Game
   const [showSuggestions, setShowSuggestions] = useState(false);
-  const searchRef = useRef(null);
+  const searchRef = useRef<HTMLDivElement>(null); // Ref thẻ Div
   const navigate = useNavigate();
 
-  // Logic tìm kiếm
   useEffect(() => {
     if (!searchTerm.trim()) { setSuggestions([]); return; }
     const delayDebounceFn = setTimeout(() => {
@@ -27,16 +27,20 @@ export default function Header() {
     return () => clearTimeout(delayDebounceFn);
   }, [searchTerm, games]);
 
-  const handleSearch = (e) => {
+  const handleSearch = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter' && searchTerm.trim()) {
         setShowSuggestions(false);
         navigate(`/search?q=${searchTerm}`);
     }
   };
 
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      setSearchTerm(e.target.value);
+  }
+
   useEffect(() => {
-    function handleClickOutside(event) {
-      if (searchRef.current && !searchRef.current.contains(event.target)) {
+    function handleClickOutside(event: MouseEvent) {
+      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
         setShowSuggestions(false);
       }
     }
@@ -46,8 +50,6 @@ export default function Header() {
 
   return (
     <header className="flex items-center justify-between gap-6 mb-8 relative z-50">
-      
-      {/* --- THANH TÌM KIẾM --- */}
       <div className="flex-1 max-w-lg relative" ref={searchRef}>
         <div className="relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
@@ -56,7 +58,7 @@ export default function Header() {
               placeholder="Tìm kiếm game..." 
               className="w-full bg-white text-gray-800 pl-10 pr-10 py-2.5 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition shadow-sm"
               value={searchTerm} 
-              onChange={(e) => setSearchTerm(e.target.value)} 
+              onChange={handleChange}
               onKeyDown={handleSearch}
               onFocus={() => { if(suggestions.length > 0) setShowSuggestions(true); }}
             />
@@ -70,7 +72,6 @@ export default function Header() {
             )}
         </div>
 
-        {/* Dropdown Gợi ý */}
         {showSuggestions && suggestions.length > 0 && (
             <div className="absolute top-full left-0 right-0 mt-2 bg-white border border-gray-200 rounded-xl shadow-xl overflow-hidden z-50">
                 <div className="px-4 py-2 text-[10px] font-bold text-gray-500 uppercase tracking-wider bg-gray-50">
@@ -94,10 +95,7 @@ export default function Header() {
         )}
       </div>
 
-      {/* --- CỤM ICON BÊN PHẢI (Đã xóa chuông) --- */}
       <div className="flex items-center gap-4">
-        
-        {/* Nút Giỏ hàng */}
         <Link to="/cart" className="p-2 text-gray-500 hover:bg-white hover:text-blue-600 rounded-full transition relative">
            <ShoppingBag size={20} />
            {quantity > 0 && (
@@ -107,7 +105,6 @@ export default function Header() {
            )}
         </Link>
 
-        {/* User Profile */}
         <div className="flex items-center gap-3 pl-4 border-l border-gray-200">
             {user ? (
                 <>

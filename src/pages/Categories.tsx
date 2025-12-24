@@ -1,72 +1,62 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useAppSelector, useAppDispatch } from '../redux/hooks';
 import { fetchProducts } from '../redux/productSlice';
 import GameCard from '../components/GameCard';
-import { ChevronLeft, ChevronRight, Loader, ArrowUpDown, Filter } from 'lucide-react'; // Thêm icon
+import { ChevronLeft, ChevronRight, Loader, ArrowUpDown, Filter } from 'lucide-react';
 
 export default function Categories() {
-  const dispatch = useDispatch();
-  const { items: games, status } = useSelector(state => state.products);
+  const dispatch = useAppDispatch();
+  const { items: games, status } = useAppSelector(state => state.products);
 
-  // --- STATE QUẢN LÝ ---
   const [selectedGenre, setSelectedGenre] = useState('All');
-  const [sortBy, setSortBy] = useState('default'); // State sắp xếp
+  const [sortBy, setSortBy] = useState('default');
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 8;
 
-  // Gọi API nếu chưa có dữ liệu
   useEffect(() => {
     if (status === 'idle') dispatch(fetchProducts());
   }, [status, dispatch]);
 
-  // 1. Lấy danh sách thể loại (Genre)
   const genres = useMemo(() => {
     if (!games.length) return [];
     const allGenres = ['All', ...new Set(games.map(game => game.genre))];
     return allGenres.sort(); 
   }, [games]);
 
-  // 2. LOGIC LỌC & SẮP XẾP (QUAN TRỌNG)
   const processedGames = useMemo(() => {
-    // Bước A: Lọc theo thể loại trước
     let result = selectedGenre === 'All' 
-        ? [...games] // Copy mảng để tránh lỗi mutate Redux state
+        ? [...games] 
         : games.filter(game => game.genre === selectedGenre);
 
-    // Bước B: Sắp xếp kết quả đã lọc
     switch (sortBy) {
-        case 'price-asc': // Giá: Thấp -> Cao
-            result.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
+        case 'price-asc':
+            result.sort((a, b) => parseFloat(a.price.toString()) - parseFloat(b.price.toString()));
             break;
-        case 'price-desc': // Giá: Cao -> Thấp
-            result.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
+        case 'price-desc':
+            result.sort((a, b) => parseFloat(b.price.toString()) - parseFloat(a.price.toString()));
             break;
-        case 'name-asc': // Tên: A -> Z
+        case 'name-asc':
             result.sort((a, b) => a.name.localeCompare(b.name));
             break;
-        case 'name-desc': // Tên: Z -> A
+        case 'name-desc':
             result.sort((a, b) => b.name.localeCompare(a.name));
             break;
-        case 'rating-desc': // Đánh giá cao nhất
+        case 'rating-desc':
             result.sort((a, b) => b.rating - a.rating);
             break;
-        default:
-            break; // Mặc định thì không làm gì
+        default: break;
     }
-
     return result;
   }, [selectedGenre, sortBy, games]);
 
-  // 3. Phân trang (Pagination) trên danh sách đã lọc & sắp xếp
   const totalPages = Math.ceil(processedGames.length / itemsPerPage);
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentGames = processedGames.slice(indexOfFirstItem, indexOfLastItem);
 
-  // Reset về trang 1 khi đổi bộ lọc
   useEffect(() => { setCurrentPage(1); }, [selectedGenre, sortBy]);
 
-  const handlePageChange = (pageNumber) => {
+  const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);
     const scrollContainer = document.getElementById('main-scroll-container');
     if (scrollContainer) scrollContainer.scrollTo({ top: 0, behavior: 'smooth' });
@@ -76,12 +66,8 @@ export default function Categories() {
 
   return (
     <div className="w-full">
-      
-      {/* HEADER & CONTROLS */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
         <h1 className="text-3xl font-bold text-gray-800">Khám phá</h1>
-        
-        {/* Dropdown Sắp xếp */}
         <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-xl border border-gray-200 shadow-sm">
             <ArrowUpDown size={16} className="text-gray-500" />
             <span className="text-sm text-gray-500 font-medium whitespace-nowrap">Sắp xếp:</span>
@@ -100,33 +86,22 @@ export default function Categories() {
         </div>
       </div>
 
-      {/* --- BỘ LỌC GENRE (PILLS) --- */}
       <div className="flex gap-3 mb-6 overflow-x-auto pb-2 scrollbar-hide items-center">
         <div className="flex items-center gap-2 text-gray-400 pr-2 border-r border-gray-200 mr-2 shrink-0">
             <Filter size={18} />
             <span className="text-xs font-bold uppercase">Lọc</span>
         </div>
         {genres.map((genre) => (
-          <button
-            key={genre}
-            onClick={() => setSelectedGenre(genre)}
-            className={`px-5 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap border ${
-              selectedGenre === genre
-                ? 'bg-blue-600 text-white border-blue-600 shadow-md'
-                : 'bg-white text-gray-500 border-gray-200 hover:border-blue-400 hover:text-blue-600'
-            }`}
-          >
+          <button key={genre} onClick={() => setSelectedGenre(genre)} className={`px-5 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap border ${selectedGenre === genre ? 'bg-blue-600 text-white border-blue-600 shadow-md' : 'bg-white text-gray-500 border-gray-200 hover:border-blue-400 hover:text-blue-600'}`}>
             {genre}
           </button>
         ))}
       </div>
 
-      {/* --- THÔNG SỐ HIỂN THỊ --- */}
       <div className="mb-4 text-gray-500 text-sm font-medium flex justify-between items-center">
           <span>Hiển thị {currentGames.length} trên tổng số {processedGames.length} game</span>
       </div>
 
-      {/* --- LƯỚI GAME --- */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 min-h-[500px] content-start">
         {currentGames.length > 0 ? (
             currentGames.map((game) => <GameCard key={game.id} game={game} />)
@@ -138,41 +113,16 @@ export default function Categories() {
         )}
       </div>
 
-      {/* --- THANH PHÂN TRANG --- */}
       {totalPages > 1 && (
         <div className="flex justify-center items-center gap-2 mt-12 pb-8">
-            <button 
-                onClick={() => handlePageChange(currentPage - 1)} 
-                disabled={currentPage === 1} 
-                className="w-10 h-10 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-blue-50 hover:text-blue-600 disabled:opacity-50 transition shadow-sm"
-            >
-                <ChevronLeft size={20} />
-            </button>
-
+            <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1} className="w-10 h-10 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-blue-50 hover:text-blue-600 disabled:opacity-50 transition shadow-sm"><ChevronLeft size={20} /></button>
             {[...Array(totalPages)].map((_, index) => {
                 const pageNum = index + 1;
                 return (
-                    <button 
-                        key={pageNum} 
-                        onClick={() => handlePageChange(pageNum)} 
-                        className={`w-10 h-10 rounded-lg font-bold text-sm transition shadow-sm border ${
-                            currentPage === pageNum 
-                            ? 'bg-blue-600 text-white border-blue-600' 
-                            : 'bg-white text-gray-600 border-gray-200 hover:bg-blue-50 hover:text-blue-600'
-                        }`}
-                    >
-                        {pageNum}
-                    </button>
+                    <button key={pageNum} onClick={() => handlePageChange(pageNum)} className={`w-10 h-10 rounded-lg font-bold text-sm transition shadow-sm border ${currentPage === pageNum ? 'bg-blue-600 text-white border-blue-600' : 'bg-white text-gray-600 border-gray-200 hover:bg-blue-50 hover:text-blue-600'}`}>{pageNum}</button>
                 );
             })}
-
-            <button 
-                onClick={() => handlePageChange(currentPage + 1)} 
-                disabled={currentPage === totalPages} 
-                className="w-10 h-10 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-blue-50 hover:text-blue-600 disabled:opacity-50 transition shadow-sm"
-            >
-                <ChevronRight size={20} />
-            </button>
+            <button onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages} className="w-10 h-10 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-blue-50 hover:text-blue-600 disabled:opacity-50 transition shadow-sm"><ChevronRight size={20} /></button>
         </div>
       )}
     </div>

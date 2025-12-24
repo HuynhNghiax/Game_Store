@@ -1,13 +1,13 @@
 import React, { useMemo, useEffect } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import { useAppDispatch, useAppSelector } from '../redux/hooks';
 import { fetchProducts } from '../redux/productSlice';
 import GameCard from '../components/GameCard';
 import { Search, Frown } from 'lucide-react';
 
 export default function SearchResults() {
-  const dispatch = useDispatch();
-  const { items: games, status } = useSelector(state => state.products);
+  const dispatch = useAppDispatch();
+  const { items: games, status } = useAppSelector(state => state.products);
   const [searchParams] = useSearchParams();
   const query = searchParams.get('q') || '';
 

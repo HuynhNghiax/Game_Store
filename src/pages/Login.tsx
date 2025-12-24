@@ -1,27 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import { Gamepad2, Mail, Lock, ArrowRight, AlertCircle } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useAppDispatch, useAppSelector } from '../redux/hooks';
 import { loginUser, clearError } from '../redux/authSlice';
+import toast from 'react-hot-toast';
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  const { loading, error, isAuthenticated } = useSelector(state => state.auth);
+  const { loading, error, isAuthenticated } = useAppSelector(state => state.auth);
 
   useEffect(() => { dispatch(clearError()); }, [dispatch]);
 
-  // Nếu đăng nhập thành công -> Chuyển về Home
   useEffect(() => {
     if (isAuthenticated) {
+        toast.success("Chào mừng trở lại!");
         navigate('/');
     }
   }, [isAuthenticated, navigate]);
 
-  const handleLogin = (e) => {
+  const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     dispatch(loginUser({ email, password }));
   };
@@ -29,13 +30,11 @@ export default function Login() {
   return (
     <div className="min-h-screen w-full bg-gray-50 flex items-center justify-center">
       <div className="bg-white p-10 rounded-2xl w-full max-w-md shadow-xl border border-gray-200">
-        
         <div className="flex flex-col items-center mb-8">
             <div className="bg-blue-600 text-white p-3 rounded-xl shadow-lg shadow-blue-200 mb-4">
                 <Gamepad2 size={32} />
             </div>
             <h2 className="text-2xl font-bold text-gray-900">Chào mừng trở lại!</h2>
-            <p className="text-gray-500 text-sm">Đăng nhập để tiếp tục</p>
         </div>
 
         {error && (
