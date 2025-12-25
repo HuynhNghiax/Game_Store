@@ -8,6 +8,7 @@ const Library = lazy(() => import('../../pages/Library'));
 const OrderHistory = lazy(() => import('../../pages/OrderHistory'));
 const Success = lazy(() => import('../../pages/Success'));
 const Profile = lazy(() => import('../../pages/Profile'));
+const ChangePassword = lazy(() => import("../../pages/ChangePassword"));
 
 export const privateRoutes: RouteObject[] = [
   {
@@ -29,5 +30,9 @@ export const privateRoutes: RouteObject[] = [
   {
     path: 'profile',
     element: <ProtectedRoute>{Loadable(Profile)({})}</ProtectedRoute>
+  },
+  {
+    path: "change-password",
+    element: <ProtectedRoute>{Loadable(ChangePassword)({})}</ProtectedRoute>
   }
 ];
