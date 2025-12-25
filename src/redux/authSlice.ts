@@ -70,6 +70,28 @@ export const loginUser = createAsyncThunk(
   }
 );
 
+export const updateProfile = createAsyncThunk(
+  'auth/updateProfile',
+  async (data: Partial<User>, { getState, rejectWithValue }) => {
+    try {
+      const state: any = getState();
+      const user = state.auth.user;
+
+      if (!user?.id) return rejectWithValue("Không tìm thấy user");
+
+      const url = IS_FIREBASE
+        ? `${BASE_URL}/users/${user.id}.json`
+        : `${BASE_URL}/users/${user.id}`;
+
+      const res = await axios.put(url, { ...user, ...data });
+
+      return IS_FIREBASE ? { id: user.id, ...res.data } : res.data;
+    } catch {
+      return rejectWithValue("Lỗi cập nhật hồ sơ");
+    }
+  }
+);
+
 const authSlice = createSlice({
   name: 'auth',
   initialState,
@@ -102,12 +124,22 @@ const authSlice = createSlice({
         state.isAuthenticated = true;
         state.user = action.payload;
       })
-      .addCase(loginUser.rejected, (state, action) => { 
-        state.loading = false; 
-        state.error = action.payload as string; 
+      .addCase(updateProfile.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(updateProfile.fulfilled, (state, action) => {
+        state.loading = false;
+        state.user = action.payload;
+        state.successMessage = "Cập nhật hồ sơ thành công!";
+      })
+      .addCase(updateProfile.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload as string;
       });
-  }
-});
+    }
+  });
+
 
 export const { logout, clearError } = authSlice.actions;
 export default authSlice.reducer;
