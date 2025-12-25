@@ -1,12 +1,17 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Lock, ArrowLeft, CheckCircle } from "lucide-react";
+import { Lock, ArrowLeft, CheckCircle, Eye, EyeOff } from "lucide-react";
 import toast from "react-hot-toast";
 
 export default function ChangePassword() {
   const [oldPassword, setOldPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+
+  const [showOld, setShowOld] = useState(false);
+  const [showNew, setShowNew] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
+
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
 
@@ -25,7 +30,6 @@ export default function ChangePassword() {
 
     setLoading(true);
 
-    // Giả lập API
     setTimeout(() => {
       setLoading(false);
       setSuccess(true);
@@ -62,32 +66,63 @@ export default function ChangePassword() {
           </Link>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-5">
-            <input
-              type="password"
-              placeholder="Mật khẩu hiện tại"
-              className="w-full px-4 py-3.5 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:ring-4 focus:ring-blue-50 outline-none"
-              value={oldPassword}
-              onChange={(e) => setOldPassword(e.target.value)}
-              required
-            />
+            
+            {/* Old Password */}
+            <div className="relative">
+              <input
+                type={showOld ? "text" : "password"}
+                placeholder="Mật khẩu hiện tại"
+                className="w-full px-4 py-3.5 pr-11 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:ring-4 focus:ring-blue-50 outline-none"
+                value={oldPassword}
+                onChange={(e) => setOldPassword(e.target.value)}
+                required
+              />
+              <button
+                type="button"
+                onClick={() => setShowOld(!showOld)}
+                className="absolute right-3 top-3.5 text-gray-500"
+              >
+                {showOld ? <EyeOff size={20} /> : <Eye size={20} />}
+              </button>
+            </div>
 
-            <input
-              type="password"
-              placeholder="Mật khẩu mới"
-              className="w-full px-4 py-3.5 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:ring-4 focus:ring-blue-50 outline-none"
-              value={newPassword}
-              onChange={(e) => setNewPassword(e.target.value)}
-              required
-            />
+            {/* New Password */}
+            <div className="relative">
+              <input
+                type={showNew ? "text" : "password"}
+                placeholder="Mật khẩu mới"
+                className="w-full px-4 py-3.5 pr-11 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:ring-4 focus:ring-blue-50 outline-none"
+                value={newPassword}
+                onChange={(e) => setNewPassword(e.target.value)}
+                required
+              />
+              <button
+                type="button"
+                onClick={() => setShowNew(!showNew)}
+                className="absolute right-3 top-3.5 text-gray-500"
+              >
+                {showNew ? <EyeOff size={20} /> : <Eye size={20} />}
+              </button>
+            </div>
 
-            <input
-              type="password"
-              placeholder="Xác nhận mật khẩu mới"
-              className="w-full px-4 py-3.5 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:ring-4 focus:ring-blue-50 outline-none"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              required
-            />
+            {/* Confirm Password */}
+            <div className="relative">
+              <input
+                type={showConfirm ? "text" : "password"}
+                placeholder="Xác nhận mật khẩu mới"
+                className="w-full px-4 py-3.5 pr-11 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:ring-4 focus:ring-blue-50 outline-none"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                required
+              />
+              <button
+                type="button"
+                onClick={() => setShowConfirm(!showConfirm)}
+                className="absolute right-3 top-3.5 text-gray-500"
+              >
+                {showConfirm ? <EyeOff size={20} /> : <Eye size={20} />}
+              </button>
+            </div>
 
             <button
               type="submit"
