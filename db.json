@@ -106,7 +106,7 @@
       "userId": "8551",
       "user": "nhannghia",
       "rating": 3,
-      "comment": "game ko hay",
+      "comment": "game ko hay quá dở",
       "createdAt": "2025-12-20T12:47:48.273Z"
     },
     {
@@ -117,6 +117,15 @@
       "rating": 5,
       "comment": "game quá hay luôn\n",
       "createdAt": "2025-12-20T13:53:30.890Z"
+    },
+    {
+      "id": "4a8d",
+      "productId": "3",
+      "userId": "8551",
+      "user": "nhannghia",
+      "rating": 1,
+      "comment": "game nhạt quá\n",
+      "createdAt": "2025-12-26T07:00:28.404Z"
     }
   ],
   "products": [
