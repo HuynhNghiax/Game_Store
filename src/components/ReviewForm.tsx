@@ -11,21 +11,21 @@ interface ReviewFormProps {
 export default function ReviewForm({ gameId }: ReviewFormProps) {
     const dispatch = useAppDispatch();
 
-    // Lấy thông tin từ Redux Store với Type an toàn
+    // State để theo dõi việc nhấn vào ô nhập liệu
+    const [isFocusing, setIsFocusing] = useState(false);
+
     const { user, isAuthenticated } = useAppSelector((state) => state.auth);
     const { list: reviews } = useAppSelector((state) => state.reviews);
 
     const [rating, setRating] = useState<number>(5);
     const [comment, setComment] = useState<string>("");
 
-    // Xác định tên hiển thị
     const displayName =
         user?.username ||
         user?.name ||
         user?.email?.split("@")[0] ||
         "Người dùng";
 
-    // Kiểm tra xem user hiện tại đã đánh giá chưa
     const hasReviewed = reviews.some(
         (rev) => String(rev.userId) === String(user?.id) && String(rev.productId) === String(gameId)
     );
@@ -49,7 +49,6 @@ export default function ReviewForm({ gameId }: ReviewFormProps) {
         setRating(5);
     };
 
-    // 1. Nếu chưa đăng nhập
     if (!isAuthenticated) {
         return (
             <div className="mt-6 p-8 bg-gradient-to-br from-gray-50 to-blue-50/30 border-2 border-dashed border-gray-200 rounded-[32px] text-center">
@@ -66,7 +65,6 @@ export default function ReviewForm({ gameId }: ReviewFormProps) {
         );
     }
 
-    // 2. Nếu đã đánh giá rồi (Nếu bạn muốn hiện form LUÔN LUÔN thì xóa đoạn if này)
     if (hasReviewed) {
         return (
             <div className="mt-6 p-6 bg-green-50/50 border border-green-100 rounded-[32px] flex items-center justify-center gap-3">
@@ -80,7 +78,6 @@ export default function ReviewForm({ gameId }: ReviewFormProps) {
         );
     }
 
-    // 3. Form bình luận
     return (
         <form
             onSubmit={handleSubmit}
@@ -95,7 +92,12 @@ export default function ReviewForm({ gameId }: ReviewFormProps) {
                         <p className="text-sm font-black text-gray-900 leading-none">
                             {displayName}
                         </p>
-                        <p className="text-[10px] text-gray-400 mt-1 uppercase tracking-wider font-bold">Đang viết đánh giá</p>
+                        {/* Chỉ hiện chữ khi isFocusing = true, không có nhấp nháy */}
+                        {isFocusing && (
+                            <p className="text-[10px] text-blue-500 mt-1 uppercase tracking-wider font-bold">
+                                Đang viết đánh giá...
+                            </p>
+                        )}
                     </div>
                 </div>
 
@@ -116,12 +118,14 @@ export default function ReviewForm({ gameId }: ReviewFormProps) {
             </div>
 
             <div className="relative group">
-        <textarea
-            className="w-full bg-gray-50/80 border-2 border-transparent text-gray-800 p-5 rounded-[24px] text-sm min-h-[120px] focus:bg-white focus:border-blue-500/20 focus:ring-4 focus:ring-blue-500/5 outline-none transition-all duration-300 placeholder:text-gray-400 shadow-inner"
-            placeholder="Hãy để lại cảm nhận của bạn về tựa game này..."
-            value={comment}
-            onChange={(e) => setComment(e.target.value)}
-        />
+                <textarea
+                    className="w-full bg-gray-50/80 border-2 border-transparent text-gray-800 p-5 rounded-[24px] text-sm min-h-[120px] focus:bg-white focus:border-blue-500/20 focus:ring-4 focus:ring-blue-500/5 outline-none transition-all duration-300 placeholder:text-gray-400 shadow-inner"
+                    placeholder="Hãy để lại cảm nhận của bạn về tựa game này..."
+                    value={comment}
+                    onChange={(e) => setComment(e.target.value)}
+                    onFocus={() => setIsFocusing(true)}
+                    onBlur={() => setIsFocusing(false)}
+                />
             </div>
 
             <div className="flex justify-end mt-4">

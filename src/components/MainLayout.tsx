@@ -3,8 +3,8 @@ import { Outlet, useLocation } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../redux/hooks';
 import { fetchWishlist } from '../redux/wishlistSlice';
 import Sidebar from './Sidebar';
-import Header from './Header'; 
-
+import Header from './Header';
+import Footer from './Footer';
 export default function MainLayout() {
   const { pathname } = useLocation();
   const scrollRef = useRef<HTMLDivElement>(null); // Ref Element
@@ -36,12 +36,14 @@ export default function MainLayout() {
             id="main-scroll-container" 
             className="flex-1 overflow-y-auto p-8 scroll-smooth"
          >
-            <div className="max-w-7xl mx-auto">
-                <Header /> 
-                <div className="mt-6 animate-fade-in pb-10">
-                    <Outlet />
-                </div>
-            </div>
+             <div className="max-w-7xl mx-auto p-8 w-full">
+                 <Header />
+                 <div className="mt-6 animate-fade-in pb-10">
+                     <Outlet />
+                 </div>
+             </div>
+                <Footer />
+
          </div>
       </main>
     </div>
