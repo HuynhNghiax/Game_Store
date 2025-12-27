@@ -86,17 +86,26 @@ export default function Categories() {
         </div>
       </div>
 
-      <div className="flex gap-3 mb-6 overflow-x-auto pb-2 scrollbar-hide items-center">
-        <div className="flex items-center gap-2 text-gray-400 pr-2 border-r border-gray-200 mr-2 shrink-0">
-            <Filter size={18} />
-            <span className="text-xs font-bold uppercase">Lọc</span>
+        {/* Thay 'flex-nowrap overflow-x-auto' bằng 'flex-wrap' */}
+        <div className="flex flex-wrap gap-3 mb-6 items-center">
+            <div className="flex items-center gap-2 text-gray-400 pr-2 border-r border-gray-200 mr-2 shrink-0">
+                <Filter size={18} />
+                <span className="text-xs font-bold uppercase">Lọc</span>
+            </div>
+            {genres.map((genre) => (
+                <button
+                    key={genre}
+                    onClick={() => setSelectedGenre(genre)}
+                    className={`px-5 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap border ${
+                        selectedGenre === genre
+                            ? 'bg-blue-600 text-white border-blue-600 shadow-md'
+                            : 'bg-white text-gray-500 border-gray-200 hover:border-blue-400 hover:text-blue-600'
+                    }`}
+                >
+                    {genre}
+                </button>
+            ))}
         </div>
-        {genres.map((genre) => (
-          <button key={genre} onClick={() => setSelectedGenre(genre)} className={`px-5 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap border ${selectedGenre === genre ? 'bg-blue-600 text-white border-blue-600 shadow-md' : 'bg-white text-gray-500 border-gray-200 hover:border-blue-400 hover:text-blue-600'}`}>
-            {genre}
-          </button>
-        ))}
-      </div>
 
       <div className="mb-4 text-gray-500 text-sm font-medium flex justify-between items-center">
           <span>Hiển thị {currentGames.length} trên tổng số {processedGames.length} game</span>
