@@ -1,79 +1,57 @@
 import React from 'react';
-import { Home, LayoutGrid, Heart, ShoppingBag, LogIn, LogOut, Gamepad2, History } from 'lucide-react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from '../redux/hooks'; // Hook TS
-import { logout } from '../redux/authSlice';
+import {Home, LayoutGrid, Heart, ShoppingBag, LogIn, LogOut, Gamepad2, History} from 'lucide-react';
+import {Link, useLocation, useNavigate} from 'react-router-dom';
+import {useAppDispatch, useAppSelector} from '../redux/hooks'; // Hook TS
+import {logout} from '../redux/authSlice';
 
 
 export default function Sidebar() {
-  const location = useLocation();
-  const navigate = useNavigate();
-  const dispatch = useAppDispatch();
-  
-  const { user } = useAppSelector(state => state.auth); 
-  
-  const isActive = (path: string) => location.pathname === path;
 
-  const menuItems = [
-    { icon: Home, label: 'Trang chủ', path: '/' },
-    { icon: LayoutGrid, label: 'Thể loại', path: '/categories' },
-    { icon: Heart, label: 'Thư viện', path: '/library' },
-    { icon: History, label: 'Lịch sử mua', path: '/history' },
-    { icon: ShoppingBag, label: 'Giỏ hàng', path: '/cart' },
-  ];
+    const location = useLocation();
+    const dispatch = useAppDispatch();
+    const navigate = useNavigate();
+    const {user} = useAppSelector(state => state.auth);
 
-  const handleLogout = () => {
-    dispatch(logout());
-    navigate('/login');
-  };
+    const isActive = (path: string) =>
+        location.pathname === path || location.pathname.startsWith(path + '/');
 
-  return (
-    <aside className="flex flex-col h-full p-6">
-      <div className="flex items-center gap-3 mb-10 px-2">
-        <div className="bg-blue-600 text-white p-2 rounded-lg">
-            <Gamepad2 size={24} />
-        </div>
-        <span className="text-xl font-bold tracking-tight text-gray-900">
-            GameStore
-        </span>
-      </div>
+    const menuItems = [
+        {icon: Home, label: 'Trang chủ', path: '/'},
+        {icon: LayoutGrid, label: 'Thể loại', path: '/categories'},
+        {icon: Heart, label: 'Thư viện', path: '/library'},
+        {icon: History, label: 'Lịch sử mua', path: '/history'},
+        {icon: ShoppingBag, label: 'Giỏ hàng', path: '/cart'},
+    ];
 
-      <nav className="flex-1 space-y-1">
-        {menuItems.map((item) => (
-          <Link
-            key={item.label}
-            to={item.path}
-            className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
-              isActive(item.path) 
-                ? 'bg-blue-50 text-blue-700' 
-                : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
-            }`}
-          >
-            <item.icon size={20} />
-            <span>{item.label}</span>
-          </Link>
-        ))}
-      </nav>
+    return (
+        <nav className="w-full bg-white">
 
-      <div className="pt-6 border-t border-gray-200 mt-auto">
-         {user ? (
-             <button 
-                onClick={handleLogout}
-                className="flex items-center gap-3 px-4 py-3 text-red-500 hover:bg-red-50 hover:text-red-600 rounded-lg transition-colors font-medium w-full"
-             >
-                <LogOut size={20} />
-                <span>Đăng xuất</span>
-             </button>
-         ) : (
-             <Link 
-                to="/login" 
-                className="flex items-center gap-3 px-4 py-3 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors font-medium"
-             >
-                <LogIn size={20} />
-                <span>Đăng nhập</span>
-             </Link>
-         )}
-      </div>
-    </aside>
-  );
+            <div className="flex items-center -ml-6">
+                {menuItems.map((item) => {
+                    const active = isActive(item.path);
+
+                    return (
+                        <Link
+                            key={item.label}
+                            to={item.path}
+                            className={`relative flex items-center gap-2.5 px-6 py-3
+                            text-sm font-medium transition-colors
+                            ${active
+                                ? 'text-blue-600'
+                                : 'text-gray-600 hover:text-gray-900'}
+                        `}
+                        >
+                            <item.icon size={20}/>
+                            <span>{item.label}</span>
+
+                            {active && (
+                                <span
+                                    className="absolute bottom-0 left-6 right-6 h-0.5 bg-blue-600 rounded-t-full"/>
+                            )}
+                        </Link>
+                    );
+                })}
+            </div>
+        </nav>
+    );
 }
