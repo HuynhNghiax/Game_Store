@@ -58,6 +58,59 @@
       "totalAmount": 59.99,
       "date": "2025-12-19T13:05:48.078Z",
       "status": "Completed"
+    },
+    {
+      "id": "9707",
+      "userId": "8551",
+      "items": [
+        {
+          "id": "2",
+          "name": "Life is Strange",
+          "price": 99000,
+          "cover": "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,q_100,w_500/v1658188606/lis_ft0puo.jpg",
+          "quantity": 1
+        },
+        {
+          "id": "3",
+          "name": "Mario Kart 8: Deluxe",
+          "price": 1200000,
+          "cover": "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,q_100,w_500/v1658232678/mariokart_0_mhgbeg.jpg",
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 1299000,
+      "date": "2025-12-29T06:46:27.109Z",
+      "status": "Completed"
+    },
+    {
+      "id": "9148",
+      "userId": "8551",
+      "items": [
+        {
+          "id": "7",
+          "name": "Horizon Zero Dawn",
+          "price": 199000,
+          "cover": "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,q_100,w_500/v1658188606/horizon_jzlhsd.jpg",
+          "quantity": 1
+        },
+        {
+          "id": "6",
+          "name": "Red Dead Redemption 2",
+          "price": 450000,
+          "cover": "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,q_100,w_500/v1658188613/rdr_fhqs3d.jpg",
+          "quantity": 1
+        },
+        {
+          "id": "5",
+          "name": "Anno 1800",
+          "price": 250000,
+          "cover": "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,q_100,w_500/v1658188622/anno_cbmzye.jpg",
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 899000,
+      "date": "2025-12-29T06:55:09.956Z",
+      "status": "Completed"
     }
   ],
   "wishlist": [

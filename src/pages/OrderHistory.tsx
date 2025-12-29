@@ -46,7 +46,7 @@ export default function OrderHistory() {
                                     <h4 className="font-bold text-gray-800 text-sm truncate">{item.name}</h4>
                                     <Link to={`/game/${item.id}`} className="text-xs text-blue-500 hover:underline">Xem chi tiết</Link>
                                 </div>
-                                <button 
+                                <button
                                     onClick={() => alert(`Đang tải xuống ${item.name}... 0%`)}
                                     className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-bold text-xs flex items-center gap-2 transition shadow-md active:scale-95 shrink-0"
                                 >
@@ -55,6 +55,13 @@ export default function OrderHistory() {
                             </div>
                         ))}
                     </div>
+
+                  <div className="mt-4 pt-4 border-t border-gray-100 flex justify-between items-center">
+                    <div className="text-gray-500 text-sm font-medium">Tổng tiền hóa đơn:</div>
+                    <div className="text-xl font-bold text-blue-600">
+                      {order.totalAmount.toLocaleString('vi-VN')} ₫
+                    </div>
+                  </div>
                 </div>
             ))}
         </div>

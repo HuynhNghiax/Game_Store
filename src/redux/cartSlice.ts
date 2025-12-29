@@ -40,7 +40,15 @@ const cartSlice = createSlice({
       const price = Number(newItem.price);
 
       if (!existingItem) {
-        state.items.push({ ...newItem, quantity: 1 });
+        // Thay vì { ...newItem, quantity: 1 }
+        // Chúng ta chỉ lấy những thứ cần thiết để hiển thị trong giỏ hàng và hóa đơn
+        state.items.push({
+          id: newItem.id,
+          name: newItem.name,
+          price: price,
+          cover: newItem.cover,
+          quantity: 1
+        });
         toast.success("Đã thêm vào giỏ hàng!");
       } else {
         existingItem.quantity++;
