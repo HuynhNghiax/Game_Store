@@ -63,7 +63,7 @@ export default function GameCard({ game }: Props) {
           </Link>
           
           <div className="mt-auto flex items-center justify-between pt-3 border-t border-gray-50">
-             <span className="text-lg font-bold text-gray-900">${game.price}</span>
+              <span className="text-lg font-bold text-gray-900">{Number(game.price).toLocaleString('vi-VN')} ₫ </span>
              <button onClick={handleAddToCart} className="flex items-center gap-2 bg-gray-900 hover:bg-blue-600 text-white px-3 py-2 rounded-lg text-sm font-medium transition-colors">
                 <ShoppingBag size={16} /> <span>Thêm</span>
              </button>
