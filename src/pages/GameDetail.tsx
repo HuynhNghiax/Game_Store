@@ -158,7 +158,17 @@ export default function GameDetail() {
                     <div className="bg-white p-6 rounded-[32px] border border-gray-200 shadow-lg sticky top-4">
                         <img src={game.cover} alt="" className="w-full h-48 object-cover rounded-2xl mb-6 shadow-md" />
                         <div className="flex justify-between items-end mb-6">
-                            <div><p className="text-gray-400 line-through text-sm">$99.99</p><p className="text-3xl font-bold text-gray-900">${game.price}</p></div>
+                            <div>
+                                {/* CHỖ SỬA 1: Đổi giá ảo $99.99 thành giá VNĐ hoặc xóa đi */}
+                                <p className="text-gray-400 line-through text-sm">
+                                    {(Number(game.price) * 1.5).toLocaleString('vi-VN')} ₫
+                                </p>
+
+                                {/* CHỖ SỬA 2: Đổi $ thành ₫ và định dạng số tiền */}
+                                <p className="text-3xl font-bold text-gray-900">
+                                    {Number(game.price).toLocaleString('vi-VN')} ₫
+                                </p>
+                            </div>
                             <span className="bg-red-50 text-red-600 text-xs font-bold px-2 py-1 rounded border border-red-100">-50%</span>
                         </div>
                         <div className="flex gap-3">

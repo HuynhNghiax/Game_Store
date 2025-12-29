@@ -58,6 +58,59 @@
       "totalAmount": 59.99,
       "date": "2025-12-19T13:05:48.078Z",
       "status": "Completed"
+    },
+    {
+      "id": "9707",
+      "userId": "8551",
+      "items": [
+        {
+          "id": "2",
+          "name": "Life is Strange",
+          "price": 99000,
+          "cover": "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,q_100,w_500/v1658188606/lis_ft0puo.jpg",
+          "quantity": 1
+        },
+        {
+          "id": "3",
+          "name": "Mario Kart 8: Deluxe",
+          "price": 1200000,
+          "cover": "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,q_100,w_500/v1658232678/mariokart_0_mhgbeg.jpg",
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 1299000,
+      "date": "2025-12-29T06:46:27.109Z",
+      "status": "Completed"
+    },
+    {
+      "id": "9148",
+      "userId": "8551",
+      "items": [
+        {
+          "id": "7",
+          "name": "Horizon Zero Dawn",
+          "price": 199000,
+          "cover": "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,q_100,w_500/v1658188606/horizon_jzlhsd.jpg",
+          "quantity": 1
+        },
+        {
+          "id": "6",
+          "name": "Red Dead Redemption 2",
+          "price": 450000,
+          "cover": "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,q_100,w_500/v1658188613/rdr_fhqs3d.jpg",
+          "quantity": 1
+        },
+        {
+          "id": "5",
+          "name": "Anno 1800",
+          "price": 250000,
+          "cover": "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,q_100,w_500/v1658188622/anno_cbmzye.jpg",
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 899000,
+      "date": "2025-12-29T06:55:09.956Z",
+      "status": "Completed"
     }
   ],
   "wishlist": [
@@ -132,7 +185,7 @@
     {
       "name": "Cyberpunk 2077",
       "surname": "cyberpunk",
-      "price": "346.500 ₫",
+      "price": "346500",
       "desc": "Cyberpunk 2077 là phần tiếp nối các sự kiện của Cyberpunk 2020, theo một hướng đi khác so với Cyberpunk V3.0. Trò chơi lấy bối cảnh tại siêu đô thị dystopia Night City, thuộc Tiểu bang Tự do Bắc California. Night City nằm ở phía nam San Francisco, quanh khu vực Morro Bay, CA. Trong Cyberpunk 2020, Night City được cho là có dân số hơn năm triệu người. Tuy nhiên, con số này được nghi ngờ là lớn hơn đáng kể vào năm 2077. Sau sự sụp đổ kinh tế vào đầu thế kỷ 21, Hoa Kỳ buộc phải phụ thuộc vào các tập đoàn lớn để tồn tại. Các tập đoàn này hoạt động trong nhiều lĩnh vực như vũ khí, robot, công nghệ sinh học, dược phẩm, truyền thông và công nghệ sinh học; nhiều công ty trong số này hoạt động trên cả luật pháp. Trò chơi theo chân câu chuyện của V — một tay súng thuê đang nổi lên tại Night City, siêu đô thị bạo lực và nguy hiểm nhất của tương lai bị thống trị bởi các tập đoàn. Hệ thống tạo nhân vật mạnh mẽ sẽ cho phép người chơi chọn giới tính, ngoại hình cũng như lý lịch lịch sử của V — tất cả có thể ảnh hưởng đến diễn biến của trò chơi. Thế giới lấy cảm hứng từ các tác phẩm của những tác giả như William Gibson (tác giả Neuromancer) và Philip K. Dick, với tiểu thuyết Do Androids Dream of Electric Sheep? cùng bản phim chuyển thể Blade Runner đã ảnh hưởng lớn đến người tạo ra, Mike Pondsmith, trong việc xây dựng trò chơi RPG bàn giấy gốc.",
       "link": "https://www.cyberpunk.net/",
       "release": "10 tháng 12 năm 2020",
@@ -157,7 +210,7 @@
     {
       "name": "Battlefield V",
       "surname": "battlefield",
-      "price": "199.000 ₫",
+      "price": "199000",
       "desc": "Series Battlefield quay về nguồn cội với hình ảnh chưa từng thấy về Chiến tranh Thế giới thứ 2. Tham gia vào các trận chiến multiplayer quy mô lớn cùng đồng đội trong các chế độ như Grand Operations hoành tráng và Combined Arms hợp tác, hoặc chứng kiến những câu chuyện nhân văn giữa bối cảnh chiến tranh toàn cầu qua chế độ chơi đơn War Stories. Chiến đấu ở những địa điểm hoành tráng, bất ngờ trên khắp thế giới và tận hưởng trải nghiệm Battlefield phong phú, sống động nhất từ trước đến nay.",
       "link": "https://www.origin.com/store/battlefield/battlefield-v",
       "release": "9 tháng 11 năm 2018",
@@ -182,7 +235,7 @@
     {
       "name": "Life is Strange",
       "surname": "lis",
-      "price": "99.000 ₫",
+      "price": "99000",
       "desc": "Life Is Strange là trò chơi episodic năm phần, cách mạng hóa thể loại game kể chuyện với lựa chọn và hậu quả bằng cách cho phép người chơi tua ngược thời gian và thay đổi quá khứ, hiện tại cũng như tương lai. Bạn vào vai Max, một học sinh năm cuối ngành nhiếp ảnh, người cứu người bạn cũ Chloe bằng cách phát hiện khả năng tua ngược thời gian. Cặp đôi nhanh chóng đối mặt với mặt tối của Arcadia Bay khi khám phá sự thật đáng sợ đằng sau vụ mất tích đột ngột của một học sinh khác. Đồng thời, Max bắt đầu có những linh cảm khi cố gắng hiểu ý nghĩa của sức mạnh của mình. Cô ấy phải nhanh chóng nhận ra rằng thay đổi quá khứ đôi khi có thể dẫn đến một tương lai thảm khốc.",
       "link": "https://lifeisstrange.square-enix-games.com/",
       "release": "30 tháng 1 năm 2015",
@@ -207,7 +260,7 @@
     {
       "name": "Mario Kart 8: Deluxe",
       "surname": "mariokart",
-      "price": "1.200.000 ₫",
+      "price": "1200000",
       "desc": "Hãy lên đường với phiên bản hoàn chỉnh nhất của Mario Kart 8 và chơi bất cứ lúc nào, bất cứ nơi đâu! Đua xe cùng bạn bè hoặc chiến đấu trong chế độ battle được cải tiến trên các đường đua mới và cũ. Chơi local multiplayer lên đến 4 người ở độ phân giải 1080p khi chơi ở chế độ TV. Tất cả các đường đua từ phiên bản Wii U, bao gồm cả DLC, đều trở lại. Thêm vào đó, Inklings xuất hiện như nhân vật khách mời mới, cùng với các nhân vật quen thuộc như King Boo, Dry Bones và Bowser Jr.!",
       "link": "https://mariokart8deluxe.nintendo.com/",
       "release": "28 tháng 4 năm 2017",
@@ -232,7 +285,7 @@
     {
       "name": "BioShock Infinite",
       "surname": "bioshockinfinite",
-      "price": "120.000 ₫",
+      "price": "120000",
       "desc": "Đây là tựa game bắn súng góc nhìn thứ nhất theo cốt truyện thuộc series BioShock, theo chân Booker DeWitt khi anh bước vào thành phố bay độc lập Columbia (từng là của Mỹ) năm 1912 và cố gắng cứu một cô gái bị giam trong tháp bởi kẻ tự xưng là nhà tiên tri/độc tài của thành phố để xóa nợ tài chính. Trong suốt câu chuyện, các chủ đề về bạo lực, phân biệt chủng tộc và định mệnh được đề cập. Lưu ý: Game có nội dung dành cho người lớn.",
       "link": "https://2k.com/en-US/game/bioshock-infinite/",
       "release": "26 tháng 2 năm 2013",
@@ -257,7 +310,7 @@
     {
       "name": "Anno 1800",
       "surname": "anno",
-      "price": "250.000 ₫",
+      "price": "250000",
       "desc": "Anno 1800 diễn ra vào thế kỷ 19, thời kỳ bình minh của Cách mạng Công nghiệp. Giống như các tựa Anno khác, đây là game xây dựng thành phố và chiến lược. Bối cảnh là thương mại thuộc địa, với kiến trúc thời Victoria và nền kinh tế dựa trên lao động nhà máy. Lối chơi cốt lõi diễn ra ở Thế giới Cũ, nơi nhu cầu của công dân, công nhân và nghệ nhân là trung tâm quản lý sản xuất và chuỗi cung ứng. Một thành phố Thế giới Mới song song tồn tại, sản xuất hàng hóa mà lao động ở Thế giới Cũ muốn mua, do đó cần thiết lập tuyến thương mại. Không giống người tiền nhiệm Anno 1701, game có tính năng blueprint giúp người chơi lập kế hoạch thành phố.",
       "link": "https://anno-union.com/",
       "release": "16 tháng 4 năm 2019",
@@ -282,7 +335,7 @@
     {
       "name": "Red Dead Redemption 2",
       "surname": "rdr",
-      "price": "450.000 ₫",
+      "price": "450000",
       "desc": "Nước Mỹ năm 1899. Kỷ nguyên miền Tây hoang dã đang kết thúc. Sau một vụ cướp thất bại ở thị trấn Blackwater, Arthur Morgan và băng Van der Linde buộc phải chạy trốn. Với lực lượng cơ quan liên bang và thợ săn tiền thưởng giỏi nhất quốc gia truy đuổi, băng đảng phải cướp bóc, trộm cắp và chiến đấu để sinh tồn trên vùng đất hoang dã của nước Mỹ. Khi những chia rẽ nội bộ ngày càng sâu sắc đe dọa xé tan băng đảng, Arthur phải lựa chọn giữa lý tưởng cá nhân và lòng trung thành với băng đảng đã nuôi dưỡng anh.",
       "link": "https://www.rockstargames.com/reddeadredemption2",
       "release": "26 tháng 10 năm 2018",
@@ -307,7 +360,7 @@
     {
       "name": "Horizon Zero Dawn",
       "surname": "horizon",
-      "price": "199.000 ₫",
+      "price": "199000",
       "desc": "Horizon Zero Dawn diễn ra vào thế kỷ 31, trong một thế giới hậu tận thế nơi những cỗ máy khổng lồ thống trị mặt đất. Nền văn minh nhân loại đã thoái hóa về các xã hội bộ lạc gồm thợ săn và hái lượm sống sót trong những khu rừng rộng lớn, dãy núi hùng vĩ và những tàn tích đầy không khí của tổ tiên họ – trong khi các cỗ máy ngày càng mạnh mẽ hơn. Người chơi điều khiển Aloy, một nữ thợ săn sử dụng tốc độ, sự khôn ngoan và linh hoạt để sống sót và bảo vệ bản thân cùng người khác trước sức mạnh, kích thước và lực lượng của các cỗ máy. Trò chơi kết hợp yếu tố khoa học viễn tưởng và thần thoại.",
       "link": "https://www.guerrilla-games.com/games",
       "release": "28 tháng 2 năm 2017",
@@ -332,7 +385,7 @@
     {
       "name": "Grand Theft Auto: V",
       "surname": "gtav",
-      "price": "399.000 ₫",
+      "price": "399000",
       "desc": "Grand Theft Auto V là một game thế giới mở rộng lớn lấy bối cảnh tại Los Santos, một siêu đô thị ngập nắng đang cố gắng tồn tại trong thời kỳ bất ổn kinh tế và truyền hình thực tế rẻ tiền. Trò chơi kết hợp kể chuyện và lối chơi theo cách mới khi người chơi liên tục nhảy vào và ra khỏi cuộc sống của ba nhân vật chính, chơi tất cả các bên trong câu chuyện đan xen của game.",
       "link": "https://www.rockstargames.com/gta-v",
       "release": "17 tháng 9 năm 2013",
@@ -357,7 +410,7 @@
     {
       "name": "The Elder Scrolls: Skyrim",
       "surname": "skyrim",
-      "price": "149.000 ₫",
+      "price": "149000",
       "desc": "Hai trăm năm đã trôi qua kể từ sự kiện trong The Elder Scrolls IV: Oblivion, và hiện tại là năm 4E 201. Vua Cao của Skyrim đã bị sát hại, và mối đe dọa nội chiến đang bao trùm vùng đất Skyrim; một bên muốn ly khai khỏi Đế chế Thứ Ba suy yếu, bên kia muốn tiếp tục là một phần của nó. Tệ hơn nữa, sự chia rẽ này là sự kiện cuối cùng trong lời tiên tri được ghi chép bởi Elder Scrolls sẽ dẫn đến sự trở lại của các con rồng dưới quyền Alduin, vị thần hủy diệt của người Nordic. Người chơi bắt đầu game trên xe ngựa hướng tới máy chém sau khi bị bắt cùng Stormcloaks trong một cuộc phục kích của Quân đoàn Đế quốc. Khi người chơi đặt đầu lên máy chém, con rồng Alduin tấn công. Trong hỗn loạn, Hadvar, vài Stormcloaks cùng thủ lĩnh và đồng tù Ulfric Stormcloak giúp người chơi trốn thoát. Người chơi có thể chọn sự trợ giúp của Ralof, Stormcloak đến cùng Ulfric, hoặc Hadvar, lính Đế quốc phụ trách đọc tên tù nhân bị hành quyết. Sau khi trợ giúp và nhận được sự ưu ái của Jarl Balgruuf the Greater, người chơi sau đó biết rằng mình là Dovahkiin, hay Dragonborn, người được giao nhiệm vụ đánh bại Alduin và các con rồng. Cuối cùng, người chơi gặp Delphine và Esbern, hai thành viên cuối cùng còn lại của Blades, và trở thành học trò của các Greybeards danh tiếng tại High Hrothgar.",
       "link": "https://elderscrolls.bethesda.net/de/",
       "release": "10 tháng 11 năm 2011",
@@ -382,7 +435,7 @@
     {
       "name": "Warframe",
       "surname": "warframe",
-      "price": "Miễn phí",
+      "price": "189000",
       "desc": "Warframe đặt người chơi vào vai thành viên của chủng tộc Tenno, vừa tỉnh giấc sau nhiều năm ngủ đông cryo vào một hệ mặt trời đang chiến tranh. Tái sinh trong một kỷ nguyên tham nhũng, Tenno bị Đế chế Grineer áp bức tìm cách tiêu diệt. Bộ giáp Warframe là chìa khóa để lật đổ Grineer bằng cách cung cấp cho người chơi các sức mạnh tấn công và phòng thủ độc đáo để khám phá, nâng cấp và làm chủ trong các cuộc đột kích radian có mục tiêu rõ ràng.",
       "link": "https://www.warframe.com/de/landing",
       "release": "25 tháng 3 năm 2013",
@@ -407,7 +460,7 @@
     {
       "name": "Minecraft",
       "surname": "minecraft",
-      "price": "699.000 ₫",
+      "price": "699000",
       "desc": "Minecraft tập trung vào việc cho phép người chơi khám phá, tương tác và thay đổi một bản đồ được tạo ngẫu nhiên gồm các khối kích thước một mét khối. Ngoài các khối, môi trường còn có thực vật, quái vật và vật phẩm. Một số hoạt động trong game bao gồm khai thác quặng, chiến đấu với quái vật thù địch và chế tạo các khối mới cùng công cụ bằng cách thu thập các tài nguyên khác nhau trong game. Mô hình mở của game cho phép người chơi tạo cấu trúc, sáng tạo và tác phẩm nghệ thuật trên các server đa người hoặc bản đồ chơi đơn. Các tính năng khác bao gồm mạch redstone cho tính toán logic và hành động từ xa, xe đẩy mỏ và đường ray, cùng một thế giới ngầm bí ẩn gọi là Nether. Mục tiêu được chỉ định nhưng hoàn toàn tùy chọn của game là du hành đến một chiều không gian gọi là End và đánh bại ender dragon.",
       "link": "https://www.minecraft.net",
       "release": "15 tháng 8 năm 2011",
@@ -432,7 +485,7 @@
     {
       "name": "Rise of the Tomb Raider",
       "surname": "riseofthetombraider",
-      "price": "79.000 ₫",
+      "price": "79000",
       "desc": "Rise of the Tomb Raider là game hành động phiêu lưu góc nhìn thứ ba nơi người chơi điều khiển Lara Croft, đang trên hành trình khám phá thành phố huyền thoại Kitezh. Chiến đấu là cơ chế gameplay chính; Lara có nhiều loại vũ khí (bao gồm súng trường tấn công, súng ngắn và súng lục), một số có chế độ bắn thay thế. Người chơi cũng có thể sử dụng lén lút để tiến triển, dùng cung tên để hạ gục kẻ thù, tạo phân tâm để thu hút sự chú ý khỏi Lara, hoặc ẩn náu trong bụi rậm để tránh kẻ thù. Lara có thể sử dụng môi trường để chiến đấu, bắn thùng nổ, xé cấu trúc quấn dây bằng mũi tên dây, hoặc phục kích từ vị trí cao. Cô cũng có thể dùng rìu băng và dao chiến đấu để cận chiến với kẻ thù.",
       "link": "https://tombraider.square-enix-games.com/en-us",
       "release": "10 tháng 11 năm 2015",
@@ -457,7 +510,7 @@
     {
       "name": "Metro Exodus",
       "surname": "metro",
-      "price": "129.000 ₫",
+      "price": "129000",
       "desc": "Metro Exodus là game bắn súng góc nhìn thứ nhất theo câu chuyện sử thi từ 4A Games kết hợp chiến đấu chết chóc và lén lút với khám phá và kinh dị sinh tồn trong một trong những thế giới game nhập vai nhất từng tạo ra. Khám phá vùng hoang dã Nga qua các cấp độ rộng lớn, phi tuyến tính và theo dõi một câu chuyện hấp dẫn kéo dài suốt một năm qua mùa xuân, hè, thu đến tận cùng mùa đông hạt nhân. Lấy cảm hứng từ tiểu thuyết của Dmitry Glukhovsky, Metro Exodus tiếp tục câu chuyện của Artyom trong cuộc phiêu lưu Metro vĩ đại nhất.",
       "link": "https://www.metrothegame.com/de/",
       "release": "15 tháng 2 năm 2019",
@@ -482,7 +535,7 @@
     {
       "name": "Terraria",
       "surname": "terraria",
-      "price": "119.000 ₫",
+      "price": "119000",
       "desc": "Đào, Chiến đấu, Khám phá, Xây dựng: Chính thế giới nằm trong tầm tay bạn khi chiến đấu để sinh tồn, tìm kiếm tài sản và vinh quang. Bạn sẽ đào sâu vào các hang động rộng lớn để tìm kho báu và nguyên liệu thô để chế tạo trang bị, máy móc và thẩm mỹ ngày càng tiến hóa? Có lẽ bạn sẽ chọn tìm kiếm những kẻ thù mạnh mẽ hơn để thử thách kỹ năng chiến đấu? Có thể bạn sẽ quyết định xây dựng thành phố riêng để chứa đựng vô số đồng minh bí ẩn mà bạn gặp trên hành trình? Trong Thế giới Terraria, lựa chọn thuộc về bạn!",
       "link": "https://terraria.org/",
       "release": "16 tháng 5 năm 2011",
@@ -507,7 +560,7 @@
     {
       "name": "Rocket League",
       "surname": "rocketleague",
-      "price": "69.000 ₫",
+      "price": "69000",
       "desc": "Rocket League là sự kết hợp mạnh mẽ giữa bóng đá phong cách arcade và hỗn loạn xe cộ với điều khiển dễ hiểu và cuộc thi dựa trên vật lý mượt mà. Rocket League bao gồm các trận đấu trực tuyến thông thường và cạnh tranh, chế độ Mùa offline đầy đủ tính năng, các “Mutators” đặc biệt cho phép thay đổi quy tắc hoàn toàn, các Chế độ Thêm lấy cảm hứng từ hockey và basketball, và hơn 500 nghìn tỷ kết hợp tùy chỉnh mỹ phẩm có thể.",
       "link": "https://www.rocketleague.com/",
       "release": "7 tháng 7 năm 2015",
@@ -532,7 +585,7 @@
     {
       "name": "The Witcher 3: Wild Hunt",
       "surname": "thewitcher",
-      "price": "199.000 ₫",
+      "price": "199000",
       "desc": "Game nhập vai và phần tiếp theo của The Witcher 2 (2011), The Witcher 3 theo chân witcher Geralt xứ Rivia khi anh tìm kiếm người yêu cũ và đứa trẻ được bảo hộ trong khi xen lẫn với các hoạt động chính trị của các Vương quốc Phương Bắc đang chiến tranh. Geralt phải chiến đấu với quái vật và đối phó với đủ loại người để giải quyết các vấn đề phức tạp và giải quyết tranh chấp gay gắt, từ cá nhân đến thay đổi thế giới.",
       "link": "https://www.thewitcher.com/en",
       "release": "19 tháng 5 năm 2015",
@@ -557,7 +610,7 @@
     {
       "name": "Hitman",
       "surname": "hitman",
-      "price": "99.000 ₫",
+      "price": "99000",
       "desc": "Hãy trở thành Sát thủ bậc thầy trong một câu chuyện gián điệp ly kỳ đầy kịch tính. Với vai Agent 47, bạn thực hiện các hợp đồng ám sát nhắm vào những mục tiêu quyền lực, nổi bật tại các địa điểm kỳ lạ trên toàn thế giới. Lối chơi tập trung vào việc loại bỏ mục tiêu trong các cấp độ sandbox rộng lớn và phức tạp với sự tự do tiếp cận hoàn toàn. Đi đâu, tấn công khi nào và giết ai – tất cả đều do bạn quyết định.",
       "link": "https://hitman.com/global/",
       "release": "11 tháng 3 năm 2016",
@@ -582,7 +635,7 @@
     {
       "name": "Fallout 4",
       "surname": "fallout",
-      "price": "199.000 ₫",
+      "price": "199000",
       "desc": "Câu chuyện của Fallout 4 tập trung vào một người phối ngẫu, Người Sống Sót Duy Nhất từ Vault 111, khi họ tìm kiếm đứa con mất tích, Shaun. Fallout 4 lấy bối cảnh tại khu vực Boston và xung quanh vào năm 2287, 10 năm sau Fallout 3. Trên hành trình, Người Sống Sót Duy Nhất khám phá một thế giới sợ hãi một tổ chức bí ẩn gọi là Institute, bị ám ảnh bởi nỗi nghi ngờ về một chủng loài robot nhưng cũng mang tính sinh học giống người gọi là synth. Do cốt truyện tập trung vào synth, Người Sống Sót Duy Nhất cũng như người chơi phải đối mặt với các câu hỏi đạo đức như con người nên thử nghiệm khoa học đến mức nào, đạo đức của việc tạo ra những cỗ máy sống có tri giác biểu lộ cảm xúc và đau khổ, và ý nghĩa của việc làm người.",
       "link": "https://fallout.bethesda.net/en/games/fallout-4",
       "release": "10 tháng 11 năm 2015",
@@ -607,7 +660,7 @@
     {
       "name": "GTA: San Andreas",
       "surname": "gtasanandreas",
-      "price": "149.000 ₫",
+      "price": "149000",
       "desc": "Sau vụ sát hại mẹ mình, Carl Johnson trở về thành phố bán hư cấu Los Santos (dựa trên Los Angeles). Là một cựu thành viên băng đảng, Carl phải giành lại đường phố cho gia đình và bạn bè bằng cách kiếm được sự tôn trọng và một lần nữa kiểm soát khu vực. Tuy nhiên, một câu chuyện đầy tội ác, dối trá và tham nhũng sẽ dẫn anh ta lang thang khắp tiểu bang San Andreas (dựa trên California và Nevada) để xây dựng lại cuộc đời.",
       "link": "https://www.rockstargames.com/games/sanandreas",
       "release": "26 tháng 10 năm 2004",
@@ -632,7 +685,7 @@
     {
       "name": "Golf with your Friends",
       "surname": "golfwithyourfriends",
-      "price": "39.000 ₫",
+      "price": "39000",
       "desc": "Golf With Your Friends là một trò chơi mini golf đa người vui nhộn, thử thách dành cho tối đa 12 người chơi. Điều khiển đơn giản và game được thiết kế để người dùng có thể tạo hoặc tham gia trận đấu chỉ trong vài giây. Trận đấu sẽ được host trên server của chúng tôi, nơi người dùng có thể thêm mật khẩu nếu cần hoặc để mở cho công chúng. Người chơi trên PC có thể truy cập trình chỉnh sửa cấp độ để tạo bản đồ riêng hoặc thử hàng nghìn bản đồ do cộng đồng tạo.",
       "link": "http://www.blacklightinteractive.com/",
       "release": "29 tháng 1 năm 2016",
@@ -657,7 +710,7 @@
     {
       "name": "Heavy Rain",
       "surname": "heavyrain",
-      "price": "49.000 ₫",
+      "price": "49000",
       "desc": "Heavy Rain là một bộ phim kinh dị tâm lý điện ảnh từ nhà phát triển game Quantic Dream dành riêng cho PlayStation 3. Xử lý nhiều chủ đề dành cho người lớn, game xoay quanh một cốt truyện tinh tế và các mạch truyện mạnh mẽ khám phá một đề xuất đạo đức phức tạp. Bạn đảm nhận vai nhiều nhân vật với nền tảng, động cơ và kỹ năng rất khác nhau trong một thế giới nơi mỗi quyết định của người chơi ảnh hưởng đến những gì sẽ xảy ra tiếp theo.",
       "link": "https://www.www.quanticdream.com/en/#!/en/category/heavy-rain",
       "release": "18 tháng 2 năm 2010",
@@ -682,7 +735,7 @@
     {
       "name": "Dota 2",
       "surname": "dota",
-      "price": "239.000 ₫",
+      "price": "239000",
       "desc": "Dota 2 là game cạnh tranh đội nhóm kiểu RTS-MOBA với yếu tố RPG. Hai đội đối thủ (Radiant và Dire) mỗi đội gồm năm người chơi. Mục tiêu chính trong Dota 2 là phá hủy Ancient của đối phương bên trong pháo đài. Các pháo đài này được bảo vệ bởi nhiều tháp dọc theo ba đường. Thay vì xây dựng quân lính như các game RTS cổ điển, mỗi người chơi điều khiển một Hero duy nhất, một đơn vị mạnh mẽ chiến lược với khả năng độc đáo và đặc trưng có thể cải thiện trong suốt trận đấu. Kinh nghiệm được kiếm khi creep và hero gần đó chết, và khi thu thập đủ kinh nghiệm, hero lên cấp, tăng chỉ số, và ở hầu hết các cấp hero nhận điểm kỹ năng để mở khóa hoặc nâng cấp một khả năng. Bên cạnh các khả năng cố định của hero, mỗi hero có 6 ô hành trang có thể chứa các Item mang lại lợi ích và khả năng đa dạng. Để mua các item này, Vàng được kiếm thụ động theo thời gian, bằng cách giết creep, giết hero địch và phá hủy công trình.",
       "link": "https://www.dota2.com/home",
       "release": "9 tháng 7 năm 2013",
@@ -707,7 +760,7 @@
     {
       "name": "Portal 2",
       "surname": "portal2",
-      "price": "29.000 ₫",
+      "price": "29000",
       "desc": "Phần tiếp theo của Portal (2007) được đánh giá cao, Portal 2 đặt nhân vật chính của game gốc, Chell, và người bạn robot mới Wheatley đối mặt với nhiều câu đố do GLaDOS, một AI chỉ có mục đích thử nghiệm cơ chế Portal Gun và trả thù Chell vì sự kiện trong Portal, nghĩ ra. Do một số tương tác và tiết lộ, Chell một lần nữa cố gắng thoát khỏi Aperture Science Labs.",
       "link": "https://www.thinkwithportals.com/",
       "release": "19 tháng 4 năm 2011",
@@ -732,7 +785,7 @@
     {
       "name": "Sid Meier's Civilization VI",
       "surname": "civilization",
-      "price": "149.000 ₫",
+      "price": "149000",
       "desc": "Civilization là game chiến lược theo lượt nơi bạn cố gắng xây dựng một đế chế trường tồn theo thời gian. Trở thành Lãnh tụ Thế giới bằng cách thành lập và lãnh đạo một nền văn minh từ Thời kỳ Đồ đá đến Thời kỳ Thông tin. Phát động chiến tranh, ngoại giao, phát triển văn hóa, và đối đầu với các lãnh tụ vĩ đại nhất lịch sử khi bạn cố gắng xây dựng nền văn minh vĩ đại nhất mà thế giới từng biết.",
       "link": "https://www.civilization.com/",
       "release": "20 tháng 10 năm 2016",
@@ -757,7 +810,7 @@
     {
       "name": "God of War",
       "surname": "godofwar",
-      "price": "499.000 ₫",
+      "price": "499000",
       "desc": "Nhiều năm đã trôi qua kể từ khi Kratos trả thù các vị thần Olympus. Sau khi sống sót sau cuộc gặp cuối cùng với cha mình Zeus, Kratos đã đến Midgard ở Na Uy cổ đại và giờ sống cùng con trai nhỏ Atreus trong thế giới của các vị thần Norse, một vùng đất hoang dã đầy quái vật và chiến binh hung dữ. Để dạy con trai mình, người mẹ (và vợ thứ hai của Kratos) vừa qua đời, cách sống sót trong thế giới như vậy, Kratos phải làm chủ cơn giận đã dẫn dắt anh nhiều năm và chấp nhận vai trò mới là một người cha và người cố vấn.",
       "link": "https://www.playstation.com/de-de/god-of-war/",
       "release": "20 tháng 4 năm 2018",
@@ -782,7 +835,7 @@
     {
       "name": "FIFA 22",
       "surname": "fifa",
-      "price": "599.000 ₫",
+      "price": "599000",
       "desc": "Được cung cấp bởi Football, FIFA 22 mang trò chơi gần hơn với thực tế với các tiến bộ gameplay cơ bản và một mùa sáng tạo mới trên mọi chế độ. Chơi với hơn 17.000 cầu thủ, hơn 700 đội tại hơn 90 sân vận động và hơn 30 giải đấu từ khắp nơi trên thế giới.",
       "link": "https://www.ea.com/de-de/games/fifa/fifa-22",
       "release": "30 tháng 9 năm 2021",
@@ -807,7 +860,7 @@
     {
       "name": "Half-Life 2",
       "surname": "halflife",
-      "price": "49.000 ₫",
+      "price": "49000",
       "desc": "Năm 1998, HALF-LIFE đã tạo cú sốc cho ngành công nghiệp game với sự kết hợp giữa hành động dồn dập và cốt truyện liên tục, nhập tâm. Bằng cách kế thừa sự hồi hộp, thử thách và cảm xúc nội tâm từ bản gốc, đồng thời thêm tính chân thực và phản hồi gây sửng sốt, Half-Life 2 mở ra một thế giới nơi sự hiện diện của người chơi ảnh hưởng đến mọi thứ xung quanh, từ môi trường vật lý đến hành vi và thậm chí cảm xúc của cả bạn bè lẫn kẻ thù.",
       "link": "https://www.half-life.com/en/halflife2",
       "release": "16 tháng 11 năm 2004",
@@ -832,7 +885,7 @@
     {
       "name": "The Walking Dead: S1",
       "surname": "twd",
-      "price": "205.000 ₫",
+      "price": "205000",
       "desc": "The Walking Dead: Season One (còn gọi là The Walking Dead: The Game) là game phiêu lưu đồ họa tương tác theo tập do Telltale Games phát triển và phát hành. Dựa trên series truyện tranh The Walking Dead của Robert Kirkman, game gồm năm tập, phát hành từ tháng 4 đến tháng 11 năm 2012. Game có mặt trên Android, iOS, Kindle Fire HDX, Microsoft Windows, Mac OS X, PlayStation 3, PlayStation Vita, Xbox 360, PlayStation 4 và Xbox One. Đây là phần đầu tiên trong series game The Walking Dead của Telltale.",
       "link": "http://www.thewalkingdeadgame.com/",
       "release": "24 tháng 4 năm 2012",
@@ -857,7 +910,7 @@
     {
       "name": "Crusader Kings III",
       "surname": "crusaderkings",
-      "price": "249.000 ₫",
+      "price": "249000",
       "desc": "Giống như các phần trước Crusader Kings và Crusader Kings II, Crusader Kings III là game chiến lược lớn và mô phỏng triều đại lấy bối cảnh Trung Cổ. Người chơi bắt đầu với một nhân vật vào năm 867 hoặc 1066. Bản đồ game chi tiết gấp bốn lần so với Crusader Kings II và lớn hơn một chút, bao gồm châu Âu, châu Phi đến tận xích đạo phía nam, và châu Á đến tận Tây Tạng phía đông. Khi nhân vật của người chơi chết hoặc bị phế truất, họ có thể tiếp tục chơi với người thừa kế. Tổng thể, người chơi phát triển một triều đại qua nhiều thế kỷ, game kết thúc vào năm 1453.",
       "link": "https://www.paradoxinteractive.com/games/crusader-kings-iii/about",
       "release": "1 tháng 9 năm 2020",
@@ -882,7 +935,7 @@
     {
       "name": "Counter Strike: GO",
       "surname": "csgo",
-      "price": "99.000 ₫",
+      "price": "99000",
       "desc": "Counter-Strike: Global Offensive (CS:GO) là game bắn súng góc nhìn thứ nhất thuộc series Counter-Strike. Game được công bố ngày 12 tháng 8 năm 2011, phát triển bởi Valve Corporation và đối tác Hidden Path Entertainment. Game phát hành ngày 21 tháng 8 năm 2012 cho PlayStation 3, Xbox 360, Microsoft Windows, macOS và sau đó là Linux dưới dạng tải về. (Lưu ý: Hiện đã được thay thế bởi Counter-Strike 2 miễn phí).",
       "link": "https://blog.counter-strike.net/",
       "release": "21 tháng 8 năm 2012",
@@ -907,7 +960,7 @@
     {
       "name": "Detroit: Become Human",
       "surname": "detroit",
-      "price": "68.000 ₫",
+      "price": "68000",
       "desc": "Lấy bối cảnh Detroit năm 2038, thành phố đã hồi sinh nhờ phát minh và đưa android vào đời sống hàng ngày. Nhưng khi android bắt đầu hành xử như thể chúng đang sống, mọi thứ bắt đầu mất kiểm soát. Bạn sẽ hóa thân vào ba nhân vật chính có thể chơi (Kara, Connor và Markus), mỗi nhân vật có góc nhìn, động cơ và khả năng riêng biệt khi đối mặt với bản ngã thực sự và đặt câu hỏi về giá trị của mình. Ba android này hiện diện xuyên suốt game khi trải qua hành trình cảm xúc với những lựa chọn quyết định số phận của chúng và mục tiêu cuối cùng – có thể được định nghĩa theo nhiều cách khác nhau tùy thuộc vào giá trị của người chơi. Cốt truyện game đề cập đến nhiều chủ đề trưởng thành khám phá ranh giới đạo đức, và mỗi quyết định của người chơi ảnh hưởng đến kết cục.",
       "link": "https://www.www.quanticdream.com/en/detroit-become-human",
       "release": "25 tháng 5 năm 2018",
@@ -932,7 +985,7 @@
     {
       "name": "Tomb Raider",
       "surname": "tombraider",
-      "price": "33.000 ₫",
+      "price": "33000",
       "desc": "Tomb Raider (thường gọi là Tomb Raider: A Survivor is Born) là phần thứ mười trong series Tomb Raider và phần đầu tiên trong lần reboot thứ hai của Crystal Dynamics. Một câu chuyện gốc đầy kịch tính và khắc nghiệt về Lara Croft, từ một cô gái trẻ sợ hãi trở thành người sống sót cứng cỏi. Chỉ vũ trang bằng bản năng nguyên thủy và khả năng vượt qua giới hạn chịu đựng của con người, Lara phải chiến đấu để khám phá lịch sử đen tối của một hòn đảo bị lãng quên và thoát khỏi sự kìm kẹp không ngừng của nó.",
       "link": "https://tombraider.square-enix-games.com/en-us",
       "release": "4 tháng 3 năm 2013",
@@ -957,7 +1010,7 @@
     {
       "name": "Elden Ring",
       "surname": "eldenring",
-      "price": "643.500 ₫",
+      "price": "643500",
       "desc": "ELDEN RING là một tựa game hành động nhập vai thế giới mở được phát triển bởi FromSoftware và Bandai Namco Entertainment. Người chơi sẽ khám phá vùng đất Lands Between rộng lớn, chiến đấu với các kẻ thù hung dữ, thu thập rune để nâng cấp sức mạnh và đối đầu với các boss khổng lồ để trở thành Elden Lord. Thế giới được sáng tạo bởi Hidetaka Miyazaki và George R. R. Martin, mang đến trải nghiệm thử thách và đầy bất ngờ.",
       "link": "https://en.bandainamcoent.eu/elden-ring/elden-ring",
       "release": "25 tháng 2 năm 2022",
@@ -982,7 +1035,7 @@
     {
       "name": "Baldur's Gate 3",
       "surname": "baldursgate3",
-      "price": "742.500 ₫",
+      "price": "742500",
       "desc": "Baldur's Gate 3 là game nhập vai theo lượt dựa trên Dungeons & Dragons, phát triển bởi Larian Studios. Người chơi dẫn dắt một nhóm nhân vật bị nhiễm ký sinh trùng, khám phá thế giới Forgotten Realms, đưa ra lựa chọn ảnh hưởng đến cốt truyện và chiến đấu chiến lược. Với tự do cao, câu chuyện phong phú và đồ họa ấn tượng, đây là kiệt tác RPG hiện đại.",
       "link": "https://baldursgate3.game/",
       "release": "3 tháng 8 năm 2023",
@@ -1007,7 +1060,7 @@
     {
       "name": "The Legend of Zelda: Tears of the Kingdom",
       "surname": "tearskingdom",
-      "price": "1.690.000 ₫",
+      "price": "1690000",
       "desc": "The Legend of Zelda: Tears of the Kingdom là phần tiếp theo của Breath of the Wild, nơi Link khám phá vương quốc Hyrule mở rộng với vùng trời và lòng đất. Sử dụng khả năng Ultrahand để xây dựng máy móc, Fuse để kết hợp vật phẩm và chiến đấu chống lại thế lực bóng tối để cứu công chúa Zelda. Game mang đến tự do sáng tạo vô tận trong thế giới mở.",
       "link": "https://www.nintendo.com/us/store/products/the-legend-of-zelda-tears-of-the-kingdom-switch/",
       "release": "12 tháng 5 năm 2023",
@@ -1032,7 +1085,7 @@
     {
       "name": "Black Myth: Wukong",
       "surname": "blackmythwukong",
-      "price": "1.299.000 ₫",
+      "price": "1299000",
       "desc": "Black Myth: Wukong là game hành động nhập vai lấy cảm hứng từ thần thoại Trung Quốc và Tây Du Ký. Bạn hóa thân thành Định Mệnh Chi Nhân (Destined One), khám phá thế giới huyền bí, chiến đấu với yêu quái khổng lồ bằng gậy Như Ý, phép biến thân và các chiêu thức đa dạng. Với đồ họa Unreal Engine 5 tuyệt đẹp, boss chiến mãn nhãn và hành trình đầy thử thách, đây là một trong những tựa game xuất sắc nhất năm 2024.",
       "link": "https://www.heishenhua.com/",
       "release": "20 tháng 8 năm 2024",
@@ -1057,7 +1110,7 @@
     {
       "name": "Marvel's Spider-Man 2",
       "surname": "spiderman2",
-      "price": "1.999.000 ₫",
+      "price": "1999000",
       "desc": "Marvel's Spider-Man 2 cho phép điều khiển Peter Parker và Miles Morales trong New York rộng lớn, chiến đấu với các villain như Venom và Kraven. Với hệ thống chiến đấu mượt mà, web-swinging đỉnh cao và cốt truyện cảm xúc về tình bạn, trách nhiệm.",
       "link": "https://www.playstation.com/en-us/games/marvels-spider-man-2/",
       "release": "20 tháng 10 năm 2023",
@@ -1082,7 +1135,7 @@
     {
       "name": "Resident Evil 4 Remake",
       "surname": "residentevil4remake",
-      "price": "340.000 ₫",
+      "price": "340000",
       "desc": "Resident Evil 4 Remake đưa Leon S. Kennedy đến Tây Ban Nha để cứu con gái tổng thống khỏi giáo phái Los Illuminados. Với đồ họa hiện đại, chiến đấu over-the-shoulder căng thẳng và yếu tố kinh dị sinh tồn, đây là phiên bản làm lại hoàn hảo của kiệt tác kinh điển.",
       "link": "https://www.residentevil.com/re4/",
       "release": "24 tháng 3 năm 2023",
@@ -1107,7 +1160,7 @@
     {
       "name": "Hogwarts Legacy",
       "surname": "hogwartslegacy",
-      "price": "129.000 ₫",
+      "price": "129000",
       "desc": "Hogwarts Legacy đưa người chơi vào thế giới phù thủy Harry Potter thế kỷ 19, nhập vai học sinh Hogwarts, học phép thuật, khám phá lâu đài và thế giới mở, chiến đấu với goblin và khám phá bí mật cổ xưa. Trải nghiệm tự do khám phá và tùy chỉnh nhân vật.",
       "link": "https://www.hogwartslegacy.com/",
       "release": "10 tháng 2 năm 2023",
@@ -1132,7 +1185,7 @@
     {
       "name": "Forza Horizon 5",
       "surname": "forzahorizon5",
-      "price": "495.000 ₫",
+      "price": "495000",
       "desc": "Forza Horizon 5 diễn ra tại Mexico rộng lớn với địa hình đa dạng từ sa mạc đến rừng rậm. Người chơi tham gia festival đua xe Horizon, thu thập hơn 500 xe, tùy chỉnh và thi đấu trong thế giới mở sống động với thời tiết động.",
       "link": "https://www.forzamotorsport.net/en-us/games/fh5",
       "release": "9 tháng 11 năm 2021",
@@ -1157,7 +1210,7 @@
     {
       "name": "Star Wars Jedi: Survivor",
       "surname": "jedisurvivor",
-      "price": "163.500 ₫",
+      "price": "163500",
       "desc": "Star Wars Jedi: Survivor tiếp nối hành trình của Cal Kestis 5 năm sau Fallen Order, trốn chạy Đế chế, khám phá các hành tinh mới, nâng cấp lightsaber và Force powers để chiến đấu với kẻ thù. Kết hợp platforming, combat và câu chuyện Star Wars hấp dẫn.",
       "link": "https://www.ea.com/games/starwars/jedi-survivor",
       "release": "28 tháng 4 năm 2023",
@@ -1182,7 +1235,7 @@
     {
       "name": "Assassin's Creed Mirage",
       "surname": "assassinscreedmirage",
-      "price": "237.000 ₫",
+      "price": "237000",
       "desc": "Assassin's Creed Mirage đưa Basim Ibn Ishaq trở thành Assassin ở Baghdad thế kỷ 9, tập trung vào stealth, parkour và ám sát. Khám phá thành phố sống động, học kỹ năng từ Hidden Ones và khám phá bí mật về quá khứ của mình.",
       "link": "https://www.ubisoft.com/en-us/game/assassins-creed/mirage",
       "release": "5 tháng 10 năm 2023",
@@ -1207,7 +1260,7 @@
     {
       "name": "Unpacking",
       "surname": "unpacking",
-      "price": "99.000 ₫",
+      "price": "99000",
       "desc": "Một trò chơi giải đố nhẹ nhàng, nơi bạn mở các thùng đồ và sắp xếp chúng vào ngôi nhà mới. Qua từng món đồ, bạn sẽ dần khám phá ra câu chuyện cuộc đời của nhân vật mà không cần một lời thoại nào.",
       "link": "https://store.steampowered.com/app/1135690/Unpacking/",
       "release": "1 tháng 11 năm 2021",
@@ -1232,7 +1285,7 @@
     {
       "name": "DAVE THE DIVER",
       "surname": "davethediver",
-      "price": "143.000 ₫",
+      "price": "143000",
       "desc": "Một trò chơi phiêu lưu dưới đại dương xanh mướt vào ban ngày và quản lý nhà hàng sushi vào ban đêm. Đồ họa pixel cực kỳ đáng yêu cùng lối chơi gây nghiện sẽ khiến bạn không thể rời mắt.",
       "link": "https://store.steampowered.com/app/1868140/DAVE_THE_DIVER/",
       "release": "28 tháng 6 năm 2023",
@@ -1257,7 +1310,7 @@
     {
       "name": "Persona 5 Royal",
       "surname": "p5r",
-      "price": "414.000 ₫",
+      "price": "414000",
       "desc": "Đeo mặt nạ và tham gia băng Phantom Thieves of Hearts khi họ thực hiện những vụ trộm chấn động. Bản Royal bao gồm thêm nội dung cốt truyện và nhân vật mới.",
       "link": "https://store.steampowered.com/app/1687950/Persona_5_Royal/",
       "release": "21 tháng 10 năm 2022",
@@ -1282,7 +1335,7 @@
     {
       "name": "Persona 3 Reload",
       "surname": "p3r",
-      "price": "409.000 ₫",
+      "price": "409000",
       "desc": "Bước vào Dark Hour và đánh thức chiều sâu của trái tim bạn. Một bản tái hiện hoàn toàn mới của tựa game RPG định nghĩa thể loại.",
       "link": "https://store.steampowered.com/app/2161700/Persona_3_Reload/",
       "release": "2 tháng 2 năm 2024",
@@ -1307,7 +1360,7 @@
     {
       "name": "Persona 4 Golden",
       "surname": "p4g",
-      "price": "190.000 ₫",
+      "price": "190000",
       "desc": "Một câu chuyện về sự trưởng thành đưa nhân vật chính và những người bạn vào một cuộc hành trình sau một chuỗi những vụ giết người hàng loạt. Hãy khám phá thế giới bên trong tivi, đối mặt với bản ngã đen tối của chính mình để tìm ra sự thật cuối cùng đằng sau màn sương mù.",
       "link": "https://store.steampowered.com/app/1113000/Persona_4_Golden/",
       "release": "13 tháng 6 năm 2020",
@@ -1332,7 +1385,7 @@
     {
       "name": "Hades II",
       "surname": "hades2",
-      "price": "288.500 ₫",
+      "price": "288500",
       "desc": "Phần tiếp theo của tựa game rogue-like hành động đoạt giải Game of the Year. Lần này bạn sẽ vào vai Melinoë, công chúa của Địa ngục, sử dụng ma thuật hắc ám để đối đầu với Titan của Thời gian.",
       "link": "https://store.steampowered.com/app/1145350/Hades_II/",
       "release": "6 tháng 5 năm 2024 (Early Access)",
@@ -1357,7 +1410,7 @@
     {
       "name": "Ori and the Will of the Wisps",
       "surname": "oriwotw",
-      "price": "172.000 ₫",
+      "price": "172000",
       "desc": "Một trong những tựa game đẹp nhất mọi thời đại. Hãy cùng chú tinh linh Ori dấn thân vào một hành trình mới trong thế giới rộng lớn, giải cứu người bạn phương xa.",
       "link": "https://store.steampowered.com/app/1057090/Ori_and_the_Will_of_the_Wisps/",
       "release": "11 tháng 3 năm 2020",
@@ -1382,7 +1435,7 @@
     {
       "name": "Viewfinder",
       "surname": "viewfinder",
-      "price": "112.500 ₫",
+      "price": "112500",
       "desc": "Thách thức mọi giác quan và định hình lại thế giới xung quanh bằng một chiếc máy ảnh lấy liền. Chụp ảnh và đưa chúng vào đời thực để vượt qua các chướng ngại vật.",
       "link": "https://store.steampowered.com/app/1382890/Viewfinder/",
       "release": "18 tháng 7 năm 2023",
@@ -1407,7 +1460,7 @@
     {
       "name": "Dorfromantik",
       "surname": "dorfromantik",
-      "price": "96.000 ₫",
+      "price": "96000",
       "desc": "Một trò chơi chiến thuật xây dựng và giải đố thư giãn, nơi bạn tạo ra một cảnh quan làng quê ngày càng mở rộng bằng cách đặt các ô gạch hình lục giác.",
       "link": "https://store.steampowered.com/app/1455840/Dorfromantik/",
       "release": "28 tháng 4 năm 2022",
@@ -1432,7 +1485,7 @@
     {
       "name": "Stray",
       "surname": "stray",
-      "price": "227.500 ₫",
+      "price": "227500",
       "desc": "Lạc lối, cô độc và xa cách gia đình, một chú mèo hoang phải giải mã một bí ẩn cổ xưa để thoát khỏi một thành phố mạng (cybercity) đang dần tàn lụi và tìm đường về nhà.",
       "link": "https://store.steampowered.com/app/1332010/Stray/",
       "release": "19 tháng 7 năm 2022",
@@ -1457,7 +1510,7 @@
     {
       "name": "Animal Well",
       "surname": "animalwell",
-      "price": "218.500 ₫",
+      "price": "218500",
       "desc": "Khám phá một mê cung siêu thực, kết nối sâu sắc với những sinh vật kỳ lạ. Một trò chơi giải đố Metroidvania có đồ họa pixel cực kỳ tinh xảo và chứa đựng hàng ngàn bí mật ẩn giấu.",
       "link": "https://store.steampowered.com/app/813230/ANIMAL_WELL/",
       "release": "9 tháng 5 năm 2024",
@@ -1482,7 +1535,7 @@
     {
       "name": "Townscaper",
       "surname": "townscaper",
-      "price": "35.000 ₫",
+      "price": "35000",
       "desc": "Không có mục tiêu, không có áp lực. Đơn giản là xây dựng những thị trấn nhỏ xinh xắn trên mặt nước bằng cách nhấp chuột. Một trải nghiệm nghệ thuật và giải trí cực kỳ thư giãn.",
       "link": "https://store.steampowered.com/app/1291340/Townscaper/",
       "release": "26 tháng 8 năm 2021",
@@ -1507,7 +1560,7 @@
     {
       "name": "Tiny Glade",
       "surname": "tinyglade",
-      "price": "153.500 ₫",
+      "price": "153500",
       "desc": "Một trò chơi xây dựng tự do không có lưới, cho phép bạn tạo ra các lâu đài cổ tích, những tàn tích rêu phong và các khu vườn thơ mộng với cảm giác cực kỳ êm dịu.",
       "link": "https://store.steampowered.com/app/2198150/Tiny_Glade/",
       "release": "23 tháng 9 năm 2024",
@@ -1532,7 +1585,7 @@
     {
       "name": "Balatro",
       "surname": "balatro",
-      "price": "174.000 ₫",
+      "price": "174000",
       "desc": "Một trò chơi xây dựng bộ bài (deck-builder) lấy cảm hứng từ Poker. Hãy tìm ra những sự kết hợp mạnh mẽ (jokers) để tạo ra những chuỗi điểm kỷ lục trong tựa game gây nghiện nhất năm 2024.",
       "link": "https://store.steampowered.com/app/2379780/Balatro/",
       "release": "20 tháng 2 năm 2024",

@@ -36,11 +36,19 @@ const cartSlice = createSlice({
     addToCart: (state, action: PayloadAction<Game>) => {
       const newItem = action.payload;
       const existingItem = state.items.find((item) => item.id === newItem.id);
-      
-      const price = parseFloat(newItem.price.toString()); 
+
+      const price = Number(newItem.price);
 
       if (!existingItem) {
-        state.items.push({ ...newItem, quantity: 1 });
+        // Thay vì { ...newItem, quantity: 1 }
+        // Chúng ta chỉ lấy những thứ cần thiết để hiển thị trong giỏ hàng và hóa đơn
+        state.items.push({
+          id: newItem.id,
+          name: newItem.name,
+          price: price,
+          cover: newItem.cover,
+          quantity: 1
+        });
         toast.success("Đã thêm vào giỏ hàng!");
       } else {
         existingItem.quantity++;
@@ -54,7 +62,8 @@ const cartSlice = createSlice({
       const id = action.payload;
       const existingItem = state.items.find((item) => item.id === id);
       if (existingItem) {
-        const price = parseFloat(existingItem.price.toString());
+        const price = Number(existingItem.price);
+
         state.items = state.items.filter((item) => item.id !== id);
         state.totalQuantity -= existingItem.quantity;
         state.totalAmount -= price * existingItem.quantity;
