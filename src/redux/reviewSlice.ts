@@ -3,7 +3,6 @@ import axios from 'axios';
 
 const REVIEWS_URL = 'http://localhost:3000/reviews';
 
-// Định nghĩa cấu trúc dữ liệu cho một Review
 export interface Review {
     id: number | string;
     productId: number | string;
@@ -14,7 +13,6 @@ export interface Review {
     createdAt: string;
 }
 
-// Định nghĩa State của Slice
 interface ReviewState {
     list: Review[];
     status: 'idle' | 'loading' | 'succeeded' | 'failed';
@@ -27,7 +25,7 @@ const initialState: ReviewState = {
     error: null
 };
 
-// 1. Tải bình luận (Có thể lọc theo productId hoặc lấy hết)
+// 1. Tải bình luận
 export const fetchReviews = createAsyncThunk(
     'reviews/fetchReviews',
     async (productId?: number | string) => {
@@ -55,7 +53,7 @@ export const deleteReview = createAsyncThunk(
     }
 );
 
-// 4. Cập nhật (Sửa) bình luận
+// 4. Cập nhật bình luận
 export const updateReview = createAsyncThunk(
     'reviews/updateReview',
     async ({ id, data }: { id: number | string; data: Partial<Review> }) => {
@@ -70,7 +68,7 @@ const reviewSlice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder
-            // Fetch reviews
+
             .addCase(fetchReviews.pending, (state) => {
                 state.status = 'loading';
             })
@@ -82,16 +80,15 @@ const reviewSlice = createSlice({
                 state.status = 'failed';
                 state.error = action.error.message || 'Something went wrong';
             })
-            // Post review
+
             .addCase(postReview.fulfilled, (state, action: PayloadAction<Review>) => {
-                // Thêm vào đầu danh sách để hiện lên trên cùng
                 state.list.unshift(action.payload);
             })
-            // Delete review
+
             .addCase(deleteReview.fulfilled, (state, action: PayloadAction<number | string>) => {
                 state.list = state.list.filter(rev => rev.id !== action.payload);
             })
-            // Update review
+
             .addCase(updateReview.fulfilled, (state, action: PayloadAction<Review>) => {
                 const index = state.list.findIndex(rev => rev.id === action.payload.id);
                 if (index !== -1) {

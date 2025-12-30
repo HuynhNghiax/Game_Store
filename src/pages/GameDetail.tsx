@@ -47,7 +47,6 @@ export default function GameDetail() {
 
     return (
         <div className="w-full relative pb-20">
-            {/* Banner & Back Button */}
             <div className="w-full h-[300px] rounded-[32px] overflow-hidden relative mb-8 shadow-md">
                 <img src={game.cover} alt="" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent"></div>
@@ -68,7 +67,6 @@ export default function GameDetail() {
                         <button onClick={handleLike} className={`xl:hidden p-3 rounded-2xl border transition flex items-center justify-center ${isLiked ? 'bg-red-50 text-red-500 border-red-200' : 'bg-white text-gray-400 border-gray-200'}`}><Heart size={24} className={isLiked ? "fill-red-500" : ""} /></button>
                     </div>
 
-                    {/* About */}
                     <div className="prose max-w-none text-gray-600 leading-relaxed">
                         <h3 className="text-xl font-bold text-gray-900 mb-2">About</h3>
                         <p>{game.desc}</p>
@@ -91,10 +89,8 @@ export default function GameDetail() {
                             <h3 className="text-2xl font-black text-gray-900">Cộng đồng đánh giá ({reviews.length})</h3>
                         </div>
 
-                        {/* Component Form để người dùng nhập */}
                         <ReviewForm gameId={game.id} />
 
-                        {/* Danh sách các bình luận đã có */}
                         <div className="mt-10 space-y-6">
                             {reviews.length === 0 ? (
                                 <p className="text-gray-400 italic">Chưa có bình luận nào. Hãy là người đầu tiên!</p>
@@ -159,12 +155,9 @@ export default function GameDetail() {
                         <img src={game.cover} alt="" className="w-full h-48 object-cover rounded-2xl mb-6 shadow-md" />
                         <div className="flex justify-between items-end mb-6">
                             <div>
-                                {/* CHỖ SỬA 1: Đổi giá ảo $99.99 thành giá VNĐ hoặc xóa đi */}
                                 <p className="text-gray-400 line-through text-sm">
                                     {(Number(game.price) * 1.5).toLocaleString('vi-VN')} ₫
                                 </p>
-
-                                {/* CHỖ SỬA 2: Đổi $ thành ₫ và định dạng số tiền */}
                                 <p className="text-3xl font-bold text-gray-900">
                                     {Number(game.price).toLocaleString('vi-VN')} ₫
                                 </p>
