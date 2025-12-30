@@ -92,7 +92,6 @@ export default function ReviewForm({ gameId }: ReviewFormProps) {
                         <p className="text-sm font-black text-gray-900 leading-none">
                             {displayName}
                         </p>
-                        {/* Chỉ hiện chữ khi isFocusing = true, không có nhấp nháy */}
                         {isFocusing && (
                             <p className="text-[10px] text-blue-500 mt-1 uppercase tracking-wider font-bold">
                                 Đang viết đánh giá...

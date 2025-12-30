@@ -86,7 +86,6 @@ export default function Categories() {
         </div>
       </div>
 
-        {/* Thay 'flex-nowrap overflow-x-auto' bằng 'flex-wrap' */}
         <div className="flex flex-wrap gap-3 mb-6 items-center">
             <div className="flex items-center gap-2 text-gray-400 pr-2 border-r border-gray-200 mr-2 shrink-0">
                 <Filter size={18} />

@@ -34,14 +34,14 @@ const Footer: React.FC = () => {
                         </h3>
                         <ul className="space-y-3 text-sm">
                             <li>
-                                <Link to="/game-ban-quyen"
+                                <Link to="/licenseGame"
                                    className="text-gray-400 hover:text-blue-400 transition-colors duration-200 flex items-center gap-2">
                                     <span className="w-1 h-1 bg-blue-500 rounded-full"></span>
                                     Game bản quyền là gì?
                                 </Link>
                             </li>
                             <li>
-                                <Link to=""
+                                <Link to="/aboutUs"
                                    className="text-gray-400 hover:text-blue-400 transition-colors duration-200 flex items-center gap-2">
                                     <span className="w-1 h-1 bg-blue-500 rounded-full"></span>
                                     Giới thiệu GameStore

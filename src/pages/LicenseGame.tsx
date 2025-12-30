@@ -1,21 +1,6 @@
 import React from "react";
-import {
-    ShieldCheck,
-    Zap,
-    RefreshCw,
-    Headphones,
-    CheckCircle2,
-    Gamepad2,
-    Users,
-    Cloud,
-    Gift,
-    Award,
-    AlertCircle,
-    Download,
-    Lock,
-    Star
-} from "lucide-react";
-
+import {ShieldCheck, Zap, RefreshCw, Headphones, CheckCircle2, Gamepad2, Users, Cloud, Gift, Award, AlertCircle, Download, Lock, Star} from "lucide-react";
+import {Link} from "react-router-dom";
 const LicenseGame: React.FC = () => {
     const benefits = [
         {
@@ -356,10 +341,11 @@ const LicenseGame: React.FC = () => {
                         Khám phá hàng ngàn game bản quyền chính hãng với giá tốt nhất thị trường
                     </p>
 
-                    <button className="bg-white text-indigo-600 px-10 py-5 md:px-12 md:py-6 rounded-full font-bold text-lg md:text-xl hover:scale-105 hover:shadow-2xl transition-all duration-300 inline-flex items-center gap-3 active:scale-95">
+                    <Link to="/" className="bg-white text-indigo-600 px-10 py-5 md:px-12 md:py-6 rounded-full font-bold text-lg md:text-xl hover:scale-105 hover:shadow-2xl transition-all duration-300 inline-flex items-center gap-3 active:scale-95">
                         <Gamepad2 size={24} />
                         <span>Khám phá cửa hàng</span>
-                    </button>
+                    </Link>
+
                 </div>
             </section>
         </div>

@@ -56,7 +56,6 @@ export default function Cart() {
                 <div className="flex-1 min-w-0">
                     <h3 className="font-bold text-gray-900 text-xl mb-1 truncate">{item.name}</h3>
                     <div className="flex items-center gap-3">
-                        {/* CHỖ CẦN SỬA: Dùng hàm formatCurrency và bỏ dấu $ cứng */}
                         <span className="text-blue-600 font-bold text-lg">
                            {formatCurrency(Number(item.price))}
                         </span>
