@@ -1,5 +1,6 @@
 import React from "react";
 import {Gamepad2, Mail, Phone, MapPin} from "lucide-react";
+import {Link} from "react-router-dom";
 
 const Footer: React.FC = () => {
     return (
@@ -33,32 +34,32 @@ const Footer: React.FC = () => {
                         </h3>
                         <ul className="space-y-3 text-sm">
                             <li>
-                                <a href="#"
+                                <Link to="/game-ban-quyen"
                                    className="text-gray-400 hover:text-blue-400 transition-colors duration-200 flex items-center gap-2">
                                     <span className="w-1 h-1 bg-blue-500 rounded-full"></span>
                                     Game bản quyền là gì?
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="#"
+                                <Link to=""
                                    className="text-gray-400 hover:text-blue-400 transition-colors duration-200 flex items-center gap-2">
                                     <span className="w-1 h-1 bg-blue-500 rounded-full"></span>
                                     Giới thiệu GameStore
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="#"
+                                <Link to=""
                                    className="text-gray-400 hover:text-blue-400 transition-colors duration-200 flex items-center gap-2">
                                     <span className="w-1 h-1 bg-blue-500 rounded-full"></span>
                                     Điều khoản dịch vụ
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="#"
+                                <Link to=""
                                    className="text-gray-400 hover:text-blue-400 transition-colors duration-200 flex items-center gap-2">
                                     <span className="w-1 h-1 bg-blue-500 rounded-full"></span>
                                     Chính sách bảo mật
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>
@@ -70,25 +71,27 @@ const Footer: React.FC = () => {
                         </h3>
                         <ul className="space-y-3 text-sm">
                             <li>
-                                <a href="#"
-                                   className="text-gray-400 hover:text-blue-400 transition-colors duration-200 flex items-center gap-2">
+                                <Link to="/login"
+                                    className="text-gray-400 hover:text-blue-400 transition-colors duration-200 flex items-center gap-2">
                                     <span className="w-1 h-1 bg-blue-500 rounded-full"></span>
                                     Đăng nhập
-                                </a>
+                                </Link>
                             </li>
+
                             <li>
-                                <a href="#"
-                                   className="text-gray-400 hover:text-blue-400 transition-colors duration-200 flex items-center gap-2">
+                                <Link to="/register"
+                                      className="text-gray-400 hover:text-blue-400 transition-colors duration-200 flex items-center gap-2">
                                     <span className="w-1 h-1 bg-blue-500 rounded-full"></span>
                                     Đăng ký
-                                </a>
+                                </Link>
                             </li>
+
                             <li>
-                                <a href="#"
-                                   className="text-gray-400 hover:text-blue-400 transition-colors duration-200 flex items-center gap-2">
+                                <Link to="/change-password"
+                                      className="text-gray-400 hover:text-blue-400 transition-colors duration-200 flex items-center gap-2">
                                     <span className="w-1 h-1 bg-blue-500 rounded-full"></span>
                                     Quên mật khẩu
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>
@@ -107,18 +110,18 @@ const Footer: React.FC = () => {
                                 </div>
                             </li>
                             <li>
-                                <a href="#"
+                                <Link to=""
                                    className="text-gray-400 hover:text-blue-400 transition-colors duration-200 flex items-center gap-2">
                                     <Mail size={16} className="text-blue-400"/>
                                     support@gamestore.vn
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="#"
+                                <Link to=""
                                    className="text-gray-400 hover:text-blue-400 transition-colors duration-200 flex items-center gap-2">
                                     <MapPin size={16} className="text-blue-400"/>
                                     TP. Hồ Chí Minh, Việt Nam
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>
@@ -191,12 +194,19 @@ const Footer: React.FC = () => {
                         © 2024 GameStore. All rights reserved.
                     </div>
                     <div className="flex items-center gap-4 text-gray-500">
-                        <a href="#" className="hover:text-blue-400 transition-colors">Điều khoản</a>
+                        <Link to="/terms" className="hover:text-blue-400 transition-colors">
+                            Điều khoản
+                        </Link>
                         <span>•</span>
-                        <a href="#" className="hover:text-blue-400 transition-colors">Bảo mật</a>
+                        <Link to="/privacy" className="hover:text-blue-400 transition-colors">
+                            Bảo mật
+                        </Link>
                         <span>•</span>
-                        <a href="#" className="hover:text-blue-400 transition-colors">Cookie</a>
+                        <Link to="/cookies" className="hover:text-blue-400 transition-colors">
+                            Cookie
+                        </Link>
                     </div>
+
                 </div>
             </div>
         </footer>
