@@ -3,12 +3,12 @@ import { Outlet, useLocation } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../redux/hooks';
 import { fetchWishlist } from '../redux/wishlistSlice';
 import Sidebar from './Sidebar';
-import Header from './Header'; 
-
+import Header from './Header';
+import Footer from './Footer';
 export default function MainLayout() {
   const { pathname } = useLocation();
   const scrollRef = useRef<HTMLDivElement>(null); // Ref Element
-  
+
   const dispatch = useAppDispatch();
   const { user } = useAppSelector(state => state.auth);
 
@@ -24,26 +24,28 @@ export default function MainLayout() {
     }
   }, [pathname]);
 
-  return (
-    <div className="flex h-screen bg-gray-50 text-gray-800 overflow-hidden">
-      <div className="w-64 shrink-0 bg-white border-r border-gray-200 z-20 hidden md:block">
-          <Sidebar />
-      </div>
+    return (
+        <div className="h-screen bg-gray-50 text-gray-800 flex flex-col">
+            <div
+                ref={scrollRef}
+                className="flex-1 overflow-y-auto scroll-smooth"
+            >
+                <div className="bg-white border-b border-gray-200 w-full">
 
-      <main className="flex-1 flex flex-col h-full relative">
-         <div 
-            ref={scrollRef} 
-            id="main-scroll-container" 
-            className="flex-1 overflow-y-auto p-8 scroll-smooth"
-         >
-            <div className="max-w-7xl mx-auto">
-                <Header /> 
-                <div className="mt-6 animate-fade-in pb-10">
-                    <Outlet />
+                    <div className="max-w-7xl mx-auto px-8">
+                        <Header />
+                        <Sidebar />
+                    </div>
                 </div>
+
+                <main className="max-w-7xl mx-auto p-8 w-full min-h-[calc(100vh-200px)]">
+                    <div className="animate-fade-in pb-10">
+                        <Outlet />
+                    </div>
+                </main>
+
+                <Footer />
             </div>
-         </div>
-      </main>
-    </div>
-  );
+        </div>
+    );
 }

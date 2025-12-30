@@ -21,8 +21,8 @@ export const createOrder = createAsyncThunk(
   'orders/create', 
   async (orderData: Order, { rejectWithValue }) => {
     try {
-      const response = await axios.post(`${BASE_URL}/orders.json`, orderData);
-      return { ...orderData, id: response.data.name };
+        const response = await axios.post(`${BASE_URL}/orders`, orderData);
+        return response.data;
     } catch (error) {
       return rejectWithValue("Lỗi khi tạo đơn hàng");
     }
@@ -33,14 +33,13 @@ export const fetchUserOrders = createAsyncThunk(
   'orders/fetchUserOrders', 
   async (userId: string | number, { rejectWithValue }) => {
     try {
-      const response = await axios.get(`${BASE_URL}/orders.json`);
-      const allOrders = transformFirebaseData(response.data) as Order[];
-      
-      // Lọc theo userId và sắp xếp mới nhất lên đầu
-      const userOrders = allOrders.filter(order => order.userId === userId);
-      return userOrders.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+        const response = await axios.get(`${BASE_URL}/orders?userId=${userId}`);
+        const userOrders = response.data;
+        return userOrders.sort((a: any, b: any) =>
+            new Date(b.date).getTime() - new Date(a.date).getTime()
+        );
     } catch (error) {
-      return rejectWithValue("Lỗi tải lịch sử đơn hàng");
+        return rejectWithValue("Lỗi tải lịch sử đơn hàng");
     }
   }
 );

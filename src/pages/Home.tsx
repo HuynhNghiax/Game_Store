@@ -69,8 +69,8 @@ export default function Home() {
            <h1 className="text-4xl md:text-6xl font-black text-white mb-4 leading-tight drop-shadow-lg">{currentGame.name}</h1>
            <p className="text-gray-300 line-clamp-2 mb-8 text-lg max-w-xl">{currentGame.desc}</p>
            <div className="flex flex-wrap gap-4">
-              <button onClick={() => dispatch(addToCart(currentGame))} className="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-2 transition transform active:scale-95 shadow-lg"><Play size={20} fill="currentColor" /> Mua Ngay ${currentGame.price}</button>
-              <Link to={`/game/${currentGame.id}`} className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-2 transition"><Info size={20} /> Chi tiết</Link>
+               <button onClick={() => dispatch(addToCart(currentGame))} className="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-2 transition transform active:scale-95 shadow-lg"><Play size={20} fill="currentColor" />Mua Ngay {Number(currentGame.price).toLocaleString('vi-VN')} ₫ </button>
+               <Link to={`/game/${currentGame.id}`} className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-2 transition"><Info size={20} /> Chi tiết</Link>
            </div>
         </div>
 

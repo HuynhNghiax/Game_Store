@@ -10,6 +10,7 @@ import authReducer from './authSlice';
 import productReducer from './productSlice';
 import orderReducer from './orderSlice';
 import wishlistReducer from './wishlistSlice';
+import reviewReducer from './reviewSlice';
 
 // Cấu hình lưu trữ (Persist)
 const persistConfig = {
@@ -24,7 +25,8 @@ const rootReducer = combineReducers({
   auth: authReducer,
   products: productReducer,
   orders: orderReducer,
-  wishlist: wishlistReducer
+  wishlist: wishlistReducer,
+  reviews: reviewReducer
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

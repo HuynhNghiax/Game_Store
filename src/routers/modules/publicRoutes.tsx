@@ -8,6 +8,8 @@ const Categories = lazy(() => import('../../pages/Categories'));
 const SearchResults = lazy(() => import('../../pages/SearchResults'));
 const NotFound = lazy(() => import('../../pages/NotFound'));
 
+const LicenseGame = lazy(() => import('../../pages/LicenseGame'));
+const AboutUs = lazy(() => import('../../pages/AboutUs'));
 export const publicRoutes: RouteObject[] = [
   {
     index: true,
@@ -24,6 +26,15 @@ export const publicRoutes: RouteObject[] = [
   {
     path: 'search',
     element: Loadable(SearchResults)({})
+  },
+  // 2. Thêm route cho trang "Game bản quyền là gì"
+  {
+    path: 'licenseGame',
+    element: Loadable(LicenseGame)({})
+  },
+  {
+    path: 'aboutUs',
+    element: Loadable(AboutUs)({})
   },
   {
     path: '*',

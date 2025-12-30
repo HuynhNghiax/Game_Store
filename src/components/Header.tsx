@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Search, ShoppingBag, X } from 'lucide-react';
+import { Search, ShoppingBag, X ,Gamepad2} from 'lucide-react';
 import { useAppSelector, useAppDispatch } from '../redux/hooks';
 import { Link, useNavigate } from 'react-router-dom';
 import { logout } from '../redux/authSlice';
@@ -49,7 +49,16 @@ export default function Header() {
   }, [searchRef]);
 
   return (
-    <header className="flex items-center justify-between gap-6 mb-8 relative z-50">
+    <header className="flex items-center justify-between gap-6 mb-8 mt-5 relative z-50">
+        <Link to="/" className="flex items-center gap-3 shrink-0">
+            <div className="bg-blue-600 text-white p-2 rounded-lg">
+                <Gamepad2 size={24} />
+            </div>
+            <span className="text-xl font-bold tracking-tight text-gray-900 hidden md:block">
+        GameStore
+      </span>
+        </Link>
+
       <div className="flex-1 max-w-lg relative" ref={searchRef}>
         <div className="relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
