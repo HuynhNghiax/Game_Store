@@ -43,7 +43,7 @@ Trải nghiệm dự án tại đây:
 
 ## 📸 Ảnh chụp màn hình (Screenshots)
 
-| Trang chủ | Giỏ hàng |
+| Trang chủ | Danh Mục |
 | --- | --- |
 | ![Home](https://scontent.fsgn24-2.fna.fbcdn.net/v/t1.15752-9/607981768_2894952540716067_8961944891577832026_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=9f807c&_nc_ohc=bqvll6hVouwQ7kNvwHNb0rh&_nc_oc=AdmbhROUgdkkWrTXMHV0j57hILJ7ZvO6d0CnrdzoiHpvUYhzD8kejerTwFcuKkQQHA0&_nc_zt=23&_nc_ht=scontent.fsgn24-2.fna&oh=03_Q7cD4QHUQhE9d6yBhxdZlJjPN65yrRvjL4sKjAXPdBwNrh0iFg&oe=697CAF10) | ![Category](https://scontent.fsgn24-2.fna.fbcdn.net/v/t1.15752-9/607013788_3915709358720424_2910925806216743065_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=9f807c&_nc_ohc=gaXn2oB9AfUQ7kNvwEO0y9L&_nc_oc=Admqd79P_5PEzPGANeLTziBPew2w2oo6p9bKF71EjOa6auz_hQTuc-Qa5EAt9vLioyQ&_nc_zt=23&_nc_ht=scontent.fsgn24-2.fna&oh=03_Q7cD4QFWm-_2xyJTbvswNvj3C6r2qR_A_p68MbtpnuPVNrW9eA&oe=697CC794) |
 ---
