@@ -122,5 +122,5 @@ src/
 Dự án được thực hiện bởi **[TÊN CỦA BẠN]**.
 Nếu bạn thấy dự án hữu ích, hãy để lại cho mình 1 ⭐ nhé!
 
-* GitHub: [Link Profile GitHub của bạn]
-* Email: [Email của bạn]
+* GitHub: [[Link Profile GitHub](https://github.com/HuynhNghiax)]
+* Email: [nghianoel2k4@gmail.com]
