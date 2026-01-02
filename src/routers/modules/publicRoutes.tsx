@@ -10,6 +10,7 @@ const NotFound = lazy(() => import('../../pages/NotFound'));
 
 const LicenseGame = lazy(() => import('../../pages/LicenseGame'));
 const AboutUs = lazy(() => import('../../pages/AboutUs'));
+const Terms = lazy(() => import('../../pages/Terms'));
 export const publicRoutes: RouteObject[] = [
   {
     index: true,
@@ -35,6 +36,10 @@ export const publicRoutes: RouteObject[] = [
   {
     path: 'aboutUs',
     element: Loadable(AboutUs)({})
+  },
+  {
+    path: 'terms',
+    element: Loadable(Terms)({})
   },
   {
     path: '*',
