@@ -48,14 +48,14 @@ const Footer: React.FC = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link to=""
+                                <Link to="/terms"
                                    className="text-gray-400 hover:text-blue-400 transition-colors duration-200 flex items-center gap-2">
                                     <span className="w-1 h-1 bg-blue-500 rounded-full"></span>
                                     Điều khoản dịch vụ
                                 </Link>
                             </li>
                             <li>
-                                <Link to=""
+                                <Link to="/privacy"
                                    className="text-gray-400 hover:text-blue-400 transition-colors duration-200 flex items-center gap-2">
                                     <span className="w-1 h-1 bg-blue-500 rounded-full"></span>
                                     Chính sách bảo mật
