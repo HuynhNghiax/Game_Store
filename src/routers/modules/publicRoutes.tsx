@@ -13,6 +13,7 @@ const AboutUs = lazy(() => import('../../pages/AboutUs'));
 const Terms = lazy(() => import('../../pages/Terms'));
 const Privacy = lazy(() => import('../../pages/Privacy'));
 const Contact = lazy(() => import('../../pages/Contact'));
+const CookiesPage = lazy(() => import('../../pages/Cookies'));
 export const publicRoutes: RouteObject[] = [
   {
     index: true,
@@ -50,6 +51,10 @@ export const publicRoutes: RouteObject[] = [
   {
     path: 'contact',
     element: Loadable(Contact)({})
+  },
+  {
+    path: 'cookies', 
+    element: Loadable(CookiesPage)({})
   },
   {
     path: '*',
