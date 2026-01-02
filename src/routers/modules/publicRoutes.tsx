@@ -10,6 +10,10 @@ const NotFound = lazy(() => import('../../pages/NotFound'));
 
 const LicenseGame = lazy(() => import('../../pages/LicenseGame'));
 const AboutUs = lazy(() => import('../../pages/AboutUs'));
+const Terms = lazy(() => import('../../pages/Terms'));
+const Privacy = lazy(() => import('../../pages/Privacy'));
+const Contact = lazy(() => import('../../pages/Contact'));
+const CookiesPage = lazy(() => import('../../pages/Cookies'));
 export const publicRoutes: RouteObject[] = [
   {
     index: true,
@@ -35,6 +39,22 @@ export const publicRoutes: RouteObject[] = [
   {
     path: 'aboutUs',
     element: Loadable(AboutUs)({})
+  },
+  {
+    path: 'terms',
+    element: Loadable(Terms)({})
+  },
+  {
+    path: 'privacy',
+    element: Loadable(Privacy)({})
+  },
+  {
+    path: 'contact',
+    element: Loadable(Contact)({})
+  },
+  {
+    path: 'cookies', 
+    element: Loadable(CookiesPage)({})
   },
   {
     path: '*',

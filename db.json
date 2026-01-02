@@ -14,7 +14,7 @@
     },
     {
       "id": "f6d6",
-      "name": "Na",
+      "name": "Nam",
       "email": "22130175@st.hcmuaf.edu.vn",
       "password": "123567"
     }
@@ -123,6 +123,11 @@
       "id": "fd3a",
       "userId": "1",
       "gameId": "1"
+    },
+    {
+      "id": "5a1b",
+      "userId": "f6d6",
+      "gameId": "0"
     }
   ],
   "reviews": [
