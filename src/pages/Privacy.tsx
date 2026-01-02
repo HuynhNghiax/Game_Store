@@ -1,5 +1,7 @@
 import React from "react";
-import { ShieldCheck, Lock, Eye, Database, UserCheck, Bell, Mail, ShieldAlert } from "lucide-react";
+// 1. PHẢI CÓ DÒNG IMPORT NÀY
+import { Link } from 'react-router-dom'; 
+import { ShieldCheck, Lock, Eye, Database, Bell, Mail, ShieldAlert } from "lucide-react";
 
 const Privacy: React.FC = () => {
   const policies = [
@@ -66,10 +68,11 @@ const Privacy: React.FC = () => {
             </h3>
             <p className="text-indigo-700">Đừng ngần ngại liên hệ với bộ phận phụ trách dữ liệu của chúng tôi.</p>
           </div>
-          <a href="mailto:support@gamestore.vn" className="flex items-center gap-3 bg-indigo-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200">
+          
+          <Link to="/contact"  className="flex items-center gap-3 bg-indigo-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200">
             <Mail size={20} />
             Liên hệ ngay
-          </a>
+          </Link>
         </div>
       </section>
     </div>

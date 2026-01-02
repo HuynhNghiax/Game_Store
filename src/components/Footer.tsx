@@ -103,23 +103,27 @@ const Footer: React.FC = () => {
                         </h3>
                         <ul className="space-y-3 text-sm">
                             <li className="flex items-start gap-2 text-gray-400">
-                                <Phone size={16} className="mt-0.5 text-blue-400 flex-shrink-0"/>
+                                <Phone size={16} className="mt-0.5 text-blue-400 flex-shrink-0" />
                                 <div>
-                                    <div className="text-white font-medium">1900 633 305</div>
+                                    <a href="tel:1900633305" className="text-white font-medium hover:text-blue-400 transition-colors">
+                                        1900 633 305
+                                    </a>
                                     <div className="text-xs text-gray-500">Hỗ trợ 24/7</div>
                                 </div>
                             </li>
+
                             <li>
-                                <Link to=""
-                                   className="text-gray-400 hover:text-blue-400 transition-colors duration-200 flex items-center gap-2">
-                                    <Mail size={16} className="text-blue-400"/>
+                                <a href="mailto:support@gamestore.vn"
+                                    className="text-gray-400 hover:text-blue-400 transition-colors duration-200 flex items-center gap-2">
+                                    <Mail size={16} className="text-blue-400" />
                                     support@gamestore.vn
-                                </Link>
+                                </a>
                             </li>
+
                             <li>
-                                <Link to=""
-                                   className="text-gray-400 hover:text-blue-400 transition-colors duration-200 flex items-center gap-2">
-                                    <MapPin size={16} className="text-blue-400"/>
+                                <Link to="/contact"
+                                    className="text-gray-400 hover:text-blue-400 transition-colors duration-200 flex items-center gap-2">
+                                    <MapPin size={16} className="text-blue-400" />
                                     TP. Hồ Chí Minh, Việt Nam
                                 </Link>
                             </li>
@@ -191,7 +195,7 @@ const Footer: React.FC = () => {
                 <div
                     className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
                     <div className="text-gray-500">
-                        © 2024 GameStore. All rights reserved.
+                        © 2026 GameStore. All rights reserved.
                     </div>
                     <div className="flex items-center gap-4 text-gray-500">
                         <Link to="/terms" className="hover:text-blue-400 transition-colors">
