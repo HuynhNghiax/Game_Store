@@ -487,8 +487,370 @@
       "rating": 1,
       "comment": "game nhạt quá\n",
       "createdAt": "2025-12-26T07:00:28.404Z"
-    }
+    },
+    {
+      "id": "4739",
+      "productId": "4",
+      "userId": "172",
+      "user": "Reviewer X",
+      "rating": 5,
+      "comment": "Boss fight đỉnh của chóp!",
+      "createdAt": "2026-01-08T23:29:00.000Z"
+    },
+    {
+      "id": "a7aa",
+      "productId": "5",
+      "userId": "4181",
+      "user": "Indie Fan",
+      "rating": 1,
+      "comment": "Gameplay nhàm chán, grind mệt mỏi.",
+      "createdAt": "2026-01-02T05:48:00.000Z"
+    },
+    {
+      "id": "a0c6",
+      "productId": "3",
+      "userId": "7861",
+      "user": "Racer",
+      "rating": 1,
+      "comment": "Chơi 1 tiếng là bỏ.",
+      "createdAt": "2025-12-23T18:54:00.000Z"
+    },
+    {
+      "id": "bf0e",
+      "productId": "7",
+      "userId": "1250",
+      "user": "Esports Pro",
+      "rating": 3,
+      "comment": "Không tệ nhưng cũng không hay lắm.",
+      "createdAt": "2025-12-20T19:03:00.000Z"
+    },
+    {
+      "id": "b693",
+      "productId": "8",
+      "userId": "6379",
+      "user": "Indie Fan",
+      "rating": 4,
+      "comment": "Đáng giá từng xu, chơi là nghiện.",
+      "createdAt": "2026-01-06T06:46:00.000Z"
+    },
+    {
+      "id": "72a6",
+      "productId": "8",
+      "userId": "2705",
+      "user": "Hardware Hub",
+      "rating": 3,
+      "comment": "Đồ họa đẹp nhưng gameplay hơi lặp.",
+      "createdAt": "2026-01-08T00:45:00.000Z"
+    },
+    {
+      "id": "e7ed",
+      "productId": "0",
+      "userId": "5304",
+      "user": "NhanNghia",
+      "rating": 4,
+      "comment": "Game cực hay, đồ họa đỉnh cao!",
+      "createdAt": "2025-12-20T06:10:00.000Z"
+    },
+    {
+      "id": "6411",
+      "productId": "8",
+      "userId": "6110",
+      "user": "Admin Gamer",
+      "rating": 4,
+      "comment": "Chơi trên PC thì phê lắm!",
+      "createdAt": "2026-01-05T11:18:00.000Z"
+    },
+    {
+      "id": "244a",
+      "productId": "4",
+      "userId": "6320",
+      "user": "Esports Pro",
+      "rating": 5,
+      "comment": "Chơi hoài không chán, recommend mọi người!",
+      "createdAt": "2026-01-06T06:39:00.000Z"
+    },
+    {
+      "id": "62d0",
+      "productId": "6",
+      "userId": "3085",
+      "user": "Nintendo Fan",
+      "rating": 3,
+      "comment": "Giá hơi cao so với chất lượng.",
+      "createdAt": "2026-01-01T07:39:00.000Z"
+    },
+    {
+      "id": "9c69",
+      "productId": "5",
+      "userId": "5379",
+      "user": "Valve Fan",
+      "rating": 5,
+      "comment": "Game hay nhất năm nay!",
+      "createdAt": "2026-01-06T08:51:00.000Z"
+    },
+    {
+      "id": "3ce7",
+      "productId": "3",
+      "userId": "2076",
+      "user": "Admin Gamer",
+      "rating": 4,
+      "comment": "Game cực hay, đồ họa đỉnh cao!",
+      "createdAt": "2025-12-27T04:06:00.000Z"
+    },
+    {
+      "id": "2e47",
+      "productId": "3",
+      "userId": "2440",
+      "user": "XBOX Fan",
+      "rating": 4,
+      "comment": "Chơi hoài không chán, recommend mọi người!",
+      "createdAt": "2025-12-29T04:33:00.000Z"
+    },
+    {
+      "id": "bc6c",
+      "productId": "7",
+      "userId": "8578",
+      "user": "Reviewer X",
+      "rating": 3,
+      "comment": "Game ổn, chơi được nhưng không xuất sắc.",
+      "createdAt": "2025-12-27T11:40:00.000Z"
+    },
+    {
+      "id": "2185",
+      "productId": "5",
+      "userId": "7763",
+      "user": "Reviewer X",
+      "rating": 4,
+      "comment": "Update thường xuyên, hỗ trợ tốt.",
+      "createdAt": "2025-12-25T07:45:00.000Z"
+    },
+    {
+      "id": "44a7",
+      "productId": "0",
+      "userId": "1175",
+      "user": "XBOX Fan",
+      "rating": 3,
+      "comment": "Giá hơi cao so với chất lượng.",
+      "createdAt": "2025-12-31T02:10:00.000Z"
+    },
+    {
+      "id": "977d",
+      "productId": "8",
+      "userId": "7052",
+      "user": "Hardware Hub",
+      "rating": 3,
+      "comment": "Game ổn, chơi được nhưng không xuất sắc.",
+      "createdAt": "2025-12-26T14:23:00.000Z"
+    },
+    {
+      "id": "52e2",
+      "productId": "6",
+      "userId": "244",
+      "user": "Nintendo Fan",
+      "rating": 1,
+      "comment": "Bug nhiều, crash liên tục.",
+      "createdAt": "2025-12-28T02:51:00.000Z"
+    },
+    {
+      "id": "001c",
+      "productId": "6",
+      "userId": "4504",
+      "user": "Admin Gamer",
+      "rating": 3,
+      "comment": "Cốt truyện bình thường, chơi cho vui.",
+      "createdAt": "2026-01-04T03:55:00.000Z"
+    },
+    {
+      "id": "6185",
+      "productId": "5",
+      "userId": "3497",
+      "user": "NhanNghia",
+      "rating": 3,
+      "comment": "Giá hơi cao so với chất lượng.",
+      "createdAt": "2026-01-07T01:35:00.000Z"
+    },
+    {
+      "id": "f67d",
+      "productId": "5",
+      "userId": "8998",
+      "user": "Nintendo Fan",
+      "rating": 2,
+      "comment": "Không nên mua, phí tiền.",
+      "createdAt": "2025-12-26T02:45:00.000Z"
+    },
+    {
+      "id": "513c",
+      "productId": "1",
+      "userId": "4171",
+      "user": "Reviewer X",
+      "rating": 4,
+      "comment": "Cốt truyện hay, gameplay mượt mà.",
+      "createdAt": "2025-12-26T12:04:00.000Z"
+    },
+    {
+      "id": "6771",
+      "productId": "1",
+      "userId": "1708",
+      "user": "Souls Like",
+      "rating": 1,
+      "comment": "Không nên mua, phí tiền.",
+      "createdAt": "2025-12-26T18:57:00.000Z"
+    },
+    {
+      "id": "e7aa",
+      "productId": "2",
+      "userId": "3544",
+      "user": "Football Fan",
+      "rating": 5,
+      "comment": "Game cực hay, đồ họa đỉnh cao!",
+      "createdAt": "2026-01-02T15:57:00.000Z"
+    },
+    {
+      "id": "a1d0",
+      "productId": "4",
+      "userId": "2753",
+      "user": "Souls Like",
+      "rating": 3,
+      "comment": "Đồ họa đẹp nhưng gameplay hơi lặp.",
+      "createdAt": "2025-12-26T20:37:00.000Z"
+    },
+    {
+      "id": "fa5a",
+      "productId": "5",
+      "userId": "5001",
+      "user": "Indie Fan",
+      "rating": 5,
+      "comment": "Game cực hay, đồ họa đỉnh cao!",
+      "createdAt": "2025-12-30T20:50:00.000Z"
+    },
+    {
+      "id": "a918",
+      "productId": "0",
+      "userId": "3530",
+      "user": "Ubisoft Fan",
+      "rating": 3,
+      "comment": "Chơi được vài tiếng rồi chán.",
+      "createdAt": "2025-12-30T19:38:00.000Z"
+    },
+    {
+      "id": "daac",
+      "productId": "5",
+      "userId": "711",
+      "user": "Nintendo Fan",
+      "rating": 5,
+      "comment": "Open world rộng lớn, khám phá thú vị.",
+      "createdAt": "2026-01-02T15:14:00.000Z"
+    },
+    {
+      "id": "f76e",
+      "productId": "7",
+      "userId": "6172",
+      "user": "TechMaster",
+      "rating": 3,
+      "comment": "Chơi được vài tiếng rồi chán.",
+      "createdAt": "2026-01-03T20:04:00.000Z"
+    },
+    {
+      "id": "2b0c",
+      "productId": "7",
+      "userId": "2846",
+      "user": "Ubisoft Fan",
+      "rating": 5,
+      "comment": "Âm thanh và nhạc nền xuất sắc.",
+      "createdAt": "2025-12-25T16:12:00.000Z"
+    },
+
+      {
+        "id": "e4c1",
+        "productId": "20",
+        "userId": "4412",
+        "user": "Gamer Pro",
+        "rating": 5,
+        "comment": "Cốt truyện quá đỉnh, chơi không rời mắt được.",
+        "createdAt": "2026-01-04T09:12:00.000Z"
+      },
+      {
+        "id": "b7d2",
+        "productId": "20",
+        "userId": "9921",
+        "user": "Reviewer dạo",
+        "rating": 2,
+        "comment": "Game hơi nhiều bug, cần tối ưu thêm.",
+        "createdAt": "2026-01-04T14:25:00.000Z"
+      },
+      {
+        "id": "c9a3",
+        "productId": "21",
+        "userId": "5520",
+        "user": "Sony Fanboy",
+        "rating": 5,
+        "comment": "Đồ họa đẹp nhất trong các game cùng thể loại.",
+        "createdAt": "2026-01-05T08:30:00.000Z"
+      },
+      {
+        "id": "a11b",
+        "productId": "21",
+        "userId": "1102",
+        "user": "Old School",
+        "rating": 4,
+        "comment": "Lối chơi cổ điển nhưng vẫn rất lôi cuốn.",
+        "createdAt": "2026-01-05T19:45:00.000Z"
+      },
+      {
+        "id": "f5e4",
+        "productId": "22",
+        "userId": "8841",
+        "user": "Chiến Thần",
+        "rating": 1,
+        "comment": "Game quá khó, không phù hợp cho người mới.",
+        "createdAt": "2026-01-06T10:15:00.000Z"
+      },
+      {
+        "id": "d2c8",
+        "productId": "23",
+        "userId": "3321",
+        "user": "Mê Game Offline",
+        "rating": 3,
+        "comment": "Game chơi được, nhưng giá hơi chát.",
+        "createdAt": "2026-01-06T21:05:00.000Z"
+      },
+      {
+        "id": "778a",
+        "productId": "23",
+        "userId": "6672",
+        "user": "Hidden Gem",
+        "rating": 5,
+        "comment": "Một cực phẩm ít người biết đến, nên thử nhé.",
+        "createdAt": "2026-01-07T12:20:00.000Z"
+      },
+      {
+        "id": "991f",
+        "productId": "24",
+        "userId": "2210",
+        "user": "SpeedRunner",
+        "rating": 4,
+        "comment": "Cảm giác điều khiển nhân vật rất mượt.",
+        "createdAt": "2026-01-07T16:55:00.000Z"
+      },
+      {
+        "id": "bc34",
+        "productId": "25",
+        "userId": "4401",
+        "user": "Casual Player",
+        "rating": 3,
+        "comment": "Giải trí nhẹ nhàng cuối tuần thì ổn.",
+        "createdAt": "2026-01-08T07:40:00.000Z"
+      },
+      {
+        "id": "ae5d",
+        "productId": "25",
+        "userId": "7712",
+        "user": "Indie Lover",
+        "rating": 5,
+        "comment": "Phong cách nghệ thuật rất độc đáo, 10 điểm!",
+        "createdAt": "2026-01-08T15:10:00.000Z"
+      }
   ],
+
   "products": [
     {
       "name": "Cyberpunk 2077",
@@ -1448,7 +1810,7 @@
       "link": "https://www.residentevil.com/re4/",
       "release": "24 tháng 3 năm 2023",
       "platforms": "PlayStation 4, PlayStation 5, Xbox Series X/S, PC",
-      "genre": "Kinh dị sinh tồn",
+      "genre": "Kinh dị",
       "developers": "Capcom",
       "publishers": "Capcom",
       "inCart": false,
@@ -1623,7 +1985,7 @@
       "link": "https://store.steampowered.com/app/1687950/Persona_5_Royal/",
       "release": "21 tháng 10 năm 2022",
       "platforms": "PlayStation 5, Xbox Series X/S, Nintendo Switch, PC",
-      "genre": "Nhập vai Nhật Bản",
+      "genre": "Nhập vai hành động",
       "developers": "ATLUS",
       "publishers": "SEGA",
       "inCart": false,
@@ -1648,7 +2010,7 @@
       "link": "https://store.steampowered.com/app/2161700/Persona_3_Reload/",
       "release": "2 tháng 2 năm 2024",
       "platforms": "PlayStation 4/5, Xbox One, Xbox Series X/S, PC",
-      "genre": "Nhập vai Nhật Bản",
+      "genre": "Nhập vai hành động",
       "developers": "ATLUS",
       "publishers": "SEGA",
       "inCart": false,
@@ -1673,7 +2035,7 @@
       "link": "https://store.steampowered.com/app/1113000/Persona_4_Golden/",
       "release": "13 tháng 6 năm 2020",
       "platforms": "PlayStation Vita, PlayStation 4, Xbox One, Nintendo Switch, PC",
-      "genre": "Nhập vai Nhật Bản",
+      "genre": "Nhập vai hành động",
       "developers": "ATLUS",
       "publishers": "SEGA",
       "inCart": false,
@@ -2373,7 +2735,7 @@
       "link": "https://www.alanwake.com/",
       "release": "27 tháng 10 năm 2023",
       "platforms": "PC, PlayStation 5, Xbox Series X/S",
-      "genre": "Kinh dị sinh tồn",
+      "genre": "Kinh dị",
       "developers": "Remedy Entertainment",
       "publishers": "Epic Games Publishing",
       "inCart": false,
@@ -2573,7 +2935,7 @@
       "link": "https://housemarque.com/games/returnal",
       "release": "15 tháng 2 năm 2023",
       "platforms": "PC, PlayStation 5",
-      "genre": "Hành động Roguelike",
+      "genre": "Hành động",
       "developers": "Housemarque",
       "publishers": "PlayStation PC LLC",
       "inCart": false,
@@ -2873,7 +3235,7 @@
       "link": "https://www.hollowknight.com/",
       "release": "24 tháng 2 năm 2017",
       "platforms": "PC, Nintendo Switch, PlayStation 4, Xbox One",
-      "genre": "Metroidvania",
+      "genre": "Hành động phiêu lưu",
       "developers": "Team Cherry",
       "publishers": "Team Cherry",
       "inCart": false,
@@ -2948,7 +3310,7 @@
       "link": "http://www.celestegame.com/",
       "release": "25 tháng 1 năm 2018",
       "platforms": "PC, Consoles",
-      "genre": "Platformer",
+      "genre": "Hành động",
       "developers": "Extremely OK Games",
       "publishers": "Extremely OK Games",
       "inCart": false,
@@ -3073,7 +3435,7 @@
       "link": "https://www.konami.com/mg/mgs5/",
       "release": "1 tháng 9 năm 2015",
       "platforms": "PC, Consoles",
-      "genre": "Hành động lén lút",
+      "genre": "Hành động",
       "developers": "Kojima Productions",
       "publishers": "Konami",
       "inCart": false,
