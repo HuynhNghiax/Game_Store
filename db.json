@@ -130,6 +130,22 @@
       "gameId": "0"
     }
   ],
+
+  "blogs": [
+    {
+      "id": "1",
+      "title": "GTA VI công bố ngày phát hành chính thức vào năm 2026",
+      "summary": "Cộng đồng game thủ đang sục sôi trước những tin đồn mới nhất về siêu phẩm thế kỷ của Rockstar Games.",
+      "content": "Rockstar Games vừa chính thức xác nhận rằng Grand Theft Auto VI (GTA VI) đang đi vào những giai đoạn phát triển cuối cùng. Theo báo cáo tài chính mới nhất, hãng dự kiến sẽ tung ra siêu phẩm này vào mùa thu năm 2026. \n\n Bối cảnh của game sẽ quay trở lại Vice City nhưng với quy mô lớn gấp 3 lần phiên bản cũ. Hệ thống AI của NPC cũng được nâng cấp đáng kể, cho phép họ có những phản ứng tự nhiên hơn với thời tiết và hành động của người chơi. Ngoài ra, cơ chế thay đổi nhân vật giữa Lucia và Jason sẽ mang lại trải nghiệm cốt truyện đa chiều hơn bao giờ hết. Đây chắc chắn là tựa game được mong đợi nhất thập kỷ!",
+      "author": "Admin Gamer",
+      "date": "08/01/2026",
+      "category": "Tin Nóng",
+      "image": "https://images.alphacoders.com/134/1343360.jpeg"
+    }
+
+  ],
+
+
   "reviews": [
     {
       "id": "95b5",

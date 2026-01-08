@@ -1,12 +1,10 @@
 import React from 'react';
-import {Home, LayoutGrid, Heart, ShoppingBag, LogIn, LogOut, Gamepad2, History} from 'lucide-react';
+import {Home, LayoutGrid, Heart, ShoppingBag, LogIn, LogOut, Gamepad2, History, Mail, Newspaper} from 'lucide-react';
 import {Link, useLocation, useNavigate} from 'react-router-dom';
-import {useAppDispatch, useAppSelector} from '../redux/hooks'; // Hook TS
+import {useAppDispatch, useAppSelector} from '../redux/hooks';
 import {logout} from '../redux/authSlice';
 
-
 export default function Sidebar() {
-
     const location = useLocation();
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
@@ -18,15 +16,16 @@ export default function Sidebar() {
     const menuItems = [
         {icon: Home, label: 'Trang chủ', path: '/'},
         {icon: LayoutGrid, label: 'Thể loại', path: '/categories'},
+        {icon: Newspaper, label: 'Tin tức', path: 'blog'},
         {icon: Heart, label: 'Thư viện', path: '/library'},
         {icon: History, label: 'Lịch sử mua', path: '/history'},
         {icon: ShoppingBag, label: 'Giỏ hàng', path: '/cart'},
+        {icon: Mail, label: 'Liên hệ', path: '/contact'},
     ];
 
     return (
-        <nav className="w-full bg-white">
-
-            <div className="flex items-center -ml-6">
+        <nav className="w-full bg-white border-b border-gray-100">
+            <div className="flex items-center -ml-6 overflow-x-auto no-scrollbar">
                 {menuItems.map((item) => {
                     const active = isActive(item.path);
 
@@ -34,7 +33,7 @@ export default function Sidebar() {
                         <Link
                             key={item.label}
                             to={item.path}
-                            className={`relative flex items-center gap-2.5 px-6 py-3
+                            className={`relative flex items-center gap-2.5 px-6 py-3 whitespace-nowrap
                             text-sm font-medium transition-colors
                             ${active
                                 ? 'text-blue-600'
