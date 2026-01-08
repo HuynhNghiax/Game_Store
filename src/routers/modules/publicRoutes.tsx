@@ -7,6 +7,9 @@ const GameDetail = lazy(() => import('../../pages/GameDetail'));
 const Categories = lazy(() => import('../../pages/Categories'));
 const SearchResults = lazy(() => import('../../pages/SearchResults'));
 const NotFound = lazy(() => import('../../pages/NotFound'));
+const Blog = lazy(() => import('../../pages/Blog'));
+const BlogDetail = lazy(() => import('../../pages/BlogDetail'));
+
 
 const LicenseGame = lazy(() => import('../../pages/LicenseGame'));
 const AboutUs = lazy(() => import('../../pages/AboutUs'));
@@ -31,7 +34,6 @@ export const publicRoutes: RouteObject[] = [
     path: 'search',
     element: Loadable(SearchResults)({})
   },
-  // 2. Thêm route cho trang "Game bản quyền là gì"
   {
     path: 'licenseGame',
     element: Loadable(LicenseGame)({})
@@ -55,6 +57,14 @@ export const publicRoutes: RouteObject[] = [
   {
     path: 'cookies', 
     element: Loadable(CookiesPage)({})
+  },
+  {
+    path: 'blog',
+    element: Loadable(Blog)({})
+  },
+  {
+    path: 'blog/:id',
+    element: Loadable(BlogDetail)({})
   },
   {
     path: '*',
