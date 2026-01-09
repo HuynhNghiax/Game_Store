@@ -17,6 +17,8 @@ const Terms = lazy(() => import('../../pages/Terms'));
 const Privacy = lazy(() => import('../../pages/Privacy'));
 const Contact = lazy(() => import('../../pages/Contact'));
 const CookiesPage = lazy(() => import('../../pages/Cookies'));
+const Support = lazy(() => import('../../pages/Support'));
+const FAQ = lazy(() => import('../../pages/FAQ'));
 export const publicRoutes: RouteObject[] = [
   {
     index: true,
@@ -65,6 +67,14 @@ export const publicRoutes: RouteObject[] = [
   {
     path: 'blog/:id',
     element: Loadable(BlogDetail)({})
+  },
+  {
+    path: 'support',
+    element: Loadable(Support)({})
+  },
+   {
+    path: 'faq',
+    element: Loadable(FAQ)({})
   },
   {
     path: '*',
