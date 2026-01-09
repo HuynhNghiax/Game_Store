@@ -111,6 +111,22 @@
       "totalAmount": 899000,
       "date": "2025-12-29T06:55:09.956Z",
       "status": "Completed"
+    },
+    {
+      "id": "7196",
+      "userId": "f6d6",
+      "items": [
+        {
+          "id": "1",
+          "name": "Battlefield V",
+          "price": 199000,
+          "cover": "https://res.cloudinary.com/gianlucajahn/image/upload/c_scale,q_100,w_500/v1658188621/battlefield_n0gd5a.jpg",
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 199000,
+      "date": "2026-01-02T11:39:55.283Z",
+      "status": "Completed"
     }
   ],
   "wishlist": [
@@ -123,11 +139,6 @@
       "id": "fd3a",
       "userId": "1",
       "gameId": "1"
-    },
-    {
-      "id": "5a1b",
-      "userId": "f6d6",
-      "gameId": "0"
     }
   ],
 
@@ -2297,9 +2308,9 @@
       "cover": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/814380/library_600x900.jpg",
       "footage": [
         "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/814380/header.jpg",
-        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/814380/ss_e83696803875382346067b84824d546255152a44.600x338.jpg",
-        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/814380/ss_37a2cb647e30d95d13b4823298d022d861d87532.600x338.jpg",
-        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/814380/ss_7524944b204e5e7834241e06d99432f4803714c3.600x338.jpg"
+        "https://cdn.mos.cms.futurecdn.net/8qtEqyNPpy7owiSoZER9d4.jpg",
+        "https://www.hollywoodreporter.com/wp-content/uploads/2018/08/sekiro-_shadows_die_twice.jpg?w=1296&h=730&crop=1",
+        "https://static.wixstatic.com/media/0c6381_f0ed6b5c481945aabd27ce691359eb9b~mv2_d_2560_1440_s_2.jpg/v1/fill/w_978,h_562,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/20190322174510_1.jpg"
       ]
     },
     {
@@ -2322,9 +2333,9 @@
       "cover": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2215430/library_600x900.jpg",
       "footage": [
         "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2215430/header.jpg",
-        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2215430/ss_840f3a6198f3b202970b4a457497d394b99d50a2.600x338.jpg",
-        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2215430/ss_2e43075276e021a812e957df3812739199d3d922.600x338.jpg",
-        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2215430/ss_c89c4d9294870f7d4323e72861e6807865768560.600x338.jpg"
+        "https://gameshoptl.com/upload/images/ghost-of-tsushima-4.jpg",
+        "https://honggame.store/wp-content/uploads/2025/10/ghost-of-tsushima-directors-cut-ra-mat-thang-8-tin-game.jpg",
+        "https://file.hstatic.net/200000876749/file/dia_game_ghost_of_tsushima_director_cut_ps5_us_2693ac1970434e5e844df8ca44edd287_1024x1024.jpg"
       ]
     },
     {
@@ -2347,9 +2358,9 @@
       "cover": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1462040/library_600x900.jpg",
       "footage": [
         "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1462040/header.jpg",
-        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1462040/ss_079836376cd22c153716612d3e098d3618bfde7a.600x338.jpg",
-        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1462040/ss_8444a170560946d0a92d506d31c8152e04e9c3e9.600x338.jpg",
-        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1462040/ss_60235773177894d0399c43d2c80c3546747d6e6a.600x338.jpg"
+        "https://images.gamethuanviet.com/wp-content/uploads/slider101/Final_Fantasy_VII_Remake_Intergrade_Vit_Ho_4.webp",
+        "https://xboxwire.thesourcemediaassets.com/sites/2/2025/09/FFVIIRIG_keyart_1920x1080-134f6a72666195bd7624-1024x576.jpg",
+        "https://sm.pcmag.com/t/pcmag_au/review/f/final-fant/final-fantasy-vii-remake-intergrade-for-pc_ewqr.1920.jpg"
       ]
     },
     {
@@ -2372,9 +2383,9 @@
       "cover": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1426210/library_600x900.jpg",
       "footage": [
         "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1426210/header.jpg",
-        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1426210/ss_75e0161494579c3d2df80766110f03126e828a2a.600x338.jpg",
-        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1426210/ss_c7c4f45479261a1532057d19c323f497dc462dd0.600x338.jpg",
-        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1426210/ss_8b6287950c40e53a5585f95874254e0c8b672728.600x338.jpg"
+        "https://www.anphatpc.com.vn/media/news/1102_photo-1-1644516857500912756033.jpg",
+        "https://cdn-media.sforum.vn/storage/app/media/wp-content/uploads/2024/03/ItTakesTwo-bg-1.jpg",
+        "https://assetsio.gnwcdn.com/it%20takes%20two%20preview%208.jpg?width=690&quality=85&format=jpg&dpr=3&auto=webp"
       ]
     },
     {
@@ -2397,9 +2408,9 @@
       "cover": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/588650/library_600x900.jpg",
       "footage": [
         "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/588650/header.jpg",
-        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/588650/ss_4950df683a31c1a965774a3f114c029314c442e9.600x338.jpg",
-        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/588650/ss_c950d69d4d547dc277c22998797f2590623a4843.600x338.jpg",
-        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/588650/ss_a4387431e6799dfa8df99db82046422d733c7797.600x338.jpg"
+        "https://www.washingtonpost.com/news/comic-riffs/wp-content/uploads/sites/15/2018/08/dead-cells6.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8X6wB6VWT4w1oA5jPcm_Br_IjAw7eDiymhA&s",
+        "https://assets.nintendo.com/image/upload/ar_16:9,c_lpad,w_1240/b_white/f_auto/q_auto/store/software/switch/70050000036097/0cb277b834be1837f0abdf31658e7066ea0b1841c2e9af6dc89dec57c10227a9"
       ]
     },
     {
@@ -2422,9 +2433,9 @@
       "cover": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2124490/library_600x900.jpg",
       "footage": [
         "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2124490/header.jpg",
-        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2124490/ss_7524944b204e5e7834241e06d99432f4803714c3.600x338.jpg",
-        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2124490/ss_2641011116260a4c28f73117498305c102a0df92.600x338.jpg",
-        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2124490/ss_d816a70a0094e99159d332d9c222c0f20d58849b.600x338.jpg"
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYLiHVOjQl3leanTNg_YPyWHHuc40Wa1kROA&s",
+        "https://cdn.mos.cms.futurecdn.net/BLvkJPQafSCvC9k3QkRgAi.jpg",
+        "https://eu-images.contentstack.com/v3/assets/blt740a130ae3c5d529/blt9107ae5da0bda5f1/6716621b8a06ada494e066e3/SH2Title.jpg?width=1280&auto=webp&quality=80&disable=upscale"
       ]
     },
     {
@@ -2447,9 +2458,9 @@
       "cover": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1623730/library_600x900.jpg",
       "footage": [
         "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1623730/header.jpg",
-        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1623730/ss_e1e19d7d3d196425c27653c063cf476901844e13.600x338.jpg",
-        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1623730/ss_1684c98df5d09f7a798935c156f2f9c31649257e.600x338.jpg",
-        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1623730/ss_598774775d78a947470f1a26d705c742c300f2e2.600x338.jpg"
+        "https://images2.thanhnien.vn/528068263637045248/2024/1/21/ss1e47bb8bbfaaaf3282bfb5d253378832b55c4e56-1705852215683-1705852216690924326252.jpg",
+        "https://cdn.thewirecutter.com/wp-content/media/2024/01/palworld-2048px-palworld2.jpg?auto=webp&quality=60&width=570",
+        "https://assetsio.gnwcdn.com/palworld-fight-mammorest.jpg?width=1200&height=1200&fit=bounds&quality=70&format=jpg&auto=webp"
       ]
     },
     {
@@ -2472,9 +2483,9 @@
       "cover": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1627720/library_600x900.jpg",
       "footage": [
         "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1627720/header.jpg",
-        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1627720/ss_a563124479e0a4f54e1950c406b0065a25039e24.600x338.jpg",
-        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1627720/ss_59f776d545089f64923e271295b28d6c8b98155d.600x338.jpg",
-        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1627720/ss_017b275681ce38f38c36df867493b22e185c786a.600x338.jpg"
+        "https://tedishop.vn/wp-content/uploads/2025/03/Lies-of-P-2-Tedi-Shop.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHTVeCrB8tYsXmu1NBhuGnTFFOImHM_ebwHA&s",
+        "https://cdn.mos.cms.futurecdn.net/pMG6pjLdwJJGD3E5g2MchT.jpg"
       ]
     },
     {
@@ -2497,9 +2508,9 @@
       "cover": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1244090/library_600x900.jpg",
       "footage": [
         "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1244090/header.jpg",
-        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1244090/ss_84f932e652285df646014ba5780a42337d45f479.600x338.jpg",
-        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1244090/ss_752f9c45582f3493409e5910c611590ab80d4400.600x338.jpg",
-        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1244090/ss_cf55798991472506b12a203f7e6f8510c56b0f47.600x338.jpg"
+        "https://i0.wp.com/cdn.vietgame.asia/wp-content/uploads/20231105164146/sea-of-stars-danh-gia-game-11-1140x641.jpg?resize=1140%2C641&ssl=1",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT6j6yS0NdiPaNhE42vhC5xF7NjTrzBKUigg&s",
+        "https://seaofstarsgame.co/assets/dist/images/img-sos-doe-xl.jpg"
       ]
     },
     {
@@ -2522,9 +2533,9 @@
       "cover": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/553850/library_600x900.jpg",
       "footage": [
         "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/553850/header.jpg",
-        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/553850/ss_5c50c18d99878170c96c4349341ba0882e9d248d.600x338.jpg",
-        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/553850/ss_02196191f6920977e2056104f6e520f92b6a55c6.600x338.jpg",
-        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/553850/ss_507632623a9d7c493df53018901be3853118a8b1.600x338.jpg"
+        "https://cdn.mos.cms.futurecdn.net/4nQpxkNVjnLwZpSbPUPmck.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpqxVqnTgV3qDFyyMJXRmhbyMV-oO9V7O8QQ&s",
+        "https://i.guim.co.uk/img/media/4527f8a6bb1a888bf38e1b2802a4ee19cd4ea766/501_575_2642_1585/master/2642.jpg?width=1200&quality=85&auto=format&fit=max&s=0231aa39888106bf2100a03285020872"
       ]
     },
     {
@@ -2547,9 +2558,9 @@
       "cover": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2054970/library_600x900.jpg",
       "footage": [
         "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2054970/header.jpg",
-        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2054970/ss_ac6f671c0627e802a818c64227f2776c53579893.600x338.jpg",
-        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2054970/ss_e1e3b6279f0611d8d9047970d4c1808006d64b22.600x338.jpg",
-        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2054970/ss_593f4e857440b847847bd60b54013143c745778a.600x338.jpg"
+        "https://static0.polygonimages.com/wordpress/wp-content/uploads/chorus/uploads/chorus_asset/file/25344992/DD2___Gryphon.jpeg?w=1600&h=900&fit=crop",
+        "https://gamelade.vn/wp-content/uploads/2024/03/dragons-dogma-2-1.webp",
+        "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2054970/ss_f419f8b6577558b40ce8c384f4bfaabbf44c8a8e.1920x1080.jpg?t=1732148252"
       ]
     },
     {
@@ -2572,9 +2583,9 @@
       "cover": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1778820/library_600x900.jpg",
       "footage": [
         "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1778820/header.jpg",
-        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1778820/ss_a5a9071c0800d927d60927e1f486a4387870d8a5.600x338.jpg",
-        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1778820/ss_3d98993201402324df7825310e527f311f99c852.600x338.jpg",
-        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1778820/ss_89d38c2901c223a5444319c72e2d093740266e74.600x338.jpg"
+        "https://gamingtrend.com/content/images/size/w1200/2025/02/law.jpg",
+        "https://cdn.shopify.com/s/files/1/0075/2425/3809/files/TEKKEN-8-EasySMX-game-controller-1.jpg?v=1698744149",
+        "https://kamikey.com/wp-content/uploads/2025/01/TEKKEN-8-Ultimate-Edition-2.jpg"
       ]
     },
     {
@@ -2597,9 +2608,9 @@
       "cover": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1364780/library_600x900.jpg",
       "footage": [
         "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1364780/header.jpg",
-        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1364780/ss_8d712499641496a8497678b87123986420ce238f.600x338.jpg",
-        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1364780/ss_e807106a782b54203d9817743452b4146a47a16e.600x338.jpg",
-        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1364780/ss_5f71d18476d05904f9814545d1d6a36f7584094a.600x338.jpg"
+        "https://img.redbull.com/images/c_limit,w_1500,h_1000/f_auto,q_auto/redbullcom/2025/7/21/wlmaw2z6rlpxhak0svc9/sagat-street-fighter-6",
+        "https://d1lss44hh2trtw.cloudfront.net/resize?type=webp&url=https%3A%2F%2Fshacknews-www.s3.amazonaws.com%2Fassets%2Farticle%2F2022%2F10%2F07%2Fstreet-fighter-6-lets-each-player-have-their-stage-of-choice-in-online-matches_feature.jpg&width=1032&sign=oEFesmZOoKM9jLOflLyCF0KVMz2epycTXkqRN-XF7DQ",
+        "https://www.streetfighter.com/article/sites/2/2025/08/outfit4.jpg"
       ]
     },
     {
@@ -2622,9 +2633,9 @@
       "cover": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1888160/library_600x900.jpg",
       "footage": [
         "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1888160/header.jpg",
-        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1888160/ss_8869e5d43806a6442654a9388c346123984e9f78.600x338.jpg",
-        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1888160/ss_e6130b91df639c4d930260714c33496c139c8052.600x338.jpg",
-        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1888160/ss_37c223c9380b273d6b976669919f42d2a45d064e.600x338.jpg"
+        "https://i.ytimg.com/vi/DcDjyestr4Y/maxresdefault.jpg",
+        "https://tedishop.vn/wp-content/uploads/2025/03/ARMORED-CORE%E2%84%A2-VI-FIRES-OF-RUBICON%E2%84%A2-2-Tedi-Shop.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOEhosYr50dVeoHyMOPULXKGXZzYo-yzlWCQ&s"
       ]
     },
     {
@@ -2647,9 +2658,9 @@
       "cover": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1817230/library_600x900.jpg",
       "footage": [
         "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1817230/header.jpg",
-        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1817230/ss_d8650f0ba1b52a46452243d666d655b38cb719bd.600x338.jpg",
-        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1817230/ss_e70876798e1f0e8f3b60ba95b77c3858c422896d.600x338.jpg",
-        "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1817230/ss_b51b730f73117498305c102a0df92b6a55c65444.600x338.jpg"
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtj6XGdeFT-Ro8GhDdpinWBlWHxQF_T3FmDA&s",
+        "https://cdn2.unrealengine.com/hi-fi-rush-feed-2-1920x1080-a4c1b7d582d9.jpg?resize=1&w=1920",
+        "https://image.api.playstation.com/vulcan/ap/rnd/202402/0615/6182c834042e2348ff31af50866443f3282a22452032603f.jpg"
       ]
     },
     {

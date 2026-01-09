@@ -154,7 +154,7 @@ const Footer: React.FC = () => {
                                 href="https://youtube.com"
                                 target="_blank"
                                 rel="noreferrer"
-                                className="w-9 h-9   rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300"
+                                className="w-9 h-9 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300"
                             >
                                 <img
                                     src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png"
