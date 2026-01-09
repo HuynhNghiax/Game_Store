@@ -16,7 +16,7 @@
       "id": "f6d6",
       "name": "Nam",
       "email": "22130175@st.hcmuaf.edu.vn",
-      "password": "123567"
+      "password": "nam0210004"
     }
   ],
   "orders": [
@@ -141,7 +141,6 @@
       "gameId": "1"
     }
   ],
-
   "blogs": [
     {
       "id": "1",
@@ -769,99 +768,97 @@
       "comment": "Âm thanh và nhạc nền xuất sắc.",
       "createdAt": "2025-12-25T16:12:00.000Z"
     },
-
-      {
-        "id": "e4c1",
-        "productId": "20",
-        "userId": "4412",
-        "user": "Gamer Pro",
-        "rating": 5,
-        "comment": "Cốt truyện quá đỉnh, chơi không rời mắt được.",
-        "createdAt": "2026-01-04T09:12:00.000Z"
-      },
-      {
-        "id": "b7d2",
-        "productId": "20",
-        "userId": "9921",
-        "user": "Reviewer dạo",
-        "rating": 2,
-        "comment": "Game hơi nhiều bug, cần tối ưu thêm.",
-        "createdAt": "2026-01-04T14:25:00.000Z"
-      },
-      {
-        "id": "c9a3",
-        "productId": "21",
-        "userId": "5520",
-        "user": "Sony Fanboy",
-        "rating": 5,
-        "comment": "Đồ họa đẹp nhất trong các game cùng thể loại.",
-        "createdAt": "2026-01-05T08:30:00.000Z"
-      },
-      {
-        "id": "a11b",
-        "productId": "21",
-        "userId": "1102",
-        "user": "Old School",
-        "rating": 4,
-        "comment": "Lối chơi cổ điển nhưng vẫn rất lôi cuốn.",
-        "createdAt": "2026-01-05T19:45:00.000Z"
-      },
-      {
-        "id": "f5e4",
-        "productId": "22",
-        "userId": "8841",
-        "user": "Chiến Thần",
-        "rating": 1,
-        "comment": "Game quá khó, không phù hợp cho người mới.",
-        "createdAt": "2026-01-06T10:15:00.000Z"
-      },
-      {
-        "id": "d2c8",
-        "productId": "23",
-        "userId": "3321",
-        "user": "Mê Game Offline",
-        "rating": 3,
-        "comment": "Game chơi được, nhưng giá hơi chát.",
-        "createdAt": "2026-01-06T21:05:00.000Z"
-      },
-      {
-        "id": "778a",
-        "productId": "23",
-        "userId": "6672",
-        "user": "Hidden Gem",
-        "rating": 5,
-        "comment": "Một cực phẩm ít người biết đến, nên thử nhé.",
-        "createdAt": "2026-01-07T12:20:00.000Z"
-      },
-      {
-        "id": "991f",
-        "productId": "24",
-        "userId": "2210",
-        "user": "SpeedRunner",
-        "rating": 4,
-        "comment": "Cảm giác điều khiển nhân vật rất mượt.",
-        "createdAt": "2026-01-07T16:55:00.000Z"
-      },
-      {
-        "id": "bc34",
-        "productId": "25",
-        "userId": "4401",
-        "user": "Casual Player",
-        "rating": 3,
-        "comment": "Giải trí nhẹ nhàng cuối tuần thì ổn.",
-        "createdAt": "2026-01-08T07:40:00.000Z"
-      },
-      {
-        "id": "ae5d",
-        "productId": "25",
-        "userId": "7712",
-        "user": "Indie Lover",
-        "rating": 5,
-        "comment": "Phong cách nghệ thuật rất độc đáo, 10 điểm!",
-        "createdAt": "2026-01-08T15:10:00.000Z"
-      }
+    {
+      "id": "e4c1",
+      "productId": "20",
+      "userId": "4412",
+      "user": "Gamer Pro",
+      "rating": 5,
+      "comment": "Cốt truyện quá đỉnh, chơi không rời mắt được.",
+      "createdAt": "2026-01-04T09:12:00.000Z"
+    },
+    {
+      "id": "b7d2",
+      "productId": "20",
+      "userId": "9921",
+      "user": "Reviewer dạo",
+      "rating": 2,
+      "comment": "Game hơi nhiều bug, cần tối ưu thêm.",
+      "createdAt": "2026-01-04T14:25:00.000Z"
+    },
+    {
+      "id": "c9a3",
+      "productId": "21",
+      "userId": "5520",
+      "user": "Sony Fanboy",
+      "rating": 5,
+      "comment": "Đồ họa đẹp nhất trong các game cùng thể loại.",
+      "createdAt": "2026-01-05T08:30:00.000Z"
+    },
+    {
+      "id": "a11b",
+      "productId": "21",
+      "userId": "1102",
+      "user": "Old School",
+      "rating": 4,
+      "comment": "Lối chơi cổ điển nhưng vẫn rất lôi cuốn.",
+      "createdAt": "2026-01-05T19:45:00.000Z"
+    },
+    {
+      "id": "f5e4",
+      "productId": "22",
+      "userId": "8841",
+      "user": "Chiến Thần",
+      "rating": 1,
+      "comment": "Game quá khó, không phù hợp cho người mới.",
+      "createdAt": "2026-01-06T10:15:00.000Z"
+    },
+    {
+      "id": "d2c8",
+      "productId": "23",
+      "userId": "3321",
+      "user": "Mê Game Offline",
+      "rating": 3,
+      "comment": "Game chơi được, nhưng giá hơi chát.",
+      "createdAt": "2026-01-06T21:05:00.000Z"
+    },
+    {
+      "id": "778a",
+      "productId": "23",
+      "userId": "6672",
+      "user": "Hidden Gem",
+      "rating": 5,
+      "comment": "Một cực phẩm ít người biết đến, nên thử nhé.",
+      "createdAt": "2026-01-07T12:20:00.000Z"
+    },
+    {
+      "id": "991f",
+      "productId": "24",
+      "userId": "2210",
+      "user": "SpeedRunner",
+      "rating": 4,
+      "comment": "Cảm giác điều khiển nhân vật rất mượt.",
+      "createdAt": "2026-01-07T16:55:00.000Z"
+    },
+    {
+      "id": "bc34",
+      "productId": "25",
+      "userId": "4401",
+      "user": "Casual Player",
+      "rating": 3,
+      "comment": "Giải trí nhẹ nhàng cuối tuần thì ổn.",
+      "createdAt": "2026-01-08T07:40:00.000Z"
+    },
+    {
+      "id": "ae5d",
+      "productId": "25",
+      "userId": "7712",
+      "user": "Indie Lover",
+      "rating": 5,
+      "comment": "Phong cách nghệ thuật rất độc đáo, 10 điểm!",
+      "createdAt": "2026-01-08T15:10:00.000Z"
+    }
   ],
-
   "products": [
     {
       "name": "Cyberpunk 2077",
@@ -3737,6 +3734,6 @@
         "https://tedishop.vn/wp-content/uploads/2025/03/UNCHARTED-Legacy-of-Thieves-Collection-2-Tedi-Shop.jpg",
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQMotgytq9oJih00F-z193aIjqxcyYrLb5aQ&s"
       ]
-    } 
+    }
   ]
 }
