@@ -1,5 +1,4 @@
 import React from "react";
-// 1. PHẢI CÓ DÒNG IMPORT NÀY
 import { Link } from 'react-router-dom'; 
 import { ShieldCheck, Lock, Eye, Database, Bell, Mail, ShieldAlert } from "lucide-react";
 

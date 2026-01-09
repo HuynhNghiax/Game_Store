@@ -61,6 +61,13 @@ const Footer: React.FC = () => {
                                     Chính sách bảo mật
                                 </Link>
                             </li>
+                            <li>
+                                <Link to="/support"
+                                   className="text-gray-400 hover:text-blue-400 transition-colors duration-200 flex items-center gap-2">
+                                    <span className="w-1 h-1 bg-blue-500 rounded-full"></span>
+                                    Hỗ trợ (Support/FAQ)
+                                </Link>
+                            </li>
                         </ul>
                     </div>
 
@@ -105,7 +112,7 @@ const Footer: React.FC = () => {
                             <li className="flex items-start gap-2 text-gray-400">
                                 <Phone size={16} className="mt-0.5 text-blue-400 flex-shrink-0" />
                                 <div>
-                                    <a href="tel:1900633305" className="text-white font-medium hover:text-blue-400 transition-colors">
+                                    <a href="/contact" className="text-white font-medium hover:text-blue-400 transition-colors">
                                         1900 633 305
                                     </a>
                                     <div className="text-xs text-gray-500">Hỗ trợ 24/7</div>
@@ -113,7 +120,7 @@ const Footer: React.FC = () => {
                             </li>
 
                             <li>
-                                <a href="mailto:support@gamestore.vn"
+                                <a href="/contact"
                                     className="text-gray-400 hover:text-blue-400 transition-colors duration-200 flex items-center gap-2">
                                     <Mail size={16} className="text-blue-400" />
                                     support@gamestore.vn
