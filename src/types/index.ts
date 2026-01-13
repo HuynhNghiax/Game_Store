@@ -38,3 +38,14 @@ export interface WishlistItem {
   userId: number | string;
   gameId: number | string;
 }
+
+export interface Blog {
+  id: string;
+  title: string;
+  summary: string;
+  content: string;
+  author: string;
+  date: string;
+  category: string;
+  image: string;
+}

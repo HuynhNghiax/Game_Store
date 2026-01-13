@@ -92,6 +92,31 @@ export const updateProfile = createAsyncThunk(
   }
 );
 
+export const changePassword = createAsyncThunk(
+  'auth/changePassword',
+  async ({ oldPassword, newPassword }: any, { getState, rejectWithValue }) => {
+    try {
+      const state: any = getState();
+      const user = state.auth.user;
+
+      if (user.password !== oldPassword) {
+        return rejectWithValue("Mật khẩu hiện tại không chính xác!");
+      }
+
+      const url = IS_FIREBASE
+        ? `${BASE_URL}/users/${user.id}.json`
+        : `${BASE_URL}/users/${user.id}`;
+
+      const updatedUser = { ...user, password: newPassword };
+      const res = await axios.put(url, updatedUser);
+
+      return IS_FIREBASE ? updatedUser : res.data;
+    } catch (error) {
+      return rejectWithValue("Lỗi khi đổi mật khẩu trên server");
+    }
+  }
+);
+
 const authSlice = createSlice({
   name: 'auth',
   initialState,
@@ -134,6 +159,19 @@ const authSlice = createSlice({
         state.successMessage = "Cập nhật hồ sơ thành công!";
       })
       .addCase(updateProfile.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload as string;
+      })
+      .addCase(changePassword.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(changePassword.fulfilled, (state, action) => {
+        state.loading = false;
+        state.user = action.payload; 
+        state.successMessage = "Đổi mật khẩu thành công!";
+      })
+      .addCase(changePassword.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload as string;
       });
